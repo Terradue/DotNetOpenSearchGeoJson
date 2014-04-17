@@ -117,7 +117,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
 
                 if (feed.Items != null) {
                     foreach (var item in feed.Items) {
-                        fc.Features.Add(ImportItem(item));
+                        fc.FeatureResults.Add(ImportItem(item));
                     }
                 }
 

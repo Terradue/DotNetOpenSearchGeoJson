@@ -107,7 +107,7 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
             return SyndicationFeedToFeatureCollection(AtomOpenSearchEngineExtension.TransformAtomResponseToSyndicationFeed(response));
         }
 
-        protected FeatureCollectionResult SyndicationFeedToFeatureCollection(SyndicationFeed feed) {
+        public static FeatureCollectionResult SyndicationFeedToFeatureCollection(SyndicationFeed feed) {
 
             SyndicationFeedImporter importer = new SyndicationFeedImporter(new ImportOptions(){ KeepNamespaces = false });
             return importer.ImportFeed(feed);
