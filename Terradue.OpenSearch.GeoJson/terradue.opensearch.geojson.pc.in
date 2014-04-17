@@ -1,0 +1,6 @@
+Name: Terradue.OpenSearch.GeoJson
+Description: Terradue.OpenSearch.GeoJson
+Version: 1.0
+
+Requires: 
+Libs: -r:@expanded_libdir@/@PACKAGE@/Terradue.OpenSearch.GeoJson.dll
