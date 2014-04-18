@@ -120,7 +120,7 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
 
         }
 
-        protected FeatureCollectionResult ResultCollectionToFeatureCollection(IOpenSearchResultCollection results) {
+        public FeatureCollectionResult ResultCollectionToFeatureCollection(IOpenSearchResultCollection results) {
 
             ResultCollectionImporter importer = new ResultCollectionImporter(new ImportOptions(){ KeepNamespaces = false });
             return importer.ImportResults(results);
