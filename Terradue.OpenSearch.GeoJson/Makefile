@@ -15,19 +15,22 @@ ASSEMBLY = bin/Debug/Terradue.OpenSearch.GeoJson.dll
 ASSEMBLY_MDB = $(ASSEMBLY).mdb
 COMPILE_TARGET = library
 PROJECT_REFERENCES =  \
-	../externals/DotNetGeoJson/Terradue.GeoJson/bin/Terradue.GeoJson.dll \
-	../externals/DotNetOpenSearch/Terradue.OpenSearch/bin/Terradue.OpenSearch.dll
+	../Terradue.GeoJson/bin/Debug/Terradue.GeoJson.dll \
+	../Terradue.OpenSearch/bin/Debug/Terradue.OpenSearch.dll
 BUILD_DIR = bin/Debug
 
 TERRADUE_OPENSEARCH_GEOJSON_DLL_MDB_SOURCE=bin/Debug/Terradue.OpenSearch.GeoJson.dll.mdb
 TERRADUE_OPENSEARCH_GEOJSON_DLL_MDB=$(BUILD_DIR)/Terradue.OpenSearch.GeoJson.dll.mdb
-TERRADUE_GEOJSON_DLL_SOURCE=../externals/DotNetGeoJson/Terradue.GeoJson/bin/Terradue.GeoJson.dll
-TERRADUE_GEOJSON_DLL_MDB_SOURCE=../externals/DotNetGeoJson/Terradue.GeoJson/bin/Terradue.GeoJson.dll.mdb
+SERVICESTACK_TEXT_DLL_SOURCE=../packages/ServiceStack.Text.3.9.71/lib/net35/ServiceStack.Text.dll
+TERRADUE_GEOJSON_DLL_SOURCE=../Terradue.GeoJson/bin/Debug/Terradue.GeoJson.dll
+TERRADUE_GEOJSON_DLL_MDB_SOURCE=../Terradue.GeoJson/bin/Debug/Terradue.GeoJson.dll.mdb
 TERRADUE_GEOJSON_DLL_MDB=$(BUILD_DIR)/Terradue.GeoJson.dll.mdb
-SERVICESTACK_TEXT_DLL_SOURCE=../externals/DotNetGeoJson/packages/ServiceStack.Text.3.9.71/lib/net35/ServiceStack.Text.dll
-TERRADUE_OPENSEARCH_DLL_SOURCE=../externals/DotNetOpenSearch/Terradue.OpenSearch/bin/Terradue.OpenSearch.dll
-TERRADUE_OPENSEARCH_DLL_MDB_SOURCE=../externals/DotNetOpenSearch/Terradue.OpenSearch/bin/Terradue.OpenSearch.dll.mdb
+TERRADUE_OPENSEARCH_DLL_SOURCE=../Terradue.OpenSearch/bin/Debug/Terradue.OpenSearch.dll
+TERRADUE_OPENSEARCH_DLL_MDB_SOURCE=../Terradue.OpenSearch/bin/Debug/Terradue.OpenSearch.dll.mdb
 TERRADUE_OPENSEARCH_DLL_MDB=$(BUILD_DIR)/Terradue.OpenSearch.dll.mdb
+TERRADUE_UTIL_DLL_SOURCE=../Terradue.Util/bin/Debug/Terradue.Util.dll
+TERRADUE_UTIL_DLL_MDB_SOURCE=../Terradue.Util/bin/Debug/Terradue.Util.dll.mdb
+TERRADUE_UTIL_DLL_MDB=$(BUILD_DIR)/Terradue.Util.dll.mdb
 
 endif
 
@@ -38,16 +41,18 @@ ASSEMBLY = bin/Release/Terradue.OpenSearch.GeoJson.dll
 ASSEMBLY_MDB = 
 COMPILE_TARGET = library
 PROJECT_REFERENCES =  \
-	../externals/DotNetGeoJson/Terradue.GeoJson/bin/Terradue.GeoJson.dll \
-	../externals/DotNetOpenSearch/Terradue.OpenSearch/bin/Terradue.OpenSearch.dll
+	../Terradue.GeoJson/bin/Release/Terradue.GeoJson.dll \
+	../Terradue.OpenSearch/bin/Release/Terradue.OpenSearch.dll
 BUILD_DIR = bin/Release
 
 TERRADUE_OPENSEARCH_GEOJSON_DLL_MDB=
-TERRADUE_GEOJSON_DLL_SOURCE=../externals/DotNetGeoJson/Terradue.GeoJson/bin/Terradue.GeoJson.dll
+SERVICESTACK_TEXT_DLL_SOURCE=../packages/ServiceStack.Text.3.9.71/lib/net35/ServiceStack.Text.dll
+TERRADUE_GEOJSON_DLL_SOURCE=../Terradue.GeoJson/bin/Release/Terradue.GeoJson.dll
 TERRADUE_GEOJSON_DLL_MDB=
-SERVICESTACK_TEXT_DLL_SOURCE=../externals/DotNetGeoJson/packages/ServiceStack.Text.3.9.71/lib/net35/ServiceStack.Text.dll
-TERRADUE_OPENSEARCH_DLL_SOURCE=../externals/DotNetOpenSearch/Terradue.OpenSearch/bin/Terradue.OpenSearch.dll
+TERRADUE_OPENSEARCH_DLL_SOURCE=../Terradue.OpenSearch/bin/Release/Terradue.OpenSearch.dll
 TERRADUE_OPENSEARCH_DLL_MDB=
+TERRADUE_UTIL_DLL_SOURCE=../Terradue.Util/bin/Release/Terradue.Util.dll
+TERRADUE_UTIL_DLL_MDB=
 
 endif
 
@@ -56,11 +61,13 @@ SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
 
 PROGRAMFILES = \
 	$(TERRADUE_OPENSEARCH_GEOJSON_DLL_MDB) \
+	$(SERVICESTACK_TEXT_DLL) \
 	$(TERRADUE_GEOJSON_DLL) \
 	$(TERRADUE_GEOJSON_DLL_MDB) \
-	$(SERVICESTACK_TEXT_DLL) \
 	$(TERRADUE_OPENSEARCH_DLL) \
-	$(TERRADUE_OPENSEARCH_DLL_MDB)  
+	$(TERRADUE_OPENSEARCH_DLL_MDB) \
+	$(TERRADUE_UTIL_DLL) \
+	$(TERRADUE_UTIL_DLL_MDB)  
 
 LINUX_PKGCONFIG = \
 	$(TERRADUE_OPENSEARCH_GEOJSON_PC)  
@@ -68,9 +75,10 @@ LINUX_PKGCONFIG = \
 
 RESGEN=resgen2
 
-TERRADUE_GEOJSON_DLL = $(BUILD_DIR)/Terradue.GeoJson.dll
 SERVICESTACK_TEXT_DLL = $(BUILD_DIR)/ServiceStack.Text.dll
+TERRADUE_GEOJSON_DLL = $(BUILD_DIR)/Terradue.GeoJson.dll
 TERRADUE_OPENSEARCH_DLL = $(BUILD_DIR)/Terradue.OpenSearch.dll
+TERRADUE_UTIL_DLL = $(BUILD_DIR)/Terradue.Util.dll
 TERRADUE_OPENSEARCH_GEOJSON_PC = $(BUILD_DIR)/terradue.opensearch.geojson.pc
 
 FILES = \
@@ -111,11 +119,13 @@ include $(top_srcdir)/Makefile.include
 
 
 
+$(eval $(call emit-deploy-target,SERVICESTACK_TEXT_DLL))
 $(eval $(call emit-deploy-target,TERRADUE_GEOJSON_DLL))
 $(eval $(call emit-deploy-target,TERRADUE_GEOJSON_DLL_MDB))
-$(eval $(call emit-deploy-target,SERVICESTACK_TEXT_DLL))
 $(eval $(call emit-deploy-target,TERRADUE_OPENSEARCH_DLL))
 $(eval $(call emit-deploy-target,TERRADUE_OPENSEARCH_DLL_MDB))
+$(eval $(call emit-deploy-target,TERRADUE_UTIL_DLL))
+$(eval $(call emit-deploy-target,TERRADUE_UTIL_DLL_MDB))
 $(eval $(call emit-deploy-wrapper,TERRADUE_OPENSEARCH_GEOJSON_PC,terradue.opensearch.geojson.pc))
 
 
@@ -147,11 +157,13 @@ install-local: $(ASSEMBLY) $(ASSEMBLY_MDB)
 	$(call cp,$(ASSEMBLY),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call cp,$(ASSEMBLY_MDB),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call cp,$(TERRADUE_OPENSEARCH_GEOJSON_DLL_MDB),$(DESTDIR)$(libdir)/$(PACKAGE))
+	$(call cp,$(SERVICESTACK_TEXT_DLL),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call cp,$(TERRADUE_GEOJSON_DLL),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call cp,$(TERRADUE_GEOJSON_DLL_MDB),$(DESTDIR)$(libdir)/$(PACKAGE))
-	$(call cp,$(SERVICESTACK_TEXT_DLL),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call cp,$(TERRADUE_OPENSEARCH_DLL),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call cp,$(TERRADUE_OPENSEARCH_DLL_MDB),$(DESTDIR)$(libdir)/$(PACKAGE))
+	$(call cp,$(TERRADUE_UTIL_DLL),$(DESTDIR)$(libdir)/$(PACKAGE))
+	$(call cp,$(TERRADUE_UTIL_DLL_MDB),$(DESTDIR)$(libdir)/$(PACKAGE))
 	mkdir -p '$(DESTDIR)$(libdir)/pkgconfig'
 	$(call cp,$(TERRADUE_OPENSEARCH_GEOJSON_PC),$(DESTDIR)$(libdir)/pkgconfig)
 	make post-install-local-hook prefix=$(prefix)
@@ -162,11 +174,13 @@ uninstall-local: $(ASSEMBLY) $(ASSEMBLY_MDB)
 	$(call rm,$(ASSEMBLY),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call rm,$(ASSEMBLY_MDB),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call rm,$(TERRADUE_OPENSEARCH_GEOJSON_DLL_MDB),$(DESTDIR)$(libdir)/$(PACKAGE))
+	$(call rm,$(SERVICESTACK_TEXT_DLL),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call rm,$(TERRADUE_GEOJSON_DLL),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call rm,$(TERRADUE_GEOJSON_DLL_MDB),$(DESTDIR)$(libdir)/$(PACKAGE))
-	$(call rm,$(SERVICESTACK_TEXT_DLL),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call rm,$(TERRADUE_OPENSEARCH_DLL),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call rm,$(TERRADUE_OPENSEARCH_DLL_MDB),$(DESTDIR)$(libdir)/$(PACKAGE))
+	$(call rm,$(TERRADUE_UTIL_DLL),$(DESTDIR)$(libdir)/$(PACKAGE))
+	$(call rm,$(TERRADUE_UTIL_DLL_MDB),$(DESTDIR)$(libdir)/$(PACKAGE))
 	$(call rm,$(TERRADUE_OPENSEARCH_GEOJSON_PC),$(DESTDIR)$(libdir)/pkgconfig)
 	make post-uninstall-local-hook prefix=$(prefix)
 
