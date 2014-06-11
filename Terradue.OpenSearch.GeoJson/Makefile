@@ -95,6 +95,7 @@ DATA_FILES =
 RESOURCES = 
 
 EXTRAS = \
+	Terradue.OpenSearch.GeoJson.csproj \
 	terradue.opensearch.geojson.pc.in 
 
 REFERENCES =  \
