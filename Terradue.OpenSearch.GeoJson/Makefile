@@ -107,7 +107,7 @@ REFERENCES =  \
 	System.Runtime.Serialization
 
 DLL_REFERENCES =  \
-	../packages/ServiceStack.Text.3.9.71/lib/net35/ServiceStack.Text.dll
+	../ServiceStack.Text
 
 CLEANFILES = $(PROGRAMFILES) $(LINUX_PKGCONFIG) 
 
