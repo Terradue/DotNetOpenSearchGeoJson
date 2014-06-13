@@ -8,7 +8,7 @@
 
 using System;
 using Mono.Addins;
-using System.ServiceModel.Syndication;
+using Terradue.ServiceModel.Syndication;
 using System.Collections.Generic;
 using System.Xml;
 using System.Net;
@@ -34,7 +34,19 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
     [Extension(typeof(IOpenSearchEngineExtension))]
     [ExtensionNode("GeoJson", "GeoJson native query")]
     public class FeatureCollectionOpenSearchEngineExtension : OpenSearchEngineExtension<FeatureCollectionResult> {
+
         public FeatureCollectionOpenSearchEngineExtension() {
+        }
+
+        static bool qualified;
+
+        public static bool Qualified {
+            get {
+                return qualified;
+            }
+            set {
+                qualified = value;
+            }
         }
 
         #region OpenSearchEngineExtension implementation
@@ -55,7 +67,7 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
             return new string[] { "application/rdf+xml", "application/atom+xml" };
         }
 
-        public override object TransformResponse(OpenSearchResponse response) {
+        public override IOpenSearchResultCollection TransformResponse(OpenSearchResponse response) {
             if (response.ContentType == "application/atom+xml")
                 return TransformAtomResponseToFeatureCollection(response);
             if (response.ContentType == "application/xml")
@@ -104,13 +116,12 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
 
         public FeatureCollectionResult TransformAtomResponseToFeatureCollection(OpenSearchResponse response) {
             // First query natively the ATOM
-            return SyndicationFeedToFeatureCollection(AtomOpenSearchEngineExtension.TransformAtomResponseToSyndicationFeed(response));
+            return AtomFeedToFeatureCollection(AtomOpenSearchEngineExtension.TransformAtomResponseToAtomFeed(response));
         }
 
-        public static FeatureCollectionResult SyndicationFeedToFeatureCollection(SyndicationFeed feed) {
+        public static FeatureCollectionResult AtomFeedToFeatureCollection(AtomFeed feed) {
 
-            SyndicationFeedImporter importer = new SyndicationFeedImporter(new ImportOptions(){ KeepNamespaces = false });
-            return importer.ImportFeed(feed);
+            return FeatureCollectionResult.FromOpenSearchResultCollection(feed);
 
         }
 
@@ -122,8 +133,7 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
 
         protected FeatureCollectionResult ResultCollectionToFeatureCollection(IOpenSearchResultCollection results) {
 
-            ResultCollectionImporter importer = new ResultCollectionImporter(new ImportOptions(){ KeepNamespaces = false });
-            return importer.ImportResults(results);
+            return FeatureCollectionResult.FromOpenSearchResultCollection(results);
 
         }
         //---------------------------------------------------------------------------------------------------------------------

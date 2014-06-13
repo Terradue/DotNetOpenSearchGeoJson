@@ -12,26 +12,69 @@ using System.Collections.Generic;
 using Terradue.OpenSearch.Result;
 using ServiceStack.Text;
 using System.Runtime.Serialization;
-using System.ServiceModel.Syndication;
+using Terradue.ServiceModel.Syndication;
 using Terradue.OpenSearch.GeoJson.Import;
+using System.Xml;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 
 namespace Terradue.OpenSearch.GeoJson.Result {
     [DataContract]
     public class FeatureCollectionResult : Terradue.GeoJson.Feature.FeatureCollection, IOpenSearchResultCollection {
+
+        protected NameValueCollection namespaces;
+
         public FeatureCollectionResult(Terradue.GeoJson.Feature.FeatureCollection fc) : base() {
             base.BoundingBoxes = fc.BoundingBoxes;
             base.CRS = fc.CRS;
             base.Properties = fc.Properties;
-            Links = new List<SyndicationLink>();
+            Links = new Collection<SyndicationLink>();
             fc.Features.FirstOrDefault(f => {
                 FeatureResults.Add(new FeatureResult(f));
                 return false;
             });
+            ImportSyndicationElements(fc);
+            InitNameSpaces();
         }
 
         public FeatureCollectionResult() : base() {
-            Links = new List<SyndicationLink>();
+            Links = new Collection<SyndicationLink>();
             FeatureResults = new List<FeatureResult>();
+            InitNameSpaces();
+        }
+
+        public static FeatureCollectionResult FromOpenSearchResultCollection(IOpenSearchResultCollection results) {
+            if (results == null)
+                throw new ArgumentNullException("results");
+
+            FeatureCollectionResult fc = new FeatureCollectionResult();
+
+            NameValueCollection namespaces = null;
+            XmlNamespaceManager xnsm = null;
+            string prefix = "";
+
+            fc.ElementExtensions = new SyndicationElementExtensionCollection(results.ElementExtensions);
+           
+            if (results.Date != null && fc.Properties.ContainsKey(prefix + "updated") == null)
+                fc.Properties.Add(prefix + "updated", results.Date.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"));
+
+            if (results.Links != null && results.Links.Count > 0) {
+                fc.Links = results.Links;
+            }
+
+            if (results.Items != null) {
+                foreach (var item in results.Items) {
+                    fc.FeatureResults.Add(FeatureResult.FromOpenSearchResultItem(item));
+                }
+            }
+            return fc;
+        }
+
+        void InitNameSpaces() {
+            namespaces = new NameValueCollection();
+            namespaces.Set("", "http://geojson.org/ns#");
+            namespaces.Set("atom", "http://www.w3.org/2005/Atom");
+            namespaces.Set("os", "http://a9.com/-/spec/opensearch/1.1/");
         }
 
         [IgnoreDataMember]
@@ -62,17 +105,18 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                         links.Add(newlink);
                     }
                     properties["links"] = links.ToArray();
-                } 
+                }
+
                 return properties;
             }
-            set {
-                base.Properties = value;
-                if ( base.Properties.ContainsKey("links") && base.Properties["links"] is Dictionary<string,object>[]) {
-                    Links = new List<SyndicationLink>();
-                    foreach (object link in (Dictionary<string,object>[])base.Properties["links"]) {
-                        if (link is Dictionary<string, object>) {
-                            Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link));
-                        }
+        }
+
+        void ImportSyndicationElements(Terradue.GeoJson.Feature.FeatureCollection fc) {
+            if ( fc.Properties.ContainsKey("links") && fc.Properties["links"] is Dictionary<string,object>[]) {
+                Links = new Collection<SyndicationLink>();
+                foreach (object link in (Dictionary<string,object>[])fc.Properties["links"]) {
+                    if (link is Dictionary<string, object>) {
+                        Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link));
                     }
                 }
             }
@@ -85,58 +129,76 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         }
 
         [IgnoreDataMember]
-        public List<IOpenSearchResultItem> Items {
+        public IEnumerable<IOpenSearchResultItem> Items {
             get {
                 return FeatureResults.Cast<IOpenSearchResultItem>().ToList();
             }
         }
 
-        List<System.ServiceModel.Syndication.SyndicationLink> links;
+        List<Terradue.ServiceModel.Syndication.SyndicationLink> links;
 
         [IgnoreDataMember]
-        public List<System.ServiceModel.Syndication.SyndicationLink> Links {
+        public Collection<Terradue.ServiceModel.Syndication.SyndicationLink> Links {
             get {
-                return links;
+                return new Collection<SyndicationLink>(links);
             }
             set {
-                links = value;
+                links = value.ToList();
             }
         }
 
+        SyndicationElementExtensionCollection elementExtensions;
         [IgnoreDataMember]
-        public System.Xml.XmlNodeList ElementExtensions {
+        public SyndicationElementExtensionCollection ElementExtensions {
             get {
-                throw new NotImplementedException();
+                return elementExtensions;
+            }
+            set {
+                elementExtensions = value;
             }
         }
 
+        string title;
         [IgnoreDataMember]
         public string Title {
             get {
-                throw new NotImplementedException();
+                return title;
+            }
+            set {
+                title = value;
             }
         }
 
+        DateTime date;
         [IgnoreDataMember]
         public DateTime Date {
             get {
-                throw new NotImplementedException();
+                return date;
+            }
+            set {
+                date = value;
             }
         }
 
+        string identifier;
         [IgnoreDataMember]
         public string Identifier {
             get {
-                if (this.Properties.ContainsKey("identifier")) return this.Properties["identifier"].ToString();
-                if (this.Properties.ContainsKey("dc:identifier")) return this.Properties["dc:identifier"].ToString();
-                return null;
+                return identifier;
+            }
+            set {
+                identifier = value;
             }
         }
 
+        long count;
         [IgnoreDataMember]
         public long Count {
             get {
-                throw new NotImplementedException();
+                return count;
+            }
+            set {
+                count = value;
             }
         }
 
@@ -146,100 +208,21 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             JsonSerializer.SerializeToStream(this, stream);
         }
 
+
+        bool showNamespaces;
+        public bool ShowNamespaces {
+            get {
+                return showNamespaces;
+            }
+            set {
+                showNamespaces = value;
+                foreach (FeatureResult item in Items) {
+                    item.ShowNamespaces = value;
+                }
+            }
+        }
         #endregion
     }
 
-    [DataContract]
-    public class FeatureResult : Terradue.GeoJson.Feature.Feature, IOpenSearchResultItem {
-        public FeatureResult(Terradue.GeoJson.Feature.Feature feature) : base(feature.Geometry, feature.Properties) {
-            base.Id = feature.Id;
-            base.BoundingBoxes = feature.BoundingBoxes;
-            base.CRS = feature.CRS;
-            links = new List<SyndicationLink>();
-        }
-
-        [DataMember(Name="properties")]
-        public new Dictionary <string,object> Properties {
-            get {
-                Dictionary <string,object> properties = base.Properties;
-                if (properties.ContainsKey("links")) {
-                    properties.Remove("links");
-                }
-                string prefix = "";
-                if (properties.ContainsKey("@namespaces")) prefix = "atom:";
-                if (Links != null && Links.Count > 0) {
-                    List<Dictionary<string,object>> links = new List<Dictionary<string,object>>();
-                    foreach (SyndicationLink link in Links) {
-                        Dictionary<string,object> newlink = new Dictionary<string,object>();
-                        newlink.Add("@" + prefix+ "href", link.Uri.ToString());
-                        if (link.RelationshipType != null) newlink.Add("@" + prefix+ "rel", link.RelationshipType);
-                        if (link.Title != null) newlink.Add("@" + prefix+ "title", link.Title);
-                        if (link.MediaType != null) newlink.Add("@" + prefix+ "type", link.MediaType);
-                        if (link.Length != 0) newlink.Add("@" + prefix+ "length", link.Length);
-
-                        links.Add(newlink);
-                    }
-                    properties["links"] = links.ToArray();
-                }
-                return properties;
-            }
-            set {
-                base.Properties = value;
-                if ( base.Properties.ContainsKey("links") && base.Properties["links"] is Dictionary<string,object>[]) {
-                    Links = new List<SyndicationLink>();
-                    foreach (object link in (Dictionary<string,object>[])base.Properties["links"]) {
-                        if (link is Dictionary<string, object>) {
-                            Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link));
-                        }
-                    }
-                }
-            }
-        }
-
-        #region IOpenSearchResultItem implementation
-
-        [IgnoreDataMember]
-        public string Title {
-            get {
-                throw new NotImplementedException();
-            }
-        }
-
-        [IgnoreDataMember]
-        public DateTime Date {
-            get {
-                throw new NotImplementedException();
-            }
-        }
-
-        [IgnoreDataMember]
-        public string Identifier {
-            get {
-                if (this.Properties.ContainsKey("identifier")) return this.Properties["identifier"].ToString();
-                if (this.Properties.ContainsKey("dc:identifier")) return this.Properties["dc:identifier"].ToString();
-                return null;
-            }
-        }
-
-        List<System.ServiceModel.Syndication.SyndicationLink> links;
-        [IgnoreDataMember]
-        public List<System.ServiceModel.Syndication.SyndicationLink> Links {
-            get {
-                return links;
-            }
-            set {
-                links = value;
-            }
-        }
-
-        [IgnoreDataMember]
-        public System.Xml.XmlNodeList ElementExtensions {
-            get {
-                throw new NotImplementedException();
-            }
-        }
-
-        #endregion
-    }
 }
 

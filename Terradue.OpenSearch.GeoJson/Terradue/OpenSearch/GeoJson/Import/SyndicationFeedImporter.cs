@@ -8,7 +8,7 @@
 
 using System;
 using System.Linq;
-using System.ServiceModel.Syndication;
+using Terradue.ServiceModel.Syndication;
 using System.Collections.Specialized;
 using System.Xml;
 using System.Collections.Generic;
@@ -27,8 +27,10 @@ namespace Terradue.OpenSearch.GeoJson.Import {
 
         public FeatureCollectionResult ImportFeed(SyndicationFeed feed) {
 
+            if (feed == null)
+                throw new ArgumentNullException("feed");
+
             FeatureCollectionResult fc = new FeatureCollectionResult();
-            fc.Properties = new System.Collections.Generic.Dictionary<string, object>();
 
             NameValueCollection namespaces = null;
             XmlNamespaceManager xnsm = null;
@@ -110,7 +112,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 if (feed.LastUpdatedTime != null)
                     fc.Properties.Add(prefix + "updated", feed.LastUpdatedTime);
                 if ((feed.Links != null) && (feed.Links.Count > 0)) {
-                    fc.Links = new List<SyndicationLink>(feed.Links);
+                    fc.Links = feed.Links;
                 }
                 if (feed.Title != null)
                     fc.Properties.Add(prefix + "title", feed.Title);
@@ -130,7 +132,12 @@ namespace Terradue.OpenSearch.GeoJson.Import {
         public FeatureResult ImportItem(SyndicationItem item) {
             if (item != null) {
 
-                XmlElement geometry = ImportUtils.FindGmlGeometry(item.ElementExtensions);
+                List<XmlElement> elements = new List<XmlElement>();
+                foreach (var element in item.ElementExtensions) {
+                    elements.Add(element.GetObject<XmlElement>());
+                }
+
+                XmlElement geometry = ImportUtils.FindGmlGeometry(elements.ToArray());
 
                 FeatureResult feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.GmlToFeature(geometry));
 
@@ -209,15 +216,11 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 if (item.LastUpdatedTime != null)
                     feature.Properties.Add(prefix + "published", item.LastUpdatedTime);
                 if ((item.Links != null) && (item.Links.Count > 0)) {
-                    feature.Links = new List<SyndicationLink>(item.Links);
+                    feature.Links = item.Links;
                 }
                 if (item.Title != null)
                     feature.Properties.Add(prefix + "title", item.Title);
 
-                feature.Properties = feature.Properties.Concat(util.ImportAttributeExtensions(item.AttributeExtensions, namespaces, xnsm)).ToDictionary(x => x.Key, x => x.Value);
-                feature.Properties = feature.Properties.Concat(util.ImportElementExtensions(item.ElementExtensions, namespaces)).ToDictionary(x => x.Key, x => x.Value);
-
-                
 
                 return feature;
             }

@@ -4,7 +4,7 @@
     <BuildDir>$(MSBuildProjectDirectory)</BuildDir>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B932B7CD-4DDA-4084-AFBC-0FFCF4310C2E}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -42,7 +42,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Mono.Addins, Version=0.6.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
@@ -50,6 +49,8 @@
       <HintPath>..\packages\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.VisualBasic" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Terradue\Terradue.targets" />
@@ -59,18 +60,22 @@
     <Compile Include="Terradue\OpenSearch\GeoJson\Extensions\FeatureCollectionOpenSearchEngineExtension.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Import\ImportOptions.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Import\ImportUtils.cs" />
-    <Compile Include="Terradue\OpenSearch\GeoJson\Import\ResultCollectionImporter.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Import\SyndicationFeedImporter.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Result\FeatureResultCollection.cs" />
+    <Compile Include="Terradue\OpenSearch\GeoJson\Result\FeatureResult.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\externals\DotNetGeoJson\Terradue.GeoJson\Terradue.GeoJson.csproj">
+    <ProjectReference Include="..\..\DotNetGeoJson\Terradue.GeoJson\Terradue.GeoJson.csproj">
       <Project>{26AD29FF-862F-46D9-9F25-473E2977A7C3}</Project>
       <Name>Terradue.GeoJson</Name>
     </ProjectReference>
-    <ProjectReference Include="..\externals\DotNetOpenSearch\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
+    <ProjectReference Include="..\..\DotNetOpenSearch\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
       <Project>{997A44FD-EE4A-490A-855B-88305E0CD269}</Project>
       <Name>Terradue.OpenSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DotNetOpenSearch\externals\DotNetSyndication\Terradue.ServiceModel.Syndication\Terradue.ServiceModel.Syndication.csproj">
+      <Project>{729A82DF-D3CE-4A1A-BA83-0508F0362DB5}</Project>
+      <Name>Terradue.ServiceModel.Syndication</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
