@@ -74,6 +74,8 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
                 return TransformAtomResponseToFeatureCollection(response);
             if (response.ContentType == "application/rdf+xml")
                 return TransformRdfXmlDocumentToFeatureCollection(response);
+            if (response.ContentType == "application/json")
+                return TransformJsonResponseToFeatureCollection(response);
 
             throw new NotSupportedException("GeoJson extension does not transform OpenSearch response from " + response.ContentType);
         }
@@ -112,6 +114,17 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
 
         }
 
+        #region implemented abstract members of OpenSearchEngineExtension
+
+        public override IOpenSearchResultCollection CreateOpenSearchResultFromOpenSearchResult(IOpenSearchResultCollection results) {
+            if (results is FeatureCollectionResult)
+                return results;
+
+            return FeatureCollectionResult.FromOpenSearchResultCollection(results);
+        }
+
+        #endregion
+
         #endregion
 
         public FeatureCollectionResult TransformAtomResponseToFeatureCollection(OpenSearchResponse response) {
@@ -136,6 +149,13 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
             return FeatureCollectionResult.FromOpenSearchResultCollection(results);
 
         }
+
+        public static FeatureCollectionResult TransformJsonResponseToFeatureCollection(OpenSearchResponse response) {
+
+            return (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(response.GetResponseStream());
+
+        }
+
         //---------------------------------------------------------------------------------------------------------------------
         public static void ReplaceSelfLinks(IOpenSearchResult osr, Func<FeatureResult,OpenSearchDescription,string,string> entryTemplate) {
             FeatureCollectionResult feed = (FeatureCollectionResult)osr.Result;

@@ -17,6 +17,7 @@ using Terradue.OpenSearch.GeoJson.Import;
 using System.Xml;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.IO;
 
 namespace Terradue.OpenSearch.GeoJson.Result {
     [DataContract]
@@ -81,12 +82,12 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         public new List<Terradue.GeoJson.Feature.Feature> Features { get; private set; }
 
         [DataMember(Name="features")]
-        public List<FeatureResult> FeatureResults { get; private set; }
+        public List<FeatureResult> FeatureResults { get; set; }
 
         [DataMember(Name="properties")]
         public new Dictionary <string,object> Properties {
             get {
-                Dictionary <string,object> properties = base.Properties;
+                Dictionary <string,object> properties = base.Properties != null ? base.Properties : new Dictionary <string,object>();
                 if (properties.ContainsKey("links")) {
                     properties.Remove("links");
                 }
@@ -202,12 +203,26 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        public void Serialize(System.IO.Stream stream) {
+        public void SerializeToStream(System.IO.Stream stream) {
             JsConfig.ExcludeTypeInfo = true;
             JsConfig.IncludeTypeInfo = false;
             JsonSerializer.SerializeToStream(this, stream);
         }
 
+        public string SerializeToString() {
+            MemoryStream ms = new MemoryStream();
+            SerializeToStream(ms);
+            ms.Seek(0, SeekOrigin.Begin);
+            StreamReader sr = new StreamReader(ms);
+            return sr.ReadToEnd();
+        }
+
+        public static IOpenSearchResultCollection DeserializeFromStream(Stream stream) {
+            StreamReader sr = new StreamReader(stream);
+            Console.Write(sr.ReadToEnd());
+            stream.Seek(0, SeekOrigin.Begin);
+            return JsonSerializer.DeserializeFromStream<FeatureCollectionResult>(stream);
+        }
 
         bool showNamespaces;
         public bool ShowNamespaces {
@@ -221,6 +236,28 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 }
             }
         }
+
+        bool alwaysAsMixed = false;
+
+        [IgnoreDataMember]
+        public bool AlwaysAsMixed {
+            get {
+                return alwaysAsMixed;
+            }
+            set {
+                alwaysAsMixed = value;
+                foreach (FeatureResult item in Items) {
+                    item.AlwaysAsMixed = value;
+                }
+            }
+        }
+
+        public string ContentType {
+            get {
+                return "application/json";
+            }
+        }
+
         #endregion
     }
 

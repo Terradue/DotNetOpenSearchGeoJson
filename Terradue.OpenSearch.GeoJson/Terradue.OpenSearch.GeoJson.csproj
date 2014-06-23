@@ -60,7 +60,6 @@
     <Compile Include="Terradue\OpenSearch\GeoJson\Extensions\FeatureCollectionOpenSearchEngineExtension.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Import\ImportOptions.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Import\ImportUtils.cs" />
-    <Compile Include="Terradue\OpenSearch\GeoJson\Import\SyndicationFeedImporter.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Result\FeatureResultCollection.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Result\FeatureResult.cs" />
   </ItemGroup>
@@ -77,5 +76,8 @@
       <Project>{729A82DF-D3CE-4A1A-BA83-0508F0362DB5}</Project>
       <Name>Terradue.ServiceModel.Syndication</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Terradue\OpenSearch\GeoJson\Import\SyndicationFeedImporter.cs" />
   </ItemGroup>
 </Project>
