@@ -53,7 +53,7 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
 
         public override string Identifier {
             get {
-                return "GeoJson";
+                return "json";
             }
         }
 
