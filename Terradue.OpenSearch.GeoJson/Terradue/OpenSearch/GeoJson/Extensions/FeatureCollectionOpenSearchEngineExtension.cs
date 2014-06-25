@@ -63,10 +63,6 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
             }
         }
 
-        public override string[] GetInputFormatTransformPath() {
-            return new string[] { "application/rdf+xml", "application/atom+xml" };
-        }
-
         public override IOpenSearchResultCollection TransformResponse(OpenSearchResponse response) {
             if (response.ContentType == "application/atom+xml")
                 return TransformAtomResponseToFeatureCollection(response);
