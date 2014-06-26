@@ -41,21 +41,23 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 
             var childnodes = nav.SelectChildren(XPathNodeType.Element);
             while (childnodes.MoveNext()) {
+                if (childnodes.Current.NodeType != XPathNodeType.Element)
+                    continue;
                 var childnode = childnodes.Current;
                 if (options.KeepNamespaces) {
                     prefix = childnode.Prefix + ":";
                 }
                 try {
-                    properties.Add(prefix + childnode.LocalName, ImportNode(childnode));
+                    properties.Add(prefix + childnode.LocalName, ImportNode(childnode.Clone()));
                 } catch (ArgumentException) {
-                    if (properties[prefix + childnode.LocalName] is object[]) {
+                    if (properties.ContainsKey(prefix + childnode.LocalName) && properties[prefix + childnode.LocalName] is object[]) {
                         object[] array = (object[])properties[prefix + childnode.LocalName];
                         List<object> list = array.ToList();
-                        list.Add(ImportNode(childnode));
+                        list.Add(ImportNode(childnode.Clone()));
                         properties[prefix + childnode.LocalName] = list.ToArray();
                     } else {
                         List<object> list = new List<object>();
-                        list.Add(ImportNode(childnode));
+                        list.Add(ImportNode(childnode.Clone()));
                         properties[prefix + childnode.LocalName] = list.ToArray();
                     }
                 }
@@ -228,9 +230,13 @@ namespace Terradue.OpenSearch.GeoJson.Import {
             string text = null;
 
             var childnodes = nav.SelectChildren(XPathNodeType.All);
+            string textNodeLocalName = nav.LocalName;
 
             Dictionary<string, object> properties = new Dictionary<string, object>();
             while (childnodes.MoveNext()) {
+
+                textNodeLocalName = nav.LocalName;
+
                 var childnode = childnodes.Current;
 
                 if (childnode.Prefix == "xmlns")
@@ -246,6 +252,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 }
                 if (childnode.NodeType == XPathNodeType.Text) {
                     text = childnode.Value;
+
                     continue;
                 }
                 if (childnode.NodeType == XPathNodeType.Element) {
@@ -295,7 +302,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 if (options.KeepNamespaces) {
                     prefix = nav.Prefix + ":";
                 }
-                properties.Add(prefix + nav.LocalName, text);
+                properties.Add(prefix + textNodeLocalName, text);
             }
 
             return properties;
