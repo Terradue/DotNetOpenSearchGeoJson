@@ -65,21 +65,26 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
             FeatureResult feature;
 
-            List<XmlElement> elements = new List<XmlElement>();
-            foreach (var ext in result.ElementExtensions) {
-                XmlElement element = ext.GetObject<XmlElement>();
-                elements.Add(element);
-            }
+            if (result.ElementExtensions != null && result.ElementExtensions.Count > 0) {
 
-            XmlElement geometry = ImportUtils.FindGmlGeometry(elements.ToArray());
-            if (geometry != null)
-                feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.GmlToFeature(geometry));
-            else {
-                geometry = ImportUtils.FindDctSpatialGeometry(elements.ToArray());
-                if (geometry != null)
-                    feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(geometry.InnerXml));
-                else
-                    feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(null));
+                List<XmlElement> elements = new List<XmlElement>();
+                foreach (var ext in result.ElementExtensions) {
+                    XmlElement element = ext.GetObject<XmlElement>();
+                    elements.Add(element);
+                }
+
+                XmlElement geometry = ImportUtils.FindGmlGeometry(elements.ToArray());
+                if (geometry != null) feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.GmlToFeature(geometry));
+                else {
+                    geometry = ImportUtils.FindDctSpatialGeometry(elements.ToArray());
+                    if (geometry != null) feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(geometry.InnerXml));
+                    else feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(null));
+                }
+
+                feature.ElementExtensions = new SyndicationElementExtensionCollection(result.ElementExtensions);
+            } else {
+                feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(null));
+                feature.ElementExtensions = new SyndicationElementExtensionCollection();
             }
 
             string prefix = "";
@@ -100,8 +105,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
             if (result.Title != null)
                 feature.Title = result.Title;
-
-            feature.ElementExtensions = new SyndicationElementExtensionCollection(result.ElementExtensions);
 
             return feature;
         }
