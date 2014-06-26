@@ -123,12 +123,19 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     properties[prefix + "links"] = LinksToProperties();
                 }
                 properties[prefix + "published"] = this.Date.ToString("yyyy-MM-ddTHH:mm:ssZ");
+                properties[prefix + "title"] = this.Title;
 
                 ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
                     KeepNamespaces = ShowNamespaces,
                     AsMixed = AlwaysAsMixed
                 });
                 properties = properties.Concat(util.SyndicationElementExtensions(ElementExtensions, ref Namespaces)).ToDictionary(x => x.Key, x => x.Value);
+
+                if (ShowNamespaces)
+                    prefix = "dc:";
+                if (!properties.ContainsKey(prefix + "identifier") && !string.IsNullOrEmpty(this.Identifier)) {
+                    properties[prefix + "identifier"] = this.Identifier;
+                }
 
                 if (ShowNamespaces)
                     properties.Add("@namespaces", Namespaces.AllKeys
