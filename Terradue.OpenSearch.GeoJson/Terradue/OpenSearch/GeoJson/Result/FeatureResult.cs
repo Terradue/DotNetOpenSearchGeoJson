@@ -86,8 +86,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
             feature.Id = result.Id;
             feature.Identifier = result.Identifier;
-            if (result.Date != null)
-                feature.Properties.Add(prefix + "published", result.Date.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"));
+            feature.Date = result.Date;
 
             if (result.Links != null && result.Links.Count > 0) {
                 feature.Links = new Collection<SyndicationLink>();
@@ -123,6 +122,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 if (Links != null && Links.Count > 0) {
                     properties[prefix + "links"] = LinksToProperties();
                 }
+                properties[prefix + "published"] = this.Date.ToString("yyyy-MM-ddTHH:mm:ssZ");
 
                 ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
                     KeepNamespaces = ShowNamespaces,
