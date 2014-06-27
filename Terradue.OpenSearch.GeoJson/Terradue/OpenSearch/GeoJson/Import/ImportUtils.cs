@@ -326,7 +326,23 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                     if (element.ChildNodes[0] != null && element.ChildNodes[0].NodeType == XmlNodeType.Element)
                         return (XmlElement)element.ChildNodes[0];
                 }
-                throw new NotImplementedException();
+            }
+            if (element.LocalName == "EarthObservation") {
+                XmlNamespaceManager xnsm = new XmlNamespaceManager(element.OwnerDocument.NameTable);
+                xnsm.AddNamespace("om", "http://www.opengis.net/om/2.0");
+                xnsm.AddNamespace("eop", "http://www.opengis.net/eop/2.0");
+                xnsm.AddNamespace("alt", "http://www.opengis.net/alt/2.0");
+                xnsm.AddNamespace("om21", "http://www.opengis.net/om/2.1");
+                xnsm.AddNamespace("eop21", "http://www.opengis.net/eop/2.1");
+                xnsm.AddNamespace("alt21", "http://www.opengis.net/alt/2.1");
+                XmlNode node = element.SelectSingleNode("om:featureOfInterest/eop:Footprint/eop:multiExtentOf", xnsm);
+                if (node != null) return (XmlElement)node.FirstChild;
+                node = element.SelectSingleNode("om:featureOfInterest/alt:Footprint/alt:nominalTrack", xnsm);
+                if (node != null) return (XmlElement)node.FirstChild;
+                node = element.SelectSingleNode("om21:featureOfInterest/eop21:Footprint/eop21:multiExtentOf", xnsm);
+                if (node != null) return (XmlElement)node.FirstChild;
+                node = element.SelectSingleNode("om21:featureOfInterest/alt21:Footprint/alt21:nominalTrack", xnsm);
+                if (node != null) return (XmlElement)node.FirstChild;
             }
             return null;
         }

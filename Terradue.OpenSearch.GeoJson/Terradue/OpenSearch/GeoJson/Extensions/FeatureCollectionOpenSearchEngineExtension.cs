@@ -63,17 +63,11 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
             }
         }
 
-        public override IOpenSearchResultCollection TransformResponse(OpenSearchResponse response) {
-            if (response.ContentType == "application/atom+xml")
-                return TransformAtomResponseToFeatureCollection(response);
-            if (response.ContentType == "application/xml")
-                return TransformAtomResponseToFeatureCollection(response);
-            if (response.ContentType == "application/rdf+xml")
-                return TransformRdfXmlDocumentToFeatureCollection(response);
+        public override IOpenSearchResultCollection ReadNative(OpenSearchResponse response) {
             if (response.ContentType == "application/json")
                 return TransformJsonResponseToFeatureCollection(response);
 
-            throw new NotSupportedException("GeoJson extension does not transform OpenSearch response from " + response.ContentType);
+            throw new NotSupportedException("GeoJson extension does not transform OpenSearch response of contentType " + response.ContentType);
         }
 
         public override string DiscoveryContentType {
@@ -110,8 +104,6 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
 
         }
 
-        #region implemented abstract members of OpenSearchEngineExtension
-
         public override IOpenSearchResultCollection CreateOpenSearchResultFromOpenSearchResult(IOpenSearchResultCollection results) {
             if (results is FeatureCollectionResult)
                 return results;
@@ -120,25 +112,6 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
         }
 
         #endregion
-
-        #endregion
-
-        public FeatureCollectionResult TransformAtomResponseToFeatureCollection(OpenSearchResponse response) {
-            // First query natively the ATOM
-            return AtomFeedToFeatureCollection(AtomOpenSearchEngineExtension.TransformAtomResponseToAtomFeed(response));
-        }
-
-        public static FeatureCollectionResult AtomFeedToFeatureCollection(AtomFeed feed) {
-
-            return FeatureCollectionResult.FromOpenSearchResultCollection(feed);
-
-        }
-
-        public FeatureCollectionResult TransformRdfXmlDocumentToFeatureCollection(OpenSearchResponse response) {
-
-            return ResultCollectionToFeatureCollection(RdfOpenSearchEngineExtension.TransformRdfResponseToRdfXmlDocument(response));
-
-        }
 
         protected FeatureCollectionResult ResultCollectionToFeatureCollection(IOpenSearchResultCollection results) {
 
