@@ -197,6 +197,17 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         #region IOpenSearchResultItem implementation
 
+        [DataMember(Name = "id")]
+        public new string Id {
+            get {
+                var link = Links.Single(l => l.RelationshipType == "self");
+                return link == null ? base.Id : link.Uri.ToString();
+            }
+            set {
+                base.Id = value;
+            }
+        }
+
         string title;
 
         [IgnoreDataMember]

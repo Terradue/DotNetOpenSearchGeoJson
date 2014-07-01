@@ -125,6 +125,12 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         #region IResultCollection implementation
 
+        public string Id {
+            get {
+                return Links.Single(l => l.RelationshipType == "self").BaseUri.ToString();
+            }
+        }
+
         public List<string> GetSelfShortList() {
             return base.Features.Select(f => f.Id).ToList();
         }
