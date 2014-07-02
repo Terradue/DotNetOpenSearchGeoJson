@@ -200,7 +200,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         [DataMember(Name = "id")]
         public new string Id {
             get {
-                var link = Links.Single(l => l.RelationshipType == "self");
+                var link = Links.SingleOrDefault(l => l.RelationshipType == "self");
                 return link == null ? base.Id : link.Uri.ToString();
             }
             set {
