@@ -48,7 +48,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             Namespaces = InitNameSpaces;
         }
 
-        NameValueCollection Namespaces;
+        protected NameValueCollection Namespaces;
 
         protected virtual NameValueCollection InitNameSpaces {
             get {
@@ -123,7 +123,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 if (ShowNamespaces)
                     prefix = "atom:";
                 if (Links != null && Links.Count > 0) {
-                    properties[prefix + "links"] = LinksToProperties();
+                    properties[prefix + "links"] = FeatureCollectionResult.LinksToProperties(Links, ShowNamespaces);
                 }
                 properties[prefix + "published"] = this.Date.ToString("yyyy-MM-ddTHH:mm:ssZ");
                 properties[prefix + "title"] = this.Title;
@@ -161,29 +161,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        protected List<Dictionary<string,object>> LinksToProperties() {
-            string prefix = "";
-            if (ShowNamespaces)
-                prefix = "atom:";
-            
-            List<Dictionary<string,object>> links = new List<Dictionary<string,object>>();
-            foreach (SyndicationLink link in Links) {
-                Dictionary<string,object> newlink = new Dictionary<string,object>();
-                newlink.Add("@" + prefix + "href", link.Uri.ToString());
-                if (link.RelationshipType != null)
-                    newlink.Add("@" + prefix + "rel", link.RelationshipType);
-                if (link.Title != null)
-                    newlink.Add("@" + prefix + "title", link.Title);
-                if (link.MediaType != null)
-                    newlink.Add("@" + prefix + "type", link.MediaType);
-                if (link.Length != 0)
-                    newlink.Add("@" + prefix + "length", link.Length);
 
-                links.Add(newlink);
-            }
-
-            return links;
-        }
 
         void ImportSyndicationElements(Terradue.GeoJson.Feature.Feature feature) {
             if (feature.Properties.ContainsKey("links") && feature.Properties["links"] is Dictionary<string,object>[]) {

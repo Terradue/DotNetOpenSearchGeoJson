@@ -23,7 +23,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
     [DataContract]
     public class FeatureCollectionResult : Terradue.GeoJson.Feature.FeatureCollection, IOpenSearchResultCollection {
 
-        protected NameValueCollection namespaces;
+        protected NameValueCollection Namespaces;
 
         public FeatureCollectionResult(Terradue.GeoJson.Feature.FeatureCollection fc) : base() {
             base.BoundingBoxes = fc.BoundingBoxes;
@@ -72,10 +72,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         }
 
         void InitNameSpaces() {
-            namespaces = new NameValueCollection();
-            namespaces.Set("", "http://geojson.org/ns#");
-            namespaces.Set("atom", "http://www.w3.org/2005/Atom");
-            namespaces.Set("os", "http://a9.com/-/spec/opensearch/1.1/");
+            Namespaces = new NameValueCollection();
+            Namespaces.Set("", "http://geojson.org/ns#");
+            Namespaces.Set("atom", "http://www.w3.org/2005/Atom");
+            Namespaces.Set("os", "http://a9.com/-/spec/opensearch/1.1/");
         }
 
         [IgnoreDataMember]
@@ -92,7 +92,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     properties.Remove("links");
                 }
                 string prefix = "";
-                if (properties.ContainsKey("@namespaces")) prefix = "atom:";
+                if (ShowNamespaces) prefix = "atom:";
                 if (Links != null && Links.Count > 0) {
                     List<Dictionary<string,object>> links = new List<Dictionary<string,object>>();
                     foreach (SyndicationLink link in Links) {
@@ -107,6 +107,28 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     }
                     properties["links"] = links.ToArray();
                 }
+
+                if (Links != null && Links.Count > 0) {
+                    properties[prefix + "links"] = LinksToProperties(Links, ShowNamespaces);
+                }
+                properties[prefix + "published"] = this.Date.ToString("yyyy-MM-ddTHH:mm:ssZ");
+                properties[prefix + "title"] = this.Title;
+
+                ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
+                    KeepNamespaces = ShowNamespaces,
+                    AsMixed = AlwaysAsMixed
+                });
+                properties = properties.Concat(util.SyndicationElementExtensions(ElementExtensions, ref Namespaces)).ToDictionary(x => x.Key, x => x.Value);
+
+                if (ShowNamespaces)
+                    prefix = "dc:";
+                if (!properties.ContainsKey(prefix + "identifier") && !string.IsNullOrEmpty(this.Identifier)) {
+                    properties[prefix + "identifier"] = this.Identifier;
+                }
+
+                if (ShowNamespaces)
+                    properties.Add("@namespaces", Namespaces.AllKeys
+                        .ToDictionary(p => p, p => Namespaces[p]));
 
                 return properties;
             }
@@ -265,6 +287,30 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         }
 
         #endregion
+
+        public static List<Dictionary<string,object>> LinksToProperties(Collection<Terradue.ServiceModel.Syndication.SyndicationLink> ilinks, bool showNamespaces) {
+            string prefix = "";
+            if (showNamespaces)
+                prefix = "atom:";
+
+            List<Dictionary<string,object>> links = new List<Dictionary<string,object>>();
+            foreach (SyndicationLink link in ilinks) {
+                Dictionary<string,object> newlink = new Dictionary<string,object>();
+                newlink.Add("@" + prefix + "href", link.Uri.ToString());
+                if (link.RelationshipType != null)
+                    newlink.Add("@" + prefix + "rel", link.RelationshipType);
+                if (link.Title != null)
+                    newlink.Add("@" + prefix + "title", link.Title);
+                if (link.MediaType != null)
+                    newlink.Add("@" + prefix + "type", link.MediaType);
+                if (link.Length != 0)
+                    newlink.Add("@" + prefix + "length", link.Length);
+
+                links.Add(newlink);
+            }
+
+            return links;
+        }
     }
 
 }
