@@ -10,7 +10,26 @@ using System;
 
 namespace Terradue.OpenSearch.GeoJson.Import {
     public class ImportOptions {
-        public bool KeepNamespaces { get; set; }
+
+        bool keepNamespaces = false;
+        public bool KeepNamespaces {
+            get {
+                return keepNamespaces;
+            }
+            set {
+                keepNamespaces = value;
+            }
+        }
+
+        bool asMixed = false;
+        public bool AsMixed {
+            get {
+                return asMixed;
+            }
+            set {
+                asMixed = value;
+            }
+        }
     }
 }
 
