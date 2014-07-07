@@ -1,6 +1,0 @@
-[submodule "externals/DotNetOpenSearch"]
-	path = externals/DotNetOpenSearch
-	url = git@github.com:Terradue/DotNetOpenSearch.git
-[submodule "externals/DotNetGeoJson"]
-	path = externals/DotNetGeoJson
-	url = git@github.com:Terradue/DotNetGeoJson.git
