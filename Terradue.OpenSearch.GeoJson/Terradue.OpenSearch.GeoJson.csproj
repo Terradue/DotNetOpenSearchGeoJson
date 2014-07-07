@@ -73,7 +73,7 @@
     <None Include="Terradue.OpenSearch.GeoJson.csproj" />
     <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="$(ProjectDir)\..\.nuget\NuGet.targets" Condition="Exists('$(ProjectDir)\..\.nuget\NuGet.targets')" />
   <ItemGroup>
     <ProjectReference Include="..\Terradue.OpenSearch\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
       <Project>{997A44FD-EE4A-490A-855B-88305E0CD269}</Project>
