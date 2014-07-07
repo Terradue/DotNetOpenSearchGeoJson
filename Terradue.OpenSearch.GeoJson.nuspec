@@ -3,7 +3,7 @@
   <metadata>
     <id>Terradue.OpenSearch.GeoJson</id>
     <version>1.0.0-beta</version>
-    <title>Terradue.OpenSearch</title>
+    <title>Terradue.OpenSearch.GeoJson</title>
     <authors>Terradue</authors>
     <projectUrl>https://github.com/Terradue/DotNetOpenSearchGeoJson</projectUrl>
     <licenseUrl>https://github.com/Terradue/DotNetOpenSearchGeoJson/blob/master/LICENSE</licenseUrl>

@@ -9,3 +9,5 @@
 *.userprefs
 
 /Terradue.OpenSearch.GeoJson/obj/
+
+/Terradue.OpenSearch.GeoJson/packages/
