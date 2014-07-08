@@ -36,7 +36,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             base.CRS = feature.CRS;
             links = new Collection<SyndicationLink>();
             elementExtensions = new SyndicationElementExtensionCollection();
-            ImportSyndicationElements(feature);
+            ImportSyndicationElements(feature.Properties);
             Namespaces = InitNameSpaces;
         }
 
@@ -45,6 +45,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             elementExtensions = new SyndicationElementExtensionCollection(result.elementExtensions);
             this.Identifier = result.Identifier;
             this.Title = result.Title;
+            ImportSyndicationElements(result.Properties);
             Namespaces = InitNameSpaces;
         }
 
@@ -158,18 +159,30 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 foreach (SyndicationElementExtension e in util.PropertiesToSyndicationElementExtensions(properties)) {
                     ElementExtensions.Add(e);
                 }
+                ImportSyndicationElements(value);
             }
         }
 
-
-
-        void ImportSyndicationElements(Terradue.GeoJson.Feature.Feature feature) {
-            if (feature.Properties.ContainsKey("links") && feature.Properties["links"] is Dictionary<string,object>[]) {
-                foreach (object link in (Dictionary<string,object>[])feature.Properties["links"]) {
+        void ImportSyndicationElements(Dictionary <string,object> properties) {
+            if (properties.ContainsKey("links") && properties["links"] is List<object>) {
+                foreach (object link in (List<object>)properties["links"]) {
                     if (link is Dictionary<string, object>) {
                         Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link));
                     }
                 }
+            }
+            if (properties.ContainsKey("atom:links") && properties["atom:links"] is List<object>) {
+                foreach (object link in (List<object>)properties["atom:links"]) {
+                    if (link is Dictionary<string, object>) {
+                        Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link,"atom:"));
+                    }
+                }
+            }
+            if (properties.ContainsKey("published") && properties["published"] is string) {
+                DateTime.TryParse((string)properties["published"], out date);
+            }
+            if (properties.ContainsKey("atom:published") && properties["atom:published"] is string) {
+                DateTime.TryParse((string)properties["atom:published"], out date);
             }
         }
 
