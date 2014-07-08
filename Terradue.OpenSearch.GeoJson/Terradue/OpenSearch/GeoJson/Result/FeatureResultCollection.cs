@@ -34,14 +34,16 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 FeatureResults.Add(new FeatureResult(f));
                 return false;
             });
-            ImportSyndicationElements(fc);
+            ImportSyndicationElements(fc.Properties);
             InitNameSpaces();
+            elementExtensions = new SyndicationElementExtensionCollection();
         }
 
         public FeatureCollectionResult() : base() {
             Links = new Collection<SyndicationLink>();
             FeatureResults = new List<FeatureResult>();
             InitNameSpaces();
+            elementExtensions = new SyndicationElementExtensionCollection();
         }
 
         public static FeatureCollectionResult FromOpenSearchResultCollection(IOpenSearchResultCollection results) {
@@ -132,16 +134,42 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
                 return properties;
             }
+
+            set {
+                // Start with an empty NameValueCollection
+                Dictionary <string,object> properties = value;
+
+                ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
+                    KeepNamespaces = ShowNamespaces,
+                    AsMixed = AlwaysAsMixed
+                });
+                foreach (SyndicationElementExtension e in util.PropertiesToSyndicationElementExtensions(properties)) {
+                    ElementExtensions.Add(e);
+                }
+                ImportSyndicationElements(value);
+            }
         }
 
-        void ImportSyndicationElements(Terradue.GeoJson.Feature.FeatureCollection fc) {
-            if ( fc.Properties.ContainsKey("links") && fc.Properties["links"] is Dictionary<string,object>[]) {
-                Links = new Collection<SyndicationLink>();
-                foreach (object link in (Dictionary<string,object>[])fc.Properties["links"]) {
+        void ImportSyndicationElements(Dictionary <string,object> properties) {
+            if (properties.ContainsKey("links") && properties["links"] is List<object>) {
+                foreach (object link in (List<object>)properties["links"]) {
                     if (link is Dictionary<string, object>) {
                         Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link));
                     }
                 }
+            }
+            if (properties.ContainsKey("atom:links") && properties["atom:links"] is List<object>) {
+                foreach (object link in (List<object>)properties["atom:links"]) {
+                    if (link is Dictionary<string, object>) {
+                        Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link,"atom:"));
+                    }
+                }
+            }
+            if (properties.ContainsKey("published") && properties["published"] is string) {
+                DateTime.TryParse((string)properties["published"], out date);
+            }
+            if (properties.ContainsKey("atom:published") && properties["atom:published"] is string) {
+                DateTime.TryParse((string)properties["atom:published"], out date);
             }
         }
 

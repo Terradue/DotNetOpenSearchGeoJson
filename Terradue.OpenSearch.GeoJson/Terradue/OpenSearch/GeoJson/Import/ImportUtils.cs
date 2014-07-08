@@ -39,12 +39,13 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 }
             }
                 
-            var childnodes = nav.SelectChildren(XPathNodeType.Element);
+            var childnodes = nav.SelectDescendants(XPathNodeType.Element, true);
+            XPathNavigator prev = null;
             while (childnodes.MoveNext()) {
-                if (childnodes.Current.NodeType != XPathNodeType.Element)
+                if (prev != null && childnodes.Current.ComparePosition(prev) != XmlNodeOrder.Same)
                     continue;
                 var childnode = childnodes.Current;
-                if (options.KeepNamespaces) {
+                if (options.KeepNamespaces && !string.IsNullOrEmpty(childnode.Prefix)) {
                     prefix = childnode.Prefix + ":";
                 }
                 try {
@@ -61,6 +62,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                         properties[prefix + childnode.LocalName] = list.ToArray();
                     }
                 }
+                prev = childnode.Clone();
             }
 
             return properties;
@@ -82,6 +84,9 @@ namespace Terradue.OpenSearch.GeoJson.Import {
             }
 
             foreach (var key in properties.Keys) {
+
+                if (key.StartsWith("@atom") || key.StartsWith("atom"))
+                    continue;
 
                 if (key == "@namespaces")
                     continue;
@@ -118,7 +123,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
 
             if (localname.Contains(":")) {
                 string prefix = localname.Split(':')[0];
-                ns = namespaces[prefix];
+                ns = namespaces[prefix] == null ? "" : namespaces[prefix];
                 localname = key.Split(':')[1];
             }
             if (key.StartsWith("@")) {
@@ -138,6 +143,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 xobject = new XElement(XName.Get(localname, ns), objects.ToArray());
             } else
                 xobject = new XElement(XName.Get(localname, ns), obj);
+
 
             return xobject;
         }
@@ -166,7 +172,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
             string prefix = "";
 
             foreach (var key in attributeExtensions.Keys) {
-                if (options.KeepNamespaces) {
+                if (options.KeepNamespaces && !string.IsNullOrEmpty(xnsm.LookupPrefix(key.Namespace))) {
                     prefix = xnsm.LookupPrefix(key.Namespace) + ":";
                 }
                 properties.Add("@" + prefix + key.Name, attributeExtensions[key]);
@@ -242,7 +248,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 if (childnode.Prefix == "xmlns")
                     continue;
 
-                if (options.KeepNamespaces) {
+                if (options.KeepNamespaces && !string.IsNullOrEmpty(childnode.Prefix)) {
                     prefix = childnode.Prefix + ":";
                 }
 
@@ -279,12 +285,12 @@ namespace Terradue.OpenSearch.GeoJson.Import {
 
             }   
             if (nav.MoveToFirstAttribute()) {
-                if (options.KeepNamespaces) {
+                if (options.KeepNamespaces && !string.IsNullOrEmpty(nav.Prefix)) {
                     prefix = nav.Prefix + ":";
                 }
                 properties.Add("@" + prefix + nav.LocalName, nav.Value);
                 while (nav.MoveToNextAttribute()) {
-                    if (options.KeepNamespaces) {
+                    if (options.KeepNamespaces && !string.IsNullOrEmpty(nav.Prefix) ) {
                         prefix = nav.Prefix + ":";
                     }
                     properties.Add("@" + prefix + nav.LocalName, nav.Value);
@@ -299,7 +305,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
             }
 
             if (text != null) {
-                if (options.KeepNamespaces) {
+                if (options.KeepNamespaces && !string.IsNullOrEmpty(nav.Prefix)) {
                     prefix = nav.Prefix + ":";
                 }
                 properties.Add(prefix + textNodeLocalName, text);
@@ -339,9 +345,9 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 if (node != null) return (XmlElement)node.FirstChild;
                 node = element.SelectSingleNode("om:featureOfInterest/alt:Footprint/alt:nominalTrack", xnsm);
                 if (node != null) return (XmlElement)node.FirstChild;
-                node = element.SelectSingleNode("om21:featureOfInterest/eop21:Footprint/eop21:multiExtentOf", xnsm);
+                node = element.SelectSingleNode("om:featureOfInterest/eop21:Footprint/eop21:multiExtentOf", xnsm);
                 if (node != null) return (XmlElement)node.FirstChild;
-                node = element.SelectSingleNode("om21:featureOfInterest/alt21:Footprint/alt21:nominalTrack", xnsm);
+                node = element.SelectSingleNode("om:featureOfInterest/alt21:Footprint/alt21:nominalTrack", xnsm);
                 if (node != null) return (XmlElement)node.FirstChild;
             }
             return null;
@@ -360,43 +366,25 @@ namespace Terradue.OpenSearch.GeoJson.Import {
             return null;
         }
 
-        public static SyndicationLink FromDictionnary(Dictionary<string,object> link) {
-            if (link.ContainsKey("@atom:href")) {
+        public static SyndicationLink FromDictionnary(Dictionary<string,object> link, string prefix = "") {
+            if (link.ContainsKey("@" + prefix + "href")) {
                 long length = 0;
                 string rel = null;
                 string title = null;
                 string type = null;
                 Uri href = new Uri((string)link["@atom:href"]);
                 object r = null;
-                if (link.TryGetValue("@atom:rel", out r))
+                if (link.TryGetValue("@" + prefix + "rel", out r))
                     rel = (string)r;
-                if (link.TryGetValue("@atom:title", out r))
+                if (link.TryGetValue("@" + prefix + "title", out r))
                     title = (string)r;
-                if (link.TryGetValue("@atom:type", out r))
+                if (link.TryGetValue("@" + prefix + "type", out r))
                     type = (string)r;
-                if (link.TryGetValue("@atom:length", out r))
+                if (link.TryGetValue("@" + prefix + "", out r))
                 if (r is string)
                     long.TryParse((string)r, out length);
                 else
                     length = (long)r;
-                SyndicationLink slink = new SyndicationLink(href, rel, title, type, length);
-                return slink;
-            }
-            if (link.ContainsKey("@href")) {
-                long length = 0;
-                string rel = null;
-                string title = null;
-                string type = null;
-                Uri href = new Uri((string)link["@href"]);
-                object r = null;
-                if (link.TryGetValue("@rel", out r))
-                    rel = (string)r;
-                if (link.TryGetValue("@title", out r))
-                    title = (string)r;
-                if (link.TryGetValue("@type", out r))
-                    type = (string)r;
-                if (link.TryGetValue("@length", out r))
-                    long.TryParse((string)r, out length);
                 SyndicationLink slink = new SyndicationLink(href, rel, title, type, length);
                 return slink;
             }
