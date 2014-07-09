@@ -39,11 +39,10 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 }
             }
                 
-            var childnodes = nav.SelectDescendants(XPathNodeType.Element, true);
+            nav.MoveToRoot();
+            var childnodes = nav.SelectChildren(XPathNodeType.Element);
             XPathNavigator prev = null;
             while (childnodes.MoveNext()) {
-                if (prev != null && childnodes.Current.ComparePosition(prev) != XmlNodeOrder.Same)
-                    continue;
                 var childnode = childnodes.Current;
                 if (options.KeepNamespaces && !string.IsNullOrEmpty(childnode.Prefix)) {
                     prefix = childnode.Prefix + ":";
@@ -297,7 +296,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 }
             }
 
-            if (string.IsNullOrEmpty(text) || text == "0")
+            if (string.IsNullOrEmpty(text))
                 return properties;
 
             if (options.AsMixed == false && text != null && properties.Count == 0) {
