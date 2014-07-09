@@ -27,7 +27,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
             string prefix = "";
             Dictionary<string,object> properties = new Dictionary<string, object>();
 
-            XPathDocument x = new XPathDocument(elements.GetReaderAtElementExtensions());
+            XPathDocument x = new XPathDocument(elements.GetReaderAtExtensionWrapper());
             XPathNavigator nav = x.CreateNavigator();
             if (options.KeepNamespaces) {
                 var allNodes = nav.SelectDescendants(XPathNodeType.All, true);
@@ -39,11 +39,9 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 }
             }
                 
-            var childnodes = nav.SelectDescendants(XPathNodeType.Element, true);
+            var childnodes = nav.SelectDescendants(XPathNodeType.Element, false);
             XPathNavigator prev = null;
             while (childnodes.MoveNext()) {
-                if (prev != null && childnodes.Current.ComparePosition(prev) != XmlNodeOrder.Same)
-                    continue;
                 var childnode = childnodes.Current;
                 if (options.KeepNamespaces && !string.IsNullOrEmpty(childnode.Prefix)) {
                     prefix = childnode.Prefix + ":";
@@ -297,7 +295,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 }
             }
 
-            if (string.IsNullOrEmpty(text) || text == "0")
+            if (string.IsNullOrEmpty(text))
                 return properties;
 
             if (options.AsMixed == false && text != null && properties.Count == 0) {
