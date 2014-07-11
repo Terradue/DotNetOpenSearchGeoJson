@@ -86,24 +86,6 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
             return null;
         }
 
-        public override SyndicationLink[] GetEnclosures(IOpenSearchResult result) {
-
-            if (!(result.Result is FeatureCollectionResult)) throw new InvalidOperationException("The extension is able to get enclosure only from FeatureCollectionResult");
-
-            List<SyndicationLink> links = new List<SyndicationLink>();
-
-            foreach (FeatureResult item in ((FeatureCollectionResult)result.Result).Features) {
-                foreach (SyndicationLink link in item.Links) {
-                    if (link.RelationshipType == "enclosure") {
-                        links.Add(link);
-                    }
-                }
-            }
-
-            return links.ToArray();
-
-        }
-
         public override IOpenSearchResultCollection CreateOpenSearchResultFromOpenSearchResult(IOpenSearchResultCollection results) {
             if (results is FeatureCollectionResult)
                 return results;
