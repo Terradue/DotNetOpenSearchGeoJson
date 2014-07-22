@@ -337,9 +337,11 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 xnsm.AddNamespace("om", "http://www.opengis.net/om/2.0");
                 xnsm.AddNamespace("eop", "http://www.opengis.net/eop/2.0");
                 xnsm.AddNamespace("alt", "http://www.opengis.net/alt/2.0");
+                xnsm.AddNamespace("opt", "http://www.opengis.net/opt/2.0");
                 xnsm.AddNamespace("om21", "http://www.opengis.net/om/2.1");
                 xnsm.AddNamespace("eop21", "http://www.opengis.net/eop/2.1");
                 xnsm.AddNamespace("alt21", "http://www.opengis.net/alt/2.1");
+                xnsm.AddNamespace("opt21", "http://www.opengis.net/opt/2.1");
                 XmlNode node = element.SelectSingleNode("om:featureOfInterest/eop:Footprint/eop:multiExtentOf", xnsm);
                 if (node != null && node.FirstChild != null) return (XmlElement)node.FirstChild;
                 node = element.SelectSingleNode("om:featureOfInterest/alt:Footprint/alt:nominalTrack", xnsm);
