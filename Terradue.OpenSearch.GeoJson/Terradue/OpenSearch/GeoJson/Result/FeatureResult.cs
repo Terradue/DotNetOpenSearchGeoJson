@@ -184,6 +184,12 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             if (properties.ContainsKey("atom:published") && properties["atom:published"] is string) {
                 DateTime.TryParse((string)properties["atom:published"], out date);
             }
+            if (properties.ContainsKey("dc:identifier") && properties["dc:identifier"] is string) {
+                identifier = (string)properties["dc:identifier"];
+            }
+            if (properties.ContainsKey("identifier") && properties["identifier"] is string) {
+                identifier = (string)properties["identifier"];
+            }
         }
 
         #region IOpenSearchResultItem implementation
