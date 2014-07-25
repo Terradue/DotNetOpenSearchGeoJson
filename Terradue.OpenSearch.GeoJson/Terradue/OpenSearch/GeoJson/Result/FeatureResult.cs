@@ -36,7 +36,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             base.CRS = feature.CRS;
             links = new Collection<SyndicationLink>();
             elementExtensions = new SyndicationElementExtensionCollection();
-            ImportSyndicationElements(feature.Properties);
+            Properties = feature.Properties;
             Namespaces = InitNameSpaces;
         }
 
@@ -45,7 +45,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             elementExtensions = new SyndicationElementExtensionCollection(result.elementExtensions);
             this.Identifier = result.Identifier;
             this.Title = result.Title;
-            ImportSyndicationElements(result.Properties);
+            Properties = result.Properties;
             Namespaces = InitNameSpaces;
         }
 
@@ -58,6 +58,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 namespaces.Set("atom", "http://www.w3.org/2005/Atom");
                 return namespaces;
             }
+        }
+
+        public static FeatureResult ParseJson(string json) {
+            return new FeatureResult(Terradue.GeoJson.Feature.Feature.ParseJson(json));
         }
 
         public static FeatureResult FromOpenSearchResultItem(IOpenSearchResultItem result) {
