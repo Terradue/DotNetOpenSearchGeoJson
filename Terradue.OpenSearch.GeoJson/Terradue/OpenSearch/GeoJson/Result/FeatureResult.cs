@@ -43,9 +43,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         public FeatureResult(FeatureResult result) : this((Terradue.GeoJson.Feature.Feature)result) {
             links = new Collection<SyndicationLink>(result.Links);
             elementExtensions = new SyndicationElementExtensionCollection(result.elementExtensions);
-            this.Identifier = result.Identifier;
             this.Title = result.Title;
-            Properties = result.Properties;
+            this.Date = result.Date;
+            this.Id = result.Id;
             Namespaces = InitNameSpaces;
         }
 
@@ -95,18 +95,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             string prefix = "";
 
             feature.Id = result.Id;
-            feature.Identifier = result.Identifier;
             feature.Date = result.Date;
 
-            if (result.Links != null && result.Links.Count > 0) {
-                feature.Links = new Collection<SyndicationLink>();
-                foreach (var link in result.Links) {
-                    if (link.RelationshipType == "self")
-                        continue;
-                    feature.Links.Add(new SyndicationLink(link));
-                }
-
-            }
+            feature.Links = new Collection<SyndicationLink>(result.Links);
 
             if (result.Title != null)
                 feature.Title = result.Title;
@@ -140,12 +131,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 properties = properties.Concat(util.SyndicationElementExtensions(ElementExtensions, ref Namespaces)).ToDictionary(x => x.Key, x => x.Value);
 
                 if (ShowNamespaces)
-                    prefix = "dc:";
-                if (!properties.ContainsKey(prefix + "identifier") && !string.IsNullOrEmpty(this.Identifier)) {
-                    properties[prefix + "identifier"] = this.Identifier;
-                }
-
-                if (ShowNamespaces)
                     properties.Add("@namespaces", Namespaces.AllKeys
                                .ToDictionary(p => p, p => Namespaces[p]));
 
@@ -153,21 +138,22 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
 
             set {
-                // Start with an empty NameValueCollection
-                Dictionary <string,object> properties = value;
-
-                ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
-                    KeepNamespaces = ShowNamespaces,
-                    AsMixed = AlwaysAsMixed
-                });
-                foreach (SyndicationElementExtension e in util.PropertiesToSyndicationElementExtensions(properties)) {
-                    ElementExtensions.Add(e);
-                }
-                ImportSyndicationElements(value);
+                if ( value != null )
+                    ImportSyndicationElements(value);
+                base.Properties = null;
             }
         }
 
         void ImportSyndicationElements(Dictionary <string,object> properties) {
+
+            ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
+                KeepNamespaces = ShowNamespaces,
+                AsMixed = AlwaysAsMixed
+            });
+            foreach (SyndicationElementExtension e in util.PropertiesToSyndicationElementExtensions(properties)) {
+                ElementExtensions.Add(e);
+            }
+
             if (properties.ContainsKey("links") && properties["links"] is List<object>) {
                 foreach (object link in (List<object>)properties["links"]) {
                     if (link is Dictionary<string, object>) {
@@ -187,12 +173,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
             if (properties.ContainsKey("atom:published") && properties["atom:published"] is string) {
                 DateTime.TryParse((string)properties["atom:published"], out date);
-            }
-            if (properties.ContainsKey("dc:identifier") && properties["dc:identifier"] is string) {
-                identifier = (string)properties["dc:identifier"];
-            }
-            if (properties.ContainsKey("identifier") && properties["identifier"] is string) {
-                identifier = (string)properties["identifier"];
             }
         }
 
@@ -233,15 +213,20 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        string identifier;
-
         [IgnoreDataMember]
         public string Identifier {
             get {
-                return identifier;
+                var identifier = ElementExtensions.ReadElementExtensions<string>("identifier", "http://purl.org/dc/elements/1.1/");
+                return identifier.Count == 0 ? base.Id : identifier[0];
             }
             set {
-                identifier = value;
+                foreach (var ext in this.ElementExtensions.ToArray()) {
+                    if (ext.OuterName == "identifier" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/") {
+                        this.ElementExtensions.Remove(ext);
+                        continue;
+                    }
+                }
+                this.ElementExtensions.Add(new XElement(XName.Get("identifier", "http://purl.org/dc/elements/1.1/"), value).CreateReader());
             }
         }
 
