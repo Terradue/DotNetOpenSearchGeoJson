@@ -65,17 +65,22 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 fc.Links = results.Links;
             }
 
+            fc.authors = results.Authors;
+            fc.categories = results.Categories;
+
             if (results.Items != null) {
                 foreach (var item in results.Items) {
                     fc.FeatureResults.Add(FeatureResult.FromOpenSearchResultItem(item));
                 }
             }
+
+
             return fc;
         }
 
         void InitNameSpaces() {
             Namespaces = new NameValueCollection();
-            Namespaces.Set("", "http://geojson.org/ns#");
+            Namespaces.Set("", "hresultsttp://geojson.org/ns#");
             Namespaces.Set("atom", "http://www.w3.org/2005/Atom");
             Namespaces.Set("os", "http://a9.com/-/spec/opensearch/1.1/");
         }
@@ -311,6 +316,20 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         public string ContentType {
             get {
                 return "application/json";
+            }
+        }
+
+        Collection<SyndicationCategory> categories;
+        public Collection<SyndicationCategory> Categories {
+            get {
+                return categories;
+            }
+        }
+
+        Collection<SyndicationPerson> authors;
+        public Collection<SyndicationPerson> Authors {
+            get {
+                return authors;
             }
         }
 

@@ -46,6 +46,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             this.Title = result.Title;
             this.Date = result.Date;
             this.Id = result.Id;
+            this.authors = result.Authors;
+            this.categories = result.Categories;
+
             Namespaces = InitNameSpaces;
         }
 
@@ -280,6 +283,20 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
+
+        Collection<SyndicationCategory> categories;
+        public Collection<SyndicationCategory> Categories {
+            get {
+                return categories;
+            }
+        }
+
+        Collection<SyndicationPerson> authors;
+        public Collection<SyndicationPerson> Authors {
+            get {
+                return authors;
+            }
+        }
         #endregion
     }
 }
