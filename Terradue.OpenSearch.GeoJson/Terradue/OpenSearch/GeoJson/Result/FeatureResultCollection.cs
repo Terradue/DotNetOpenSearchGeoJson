@@ -180,10 +180,13 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         #region IResultCollection implementation
 
-        public string Id {
+        public new string Id {
             get {
-                return Links.Single(l => l.RelationshipType == "self").BaseUri.ToString();
+                var links = Links.Where(l => l.RelationshipType == "self").ToArray();
+                if (links.Count() > 0) return links[0].Uri.ToString();
+                return null;
             }
+            set{ }
         }
 
         public List<string> GetSelfShortList() {

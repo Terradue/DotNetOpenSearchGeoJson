@@ -45,7 +45,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             elementExtensions = new SyndicationElementExtensionCollection(result.elementExtensions);
             this.Title = result.Title;
             this.Date = result.Date;
-            this.Id = result.Id;
+            base.Id = result.Id;
             this.authors = result.Authors;
             this.categories = result.Categories;
 
@@ -184,8 +184,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         [DataMember(Name = "id")]
         public new string Id {
             get {
-                var link = Links.SingleOrDefault(l => l.RelationshipType == "self");
-                return link == null ? base.Id : link.Uri.ToString();
+                var links = Links.Where(l => l.RelationshipType == "self").ToArray();
+                if (links.Count() > 0) return links[0].Uri.ToString();
+                return base.Id;
             }
             set {
                 base.Id = value;
