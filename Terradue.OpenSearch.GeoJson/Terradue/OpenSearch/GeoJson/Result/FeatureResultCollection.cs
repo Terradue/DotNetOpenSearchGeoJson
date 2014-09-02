@@ -198,6 +198,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             get {
                 return FeatureResults.Cast<IOpenSearchResultItem>().ToList();
             }
+            set {
+                FeatureResults = value.Cast<FeatureResult>().ToList();
+            }
         }
 
         List<Terradue.ServiceModel.Syndication.SyndicationLink> links;
