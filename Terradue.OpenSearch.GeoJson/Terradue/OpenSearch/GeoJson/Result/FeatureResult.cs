@@ -157,6 +157,11 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 ElementExtensions.Add(e);
             }
 
+            if (properties.ContainsKey("atom:title")){
+                if ( properties["atom:title"] is string)
+                    title = (string)properties["atom:title"];
+            }
+
             if (properties.ContainsKey("links") && properties["links"] is List<object>) {
                 foreach (object link in (List<object>)properties["links"]) {
                     if (link is Dictionary<string, object>) {
