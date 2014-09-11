@@ -270,6 +270,15 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
+        public long TotalResults {
+            get {
+                var el = ElementExtensions.ReadElementExtensions<string>("totalResults", "http://a9.com/-/spec/opensearch/1.1/");
+                if (el.Count > 0)
+                    return long.Parse(el[0]);
+                return 0;
+            }
+        }
+
         public void SerializeToStream(System.IO.Stream stream) {
             JsConfig.ExcludeTypeInfo = true;
             JsConfig.IncludeTypeInfo = false;
