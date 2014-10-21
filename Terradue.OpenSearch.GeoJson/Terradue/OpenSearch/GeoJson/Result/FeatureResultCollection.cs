@@ -86,7 +86,11 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         }
 
         [IgnoreDataMember]
-        public new List<Terradue.GeoJson.Feature.Feature> Features { get; private set; }
+        public new List<Terradue.GeoJson.Feature.Feature> Features { 
+            get{
+                return FeatureResults.Cast<Terradue.GeoJson.Feature.Feature>().ToList();
+            } 
+        }
 
         [DataMember(Name="features")]
         public List<FeatureResult> FeatureResults { get; set; }

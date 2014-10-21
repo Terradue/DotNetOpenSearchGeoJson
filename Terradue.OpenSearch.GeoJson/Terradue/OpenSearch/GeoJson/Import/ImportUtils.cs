@@ -268,7 +268,21 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                         if (subprop is Dictionary<string, object> && ((Dictionary<string, object>)subprop).Count == 0) {
                             continue;
                         }
-                        properties.Add(prefix + childnode.LocalName, subprop);
+                        if ( properties.ContainsKey(prefix + childnode.LocalName)) {
+                            List<object> array = null;
+                            if ( properties[prefix + childnode.LocalName] is List<object> ){
+                                array = (List<object>)properties[prefix + childnode.LocalName];
+                            } else {
+                                array = new List<object>();
+                                array.Add(properties[prefix + childnode.LocalName]);
+                                properties.Remove(prefix + childnode.LocalName);
+                                properties.Add(prefix + childnode.LocalName, array);
+                            }
+                            array.Add(subprop);
+                            
+                        } else {
+                            properties.Add(prefix + childnode.LocalName, subprop);
+                        }
                     } catch (ArgumentException) {
                         if (properties[prefix + childnode.LocalName] is object[]) {
                             object[] array = (object[])properties[prefix + childnode.LocalName];
