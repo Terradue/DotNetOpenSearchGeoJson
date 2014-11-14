@@ -4,8 +4,6 @@
     <BuildDir>$(MSBuildProjectDirectory)</BuildDir>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B932B7CD-4DDA-4084-AFBC-0FFCF4310C2E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Terradue.OpenSearch.GeoJson</RootNamespace>
