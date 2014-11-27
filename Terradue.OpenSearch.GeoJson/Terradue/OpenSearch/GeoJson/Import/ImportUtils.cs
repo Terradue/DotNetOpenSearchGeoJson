@@ -330,6 +330,15 @@ namespace Terradue.OpenSearch.GeoJson.Import {
 
         }
 
+        public static XmlElement FindGeoRssGeometry(XmlElement[] elements) {
+            foreach (XmlElement element in elements) {
+                if (element.NamespaceURI == "http://www.georss.org/georss") {
+                    return element;
+                }
+            }
+            return null;
+        }
+
         public static XmlElement FindGmlGeometry(XmlElement[] elements) {
             foreach (XmlElement element in elements) {
                 XmlElement geom = FindGmlGeometry(element);

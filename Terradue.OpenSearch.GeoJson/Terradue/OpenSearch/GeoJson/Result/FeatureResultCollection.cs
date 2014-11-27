@@ -230,9 +230,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        string title;
+        TextSyndicationContent title;
         [IgnoreDataMember]
-        public string Title {
+        public TextSyndicationContent Title {
             get {
                 return title;
             }
@@ -274,12 +274,46 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
+        readonly Collection<SyndicationPerson> contributors;
+        public Collection<SyndicationPerson> Contributors {
+            get {
+                return contributors;
+            }
+        }
+
+        TextSyndicationContent copyright;
+        public TextSyndicationContent Copyright {
+            get {
+                return copyright;
+            }
+            set {
+                copyright = value;
+            }
+        }
+
+        TextSyndicationContent description;
+        public TextSyndicationContent Description {
+            get {
+                return description;
+            }
+            set {
+                description = value;
+            }
+        }
+
+        string generator;
+        public string Generator {
+            get {
+                return generator;
+            }
+            set {
+                generator = value;
+            }
+        }
+
         public long TotalResults {
             get {
-                var el = ElementExtensions.ReadElementExtensions<string>("totalResults", "http://a9.com/-/spec/opensearch/1.1/");
-                if (el.Count > 0)
-                    return long.Parse(el[0]);
-                return 0;
+                return Items.Count();
             }
         }
 
