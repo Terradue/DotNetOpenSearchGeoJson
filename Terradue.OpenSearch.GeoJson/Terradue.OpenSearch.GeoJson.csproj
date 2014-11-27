@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="RestorePackages;Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <BuildDir>$(MSBuildProjectDirectory)</BuildDir>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B932B7CD-4DDA-4084-AFBC-0FFCF4310C2E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Terradue.OpenSearch.GeoJson</RootNamespace>
@@ -22,22 +20,12 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="BeforeBuild" command="nuget restore -SolutionDirectory ${ProjectDir}/.. -PackagesDirectory ${ProjectDir}/../packages" workingdir="" />
-      </CustomCommands>
-    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>True</Optimize>
     <OutputPath>bin</OutputPath>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="BeforeBuild" command="nuget restore -SolutionDirectory ${ProjectDir}/.. -PackagesDirectory ${ProjectDir}/../packages" workingdir="" />
-      </CustomCommands>
-    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -54,11 +42,11 @@
     <Reference Include="Terradue.ServiceModel.Syndication">
       <HintPath>..\packages\Terradue.ServiceModel.Syndication.1.0.0.0\lib\net40\Terradue.ServiceModel.Syndication.dll</HintPath>
     </Reference>
-    <Reference Include="Terradue.OpenSearch">
-      <HintPath>..\packages\Terradue.OpenSearch.1.7.0.1\lib\net40\Terradue.OpenSearch.dll</HintPath>
+    <Reference Include="Terradue">
+      <HintPath>..\packages\Terradue.OpenSearch.1.8.0\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
     <Reference Include="Terradue.GeoJson">
-      <HintPath>..\packages\Terradue.GeoJson.1.4.0\lib\net40\Terradue.GeoJson.dll</HintPath>
+      <HintPath>..\packages\Terradue.GeoJson.1.4.4\lib\net40\Terradue.GeoJson.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -75,5 +63,4 @@
     <None Include="Terradue.OpenSearch.GeoJson.csproj" />
     <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="$(MSBuildProjectDirectory)\..\.nuget\NuGet.targets" Condition="Exists('$(MSBuildProjectDirectory)\..\.nuget\NuGet.targets')" />
 </Project>

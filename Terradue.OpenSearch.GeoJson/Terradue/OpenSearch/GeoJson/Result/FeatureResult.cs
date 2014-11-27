@@ -85,8 +85,15 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 if (geometry != null) feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.GmlToFeature(geometry));
                 else {
                     geometry = ImportUtils.FindDctSpatialGeometry(elements.ToArray());
-                    if (geometry != null) feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(geometry.InnerXml));
-                    else feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(null));
+                    if (geometry != null)
+                        feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(geometry.InnerXml));
+                    else {
+                        geometry = ImportUtils.FindGeoRssGeometry(elements.ToArray());
+                        if ( geometry != null )
+                            feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.GeoRSSToFeature(geometry));
+                        else
+                            feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(null));
+                    }
                 }
 
                 feature.ElementExtensions = new SyndicationElementExtensionCollection(result.ElementExtensions);
@@ -125,7 +132,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     properties[prefix + "links"] = FeatureCollectionResult.LinksToProperties(Links, ShowNamespaces);
                 }
                 properties[prefix + "published"] = this.Date.ToString("yyyy-MM-ddTHH:mm:ssZ");
-                properties[prefix + "title"] = this.Title;
+                properties[prefix + "title"] = this.Title.Text;
 
                 ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
                     KeepNamespaces = ShowNamespaces,
@@ -159,7 +166,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
             if (properties.ContainsKey("atom:title")){
                 if ( properties["atom:title"] is string)
-                    title = (string)properties["atom:title"];
+                    title = new TextSyndicationContent((string)properties["atom:title"]);
             }
 
             if (properties.ContainsKey("links") && properties["links"] is List<object>) {
@@ -198,10 +205,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        string title;
+        TextSyndicationContent title;
 
         [IgnoreDataMember]
-        public string Title {
+        public TextSyndicationContent Title {
             get {
                 return title;
             }
@@ -301,6 +308,33 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         public Collection<SyndicationPerson> Authors {
             get {
                 return authors;
+            }
+        }
+
+        TextSyndicationContent summary;
+        public TextSyndicationContent Summary {
+            get {
+                return summary;
+            }
+            set {
+                summary = value;
+            }
+        }
+
+        readonly Collection<SyndicationPerson> contributors;
+        public Collection<SyndicationPerson> Contributors {
+            get {
+                return contributors;
+            }
+        }
+
+        TextSyndicationContent copyright;
+        public TextSyndicationContent Copyright {
+            get {
+                return copyright;
+            }
+            set {
+                copyright = value;
             }
         }
         #endregion
