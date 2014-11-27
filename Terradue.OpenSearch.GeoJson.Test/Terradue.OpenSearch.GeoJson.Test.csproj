@@ -52,11 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Test.cs" />
+    <Compile Include="FromAtomTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Samples\wps.xml" />
+    <None Include="Samples\landsat8.atom" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />
