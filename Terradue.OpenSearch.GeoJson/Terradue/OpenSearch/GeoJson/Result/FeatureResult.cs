@@ -133,6 +133,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 }
                 properties[prefix + "published"] = this.Date.ToString("yyyy-MM-ddTHH:mm:ssZ");
                 properties[prefix + "title"] = this.Title.Text;
+                properties[prefix + "summary"] = this.Summary.Text;
 
                 ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
                     KeepNamespaces = ShowNamespaces,
@@ -335,6 +336,16 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
             set {
                 copyright = value;
+            }
+        }
+
+        SyndicationContent content;
+        public SyndicationContent Content {
+            get {
+                return content;
+            }
+            set {
+                content = value;
             }
         }
         #endregion
