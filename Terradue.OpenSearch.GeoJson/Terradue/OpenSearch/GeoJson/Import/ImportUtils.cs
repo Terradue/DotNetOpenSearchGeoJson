@@ -332,7 +332,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
 
         public static XmlElement FindGeoRssGeometry(XmlElement[] elements) {
             foreach (XmlElement element in elements) {
-                if (element.NamespaceURI == "http://www.georss.org/georss") {
+                if (element.NamespaceURI == "http://www.georss.org/georss"|| element.NamespaceURI == "http://www.georss.org/georss/10") {
                     return element;
                 }
             }
