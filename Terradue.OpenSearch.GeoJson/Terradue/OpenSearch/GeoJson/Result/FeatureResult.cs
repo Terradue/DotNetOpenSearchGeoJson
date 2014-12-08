@@ -18,6 +18,8 @@ using System.Xml;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Xml.Linq;
+using System.Text;
+using System.IO;
 
 namespace Terradue.OpenSearch.GeoJson.Result {
 
@@ -132,8 +134,16 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     properties[prefix + "links"] = FeatureCollectionResult.LinksToProperties(Links, ShowNamespaces);
                 }
                 properties[prefix + "published"] = this.Date.ToString("yyyy-MM-ddTHH:mm:ssZ");
+                if (Title != null )
                 properties[prefix + "title"] = this.Title.Text;
+                if (Summary != null )
                 properties[prefix + "summary"] = this.Summary.Text;
+                if (Content != null) {
+                    MemoryStream ms = new MemoryStream();
+                    this.Content.WriteTo(XmlWriter.Create(ms), "content", "atom");
+                    ms.Seek(0, SeekOrigin.Begin);
+                    properties[prefix + "content"] = XElement.Load(XmlReader.Create(ms)).Value;
+                }
 
                 ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
                     KeepNamespaces = ShowNamespaces,
