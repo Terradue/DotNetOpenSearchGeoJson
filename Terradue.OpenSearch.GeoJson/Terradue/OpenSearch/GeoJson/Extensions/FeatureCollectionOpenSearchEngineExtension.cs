@@ -79,8 +79,15 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
         public override OpenSearchUrl FindOpenSearchDescriptionUrlFromResponse(OpenSearchResponse response) {
 
             if (response.ContentType == "application/json") {
-                // TODO
-                throw new NotImplementedException();
+
+                FeatureCollectionResult col = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(response.GetResponseStream());
+
+                var link = col.Links.FirstOrDefault(l => l.RelationshipType == "search");
+                if (link != null)
+                    return new OpenSearchUrl(link.Uri);
+                else
+                    return null;
+
             }
 
             return null;

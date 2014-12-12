@@ -20,6 +20,7 @@ using System.Collections.Specialized;
 using System.IO;
 
 namespace Terradue.OpenSearch.GeoJson.Result {
+
     [DataContract]
     public class FeatureCollectionResult : Terradue.GeoJson.Feature.FeatureCollection, IOpenSearchResultCollection {
 
@@ -333,8 +334,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         public static IOpenSearchResultCollection DeserializeFromStream(Stream stream) {
             StreamReader sr = new StreamReader(stream);
-            Console.Write(sr.ReadToEnd());
-            stream.Seek(0, SeekOrigin.Begin);
             return JsonSerializer.DeserializeFromStream<FeatureCollectionResult>(stream);
         }
 
