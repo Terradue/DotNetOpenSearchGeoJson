@@ -398,7 +398,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                 string rel = null;
                 string title = null;
                 string type = null;
-                Uri href = new Uri((string)link["@atom:href"]);
+                Uri href = new Uri((string)link["@" + prefix + "href"]);
                 object r = null;
                 if (link.TryGetValue("@" + prefix + "rel", out r))
                     rel = (string)r;

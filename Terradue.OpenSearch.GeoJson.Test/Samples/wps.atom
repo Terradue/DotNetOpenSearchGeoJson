@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title type="text">Discovery feed for WPS result local data</title>
+	<id>urn:uuid:734eeec0-5b69-47bc-9fc0-f2173ba2e6f9</id>
+	<updated>2014-12-11T06:46:59.277211Z</updated>
+	<link rel="alternate" href="http://vm-10-10-31-32.dev.terradue.int/?format=atom" />
+	<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+	<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+	<subtitle type="text">This OpenSearch Service allows the discovery of the different items which are part of the localdata collectionThis search service is in accordance with the OGC 10-032r3 specification.</subtitle>
+	<generator>Terradue Web Server</generator>
+	<entry>
+		<id>urn:uuid:9007293c-bf5c-4e2f-b962-f119122c7ba0</id>
+		<title type="text">A_20090412_crop.png</title>
+		<published>2014-12-11T06:46:59.158681Z</published>
+		<updated>2014-12-11T06:46:59.158664Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="25539933" href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/A_20090412_crop.png" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">A_20090412_crop.png</identifier>
+		<where xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.georss.org/georss/10">
+			<Polygon xmlns="http://www.opengis.net/gml">
+				<exterior>
+					<LinearRing>
+						<posList srsDimension="2">0 0 0 5380 5170 0 5170 5380 0 0 </posList>
+					</LinearRing>
+				</exterior>
+			</Polygon>
+		</where>
+		<offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" code="http://www.opengis.net/spec/owc-atom/1.0/req/wms" xmlns="http://www.opengis.net/owc/1.0">
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/A_20090412_crop.png" type="text" />
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/A_20090412_crop.png" type="text" />
+		</offering>
+	</entry>
+	<entry>
+		<id>urn:uuid:ee94a270-5b1f-4ddb-9c0f-97a89d87c803</id>
+		<title type="text">A_master_crop.png</title>
+		<published>2014-12-11T06:46:59.170345Z</published>
+		<updated>2014-12-11T06:46:59.17034Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="25555090" href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/A_master_crop.png" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">A_master_crop.png</identifier>
+		<where xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.georss.org/georss/10">
+			<Polygon xmlns="http://www.opengis.net/gml">
+				<exterior>
+					<LinearRing>
+						<posList srsDimension="2">0 0 0 5381 5170 0 5170 5381 0 0 </posList>
+					</LinearRing>
+				</exterior>
+			</Polygon>
+		</where>
+		<offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" code="http://www.opengis.net/spec/owc-atom/1.0/req/wms" xmlns="http://www.opengis.net/owc/1.0">
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/A_master_crop.png" type="text" />
+		</offering>
+	</entry>
+	<entry>
+		<id>urn:uuid:8fd7c67b-0eef-4b1e-bf98-527b4b1550af</id>
+		<title type="text">P_master_20090412_cint.png</title>
+		<published>2014-12-11T06:46:59.180224Z</published>
+		<updated>2014-12-11T06:46:59.180219Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="1487743" href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/P_master_20090412_cint.png" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">P_master_20090412_cint.png</identifier>
+		<where xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.georss.org/georss/10">
+			<Polygon xmlns="http://www.opengis.net/gml">
+				<exterior>
+					<LinearRing>
+						<posList srsDimension="2">0 0 0 1254 1184 0 1184 1254 0 0 </posList>
+					</LinearRing>
+				</exterior>
+			</Polygon>
+		</where>
+		<offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" code="http://www.opengis.net/spec/owc-atom/1.0/req/wms" xmlns="http://www.opengis.net/owc/1.0">
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/P_master_20090412_cint.png" type="text" />
+		</offering>
+	</entry>
+	<entry>
+		<id>urn:uuid:e983566a-e135-493e-a91f-78f0188096c5</id>
+		<title type="text">P_master_20090412_coh.png</title>
+		<published>2014-12-11T06:46:59.18993Z</published>
+		<updated>2014-12-11T06:46:59.189925Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="1109234" href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/P_master_20090412_coh.png" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">P_master_20090412_coh.png</identifier>
+		<where xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.georss.org/georss/10">
+			<Polygon xmlns="http://www.opengis.net/gml">
+				<exterior>
+					<LinearRing>
+						<posList srsDimension="2">0 0 0 1254 1184 0 1184 1254 0 0 </posList>
+					</LinearRing>
+				</exterior>
+			</Polygon>
+		</where>
+		<offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" code="http://www.opengis.net/spec/owc-atom/1.0/req/wms" xmlns="http://www.opengis.net/owc/1.0">
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/P_master_20090412_coh.png" type="text" />
+		</offering>
+	</entry>
+	<entry>
+		<id>urn:uuid:6bcb11c2-f766-45f2-b2ee-561006e8a2ba</id>
+		<title type="text">P_master_20090412_srd.png</title>
+		<published>2014-12-11T06:46:59.199817Z</published>
+		<updated>2014-12-11T06:46:59.199813Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="1487743" href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/P_master_20090412_srd.png" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">P_master_20090412_srd.png</identifier>
+		<where xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.georss.org/georss/10">
+			<Polygon xmlns="http://www.opengis.net/gml">
+				<exterior>
+					<LinearRing>
+						<posList srsDimension="2">0 0 0 1254 1184 0 1184 1254 0 0 </posList>
+					</LinearRing>
+				</exterior>
+			</Polygon>
+		</where>
+		<offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" code="http://www.opengis.net/spec/owc-atom/1.0/req/wms" xmlns="http://www.opengis.net/owc/1.0">
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/P_master_20090412_srd.png" type="text" />
+		</offering>
+	</entry>
+	<entry>
+		<id>urn:uuid:8c1f6767-c62a-42ba-9d65-d14c2001d7ec</id>
+		<title type="text">P_master_20090412_srp.png</title>
+		<published>2014-12-11T06:46:59.223732Z</published>
+		<updated>2014-12-11T06:46:59.223723Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="1487743" href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/P_master_20090412_srp.png" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">P_master_20090412_srp.png</identifier>
+		<where xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.georss.org/georss/10">
+			<Polygon xmlns="http://www.opengis.net/gml">
+				<exterior>
+					<LinearRing>
+						<posList srsDimension="2">0 0 0 1254 1184 0 1184 1254 0 0 </posList>
+					</LinearRing>
+				</exterior>
+			</Polygon>
+		</where>
+		<offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" code="http://www.opengis.net/spec/owc-atom/1.0/req/wms" xmlns="http://www.opengis.net/owc/1.0">
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/P_master_20090412_srp.png" type="text" />
+		</offering>
+	</entry>
+	<entry>
+		<id>urn:uuid:1b1077e5-a288-4a06-a0de-f7ea95d7dfba</id>
+		<title type="text">master_20090412_cint.tiff</title>
+		<published>2014-12-11T06:46:59.232941Z</published>
+		<updated>2014-12-11T06:46:59.232936Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="137128230" href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/master_20090412_cint.tiff" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">master_20090412_cint.tiff</identifier>
+		<where xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.georss.org/georss/10">
+			<Polygon xmlns="http://www.opengis.net/gml">
+				<exterior>
+					<LinearRing>
+						<posList srsDimension="2">12.4181100012822 42.9104220009105 12.4181100012822 41.8382779990895 13.8220899987178 42.9104220009105 13.8220899987178 41.8382779990895 12.4181100012822 42.9104220009105 </posList>
+					</LinearRing>
+				</exterior>
+			</Polygon>
+		</where>
+		<offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" code="http://www.opengis.net/spec/owc-atom/1.0/req/geotiff" xmlns="http://www.opengis.net/owc/1.0">
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/master_20090412_cint.tiff" type="text" />
+		</offering>
+	</entry>
+	<entry>
+		<id>urn:uuid:10abef28-2019-4afc-a776-ed780bdca2b3</id>
+		<title type="text">master_20090412_coh.tiff</title>
+		<published>2014-12-11T06:46:59.244204Z</published>
+		<updated>2014-12-11T06:46:59.244198Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="137128230" href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/master_20090412_coh.tiff" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">master_20090412_coh.tiff</identifier>
+		<where xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.georss.org/georss/10">
+			<Polygon xmlns="http://www.opengis.net/gml">
+				<exterior>
+					<LinearRing>
+						<posList srsDimension="2">12.4181100012822 42.9104220009105 12.4181100012822 41.8382779990895 13.8220899987178 42.9104220009105 13.8220899987178 41.8382779990895 12.4181100012822 42.9104220009105 </posList>
+					</LinearRing>
+				</exterior>
+			</Polygon>
+		</where>
+		<offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" code="http://www.opengis.net/spec/owc-atom/1.0/req/geotiff" xmlns="http://www.opengis.net/owc/1.0">
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/master_20090412_coh.tiff" type="text" />
+		</offering>
+	</entry>
+	<entry>
+		<id>urn:uuid:322236cf-2efc-4de1-9042-03fab634643a</id>
+		<title type="text">master_20090412_srd.tiff</title>
+		<published>2014-12-11T06:46:59.254284Z</published>
+		<updated>2014-12-11T06:46:59.25428Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="137128230" href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/master_20090412_srd.tiff" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">master_20090412_srd.tiff</identifier>
+		<where xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.georss.org/georss/10">
+			<Polygon xmlns="http://www.opengis.net/gml">
+				<exterior>
+					<LinearRing>
+						<posList srsDimension="2">12.4181100012822 42.9104220009105 12.4181100012822 41.8382779990895 13.8220899987178 42.9104220009105 13.8220899987178 41.8382779990895 12.4181100012822 42.9104220009105 </posList>
+					</LinearRing>
+				</exterior>
+			</Polygon>
+		</where>
+		<offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" code="http://www.opengis.net/spec/owc-atom/1.0/req/geotiff" xmlns="http://www.opengis.net/owc/1.0">
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/master_20090412_srd.tiff" type="text" />
+		</offering>
+	</entry>
+	<entry>
+		<id>urn:uuid:2e438795-c00d-40fa-949b-287581c56a81</id>
+		<title type="text">master_20090412_srp.tiff</title>
+		<published>2014-12-11T06:46:59.263413Z</published>
+		<updated>2014-12-11T06:46:59.263409Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="137128230" href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/master_20090412_srp.tiff" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/description" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://vm-10-10-31-32.dev.terradue.int/sbws/wps/adore_wf/0000000-141210161346290-oozie-oozi-W/results/search?format=atom" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">master_20090412_srp.tiff</identifier>
+		<where xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.georss.org/georss/10">
+			<Polygon xmlns="http://www.opengis.net/gml">
+				<exterior>
+					<LinearRing>
+						<posList srsDimension="2">12.4181100012822 42.9104220009105 12.4181100012822 41.8382779990895 13.8220899987178 42.9104220009105 13.8220899987178 41.8382779990895 12.4181100012822 42.9104220009105 </posList>
+					</LinearRing>
+				</exterior>
+			</Polygon>
+		</where>
+		<offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" code="http://www.opengis.net/spec/owc-atom/1.0/req/geotiff" xmlns="http://www.opengis.net/owc/1.0">
+			<content href="http://vm-10-10-31-32.dev.terradue.int:50075/streamFile/tmp/sandbox/adore_wf/0000000-141210161346290-oozie-oozi-W/_results/master_20090412_srp.tiff" type="text" />
+		</offering>
+	</entry>
+	<identifier xmlns="http://purl.org/dc/elements/1.1/">localdata</identifier>
+	<queryTime xmlns="http://a9.com/-/spec/opensearch/1.1/">0.2761</queryTime>
+	<startIndex xmlns="http://a9.com/-/spec/opensearch/1.1/">1</startIndex>
+	<itemsPerPage xmlns="http://a9.com/-/spec/opensearch/1.1/">20</itemsPerPage>
+	<Query format="atom" xmlns="http://a9.com/-/spec/opensearch/1.1/" />
+</feed>
