@@ -84,14 +84,15 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 }
 
                 XmlElement geometry = ImportUtils.FindGmlGeometry(elements.ToArray());
-                if (geometry != null) feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.GmlToFeature(geometry));
+                if (geometry != null)
+                    feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.GmlToFeature(geometry));
                 else {
                     geometry = ImportUtils.FindDctSpatialGeometry(elements.ToArray());
                     if (geometry != null)
                         feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(geometry.InnerXml));
                     else {
                         geometry = ImportUtils.FindGeoRssGeometry(elements.ToArray());
-                        if ( geometry != null )
+                        if (geometry != null)
                             feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.GeoRSSToFeature(geometry));
                         else
                             feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(null));
@@ -140,10 +141,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     properties[prefix + "links"] = FeatureCollectionResult.LinksToProperties(Links, ShowNamespaces);
                 }
                 properties[prefix + "published"] = this.Date.ToString("yyyy-MM-ddTHH:mm:ssZ");
-                if (Title != null )
-                properties[prefix + "title"] = this.Title.Text;
-                if (Summary != null )
-                properties[prefix + "summary"] = this.Summary.Text;
+                if (Title != null)
+                    properties[prefix + "title"] = this.Title.Text;
+                if (Summary != null)
+                    properties[prefix + "summary"] = this.Summary.Text;
                 if (Content != null) {
                     var content = new Dictionary<string, string>();
                     MemoryStream ms = new MemoryStream();
@@ -154,6 +155,20 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     content.Add("type", this.Content.Type);
                     content.Add("text", XElement.Load(XmlReader.Create(ms)).Value);
                     properties[prefix + "content"] = content;
+                }
+
+                if (Authors != null && Authors.Count > 0) {
+                    foreach (var author in Authors) {
+                        var authord = new Dictionary<string, string>();
+                        authord.Add("email", author.Email);
+                        authord.Add("name", author.Name);
+                        authord.Add("uri", author.Uri.ToString());
+                        properties[prefix + "authors"] = authord;
+                    }
+                }
+
+                if (Copyright != null) {
+                    properties[prefix + "copyright"] = this.Copyright.Text;
                 }
 
                 ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
@@ -170,7 +185,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
 
             set {
-                if ( value != null )
+                if (value != null)
                     ImportSyndicationElements(value);
                 base.Properties = null;
             }
@@ -186,8 +201,8 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 ElementExtensions.Add(e);
             }
 
-            if (properties.ContainsKey("atom:title")){
-                if ( properties["atom:title"] is string)
+            if (properties.ContainsKey("atom:title")) {
+                if (properties["atom:title"] is string)
                     title = new TextSyndicationContent((string)properties["atom:title"]);
             }
 
@@ -201,7 +216,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             if (properties.ContainsKey("atom:links") && properties["atom:links"] is List<object>) {
                 foreach (object link in (List<object>)properties["atom:links"]) {
                     if (link is Dictionary<string, object>) {
-                        Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link,"atom:"));
+                        Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link, "atom:"));
                     }
                 }
             }
@@ -219,7 +234,8 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         public new string Id {
             get {
                 var links = Links.Where(l => l.RelationshipType == "self").ToArray();
-                if (links.Count() > 0) return links[0].Uri.ToString();
+                if (links.Count() > 0)
+                    return links[0].Uri.ToString();
                 return base.Id;
             }
             set {
@@ -322,6 +338,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
 
         Collection<SyndicationCategory> categories;
+
         public Collection<SyndicationCategory> Categories {
             get {
                 return categories;
@@ -329,6 +346,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         }
 
         Collection<SyndicationPerson> authors;
+
         public Collection<SyndicationPerson> Authors {
             get {
                 return authors;
@@ -336,6 +354,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         }
 
         TextSyndicationContent summary;
+
         public TextSyndicationContent Summary {
             get {
                 return summary;
@@ -346,6 +365,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         }
 
         Collection<SyndicationPerson> contributors;
+
         public Collection<SyndicationPerson> Contributors {
             get {
                 return contributors;
@@ -353,6 +373,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         }
 
         TextSyndicationContent copyright;
+
         public TextSyndicationContent Copyright {
             get {
                 return copyright;
@@ -363,6 +384,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         }
 
         SyndicationContent content;
+
         public SyndicationContent Content {
             get {
                 return content;
@@ -371,6 +393,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 content = value;
             }
         }
+
         #endregion
     }
 }
