@@ -108,11 +108,17 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
             feature.Id = result.Id;
             feature.Date = result.Date;
+            feature.Summary = result.Summary;
+            feature.Content = result.Content;
+            feature.contributors = result.Contributors;
+            feature.authors = result.Authors;
+            feature.Title = result.Title;
+            feature.categories = feature.Categories;
+            feature.Copyright = result.Copyright;
+            feature.Identifier = result.Identifier;
 
             feature.Links = new Collection<SyndicationLink>(result.Links);
 
-            if (result.Title != null)
-                feature.Title = result.Title;
 
             return feature;
         }
@@ -139,10 +145,15 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 if (Summary != null )
                 properties[prefix + "summary"] = this.Summary.Text;
                 if (Content != null) {
+                    var content = new Dictionary<string, string>();
                     MemoryStream ms = new MemoryStream();
-                    this.Content.WriteTo(XmlWriter.Create(ms), "content", "atom");
+                    var xw = XmlWriter.Create(ms);
+                    this.Content.WriteTo(xw, "content", "");
+                    xw.Flush();
                     ms.Seek(0, SeekOrigin.Begin);
-                    properties[prefix + "content"] = XElement.Load(XmlReader.Create(ms)).Value;
+                    content.Add("type", this.Content.Type);
+                    content.Add("text", XElement.Load(XmlReader.Create(ms)).Value);
+                    properties[prefix + "content"] = content;
                 }
 
                 ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
@@ -247,6 +258,8 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 return identifier.Count == 0 ? base.Id : identifier[0];
             }
             set {
+                if (value == null)
+                    return;
                 foreach (var ext in this.ElementExtensions.ToArray()) {
                     if (ext.OuterName == "identifier" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/") {
                         this.ElementExtensions.Remove(ext);
@@ -332,7 +345,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        readonly Collection<SyndicationPerson> contributors;
+        Collection<SyndicationPerson> contributors;
         public Collection<SyndicationPerson> Contributors {
             get {
                 return contributors;
