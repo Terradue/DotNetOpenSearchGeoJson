@@ -22,6 +22,20 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             Assert.That(col.Features[0].Geometry != null);
 
         }
+
+        [Test()]
+        public void FromWPSAtomTest() {
+
+            XmlReader reader = XmlReader.Create("../Samples/wps.atom");
+            SyndicationFeed feed = SyndicationFeed.Load(reader);
+            AtomFeed atom = new AtomFeed(feed);
+
+            FeatureCollectionResult col = FeatureCollectionResult.FromOpenSearchResultCollection(atom);
+
+            Console.Out.Write(col.SerializeToString());
+            Assert.That(col.Features[0].Geometry != null);
+
+        }
     }
 }
 

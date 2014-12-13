@@ -22,6 +22,7 @@ using Terradue.OpenSearch.Response;
 using Terradue.OpenSearch.Schema;
 using Terradue.OpenSearch.Engine;
 using Terradue.OpenSearch.Result;
+using ServiceStack.Text;
 
 [assembly:Addin]
 [assembly:AddinDependency ("OpenSearchEngine", "1.0")]
@@ -79,8 +80,18 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
         public override OpenSearchUrl FindOpenSearchDescriptionUrlFromResponse(OpenSearchResponse response) {
 
             if (response.ContentType == "application/json") {
-                // TODO
-                throw new NotImplementedException();
+
+                JsConfig.ConvertObjectTypesIntoStringDictionary = true;
+
+                FeatureCollectionResult col = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(response.GetResponseStream());
+
+
+                var link = col.Links.FirstOrDefault(l => l.RelationshipType == "search");
+                if (link != null)
+                    return new OpenSearchUrl(link.Uri);
+                else
+                    return null;
+
             }
 
             return null;
