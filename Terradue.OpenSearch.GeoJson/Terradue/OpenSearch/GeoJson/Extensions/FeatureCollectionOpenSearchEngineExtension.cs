@@ -23,6 +23,7 @@ using Terradue.OpenSearch.Schema;
 using Terradue.OpenSearch.Engine;
 using Terradue.OpenSearch.Result;
 using ServiceStack.Text;
+using System.IO;
 
 [assembly:Addin]
 [assembly:AddinDependency ("OpenSearchEngine", "1.0")]
@@ -64,11 +65,15 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
             }
         }
 
-        public override IOpenSearchResultCollection ReadNative(OpenSearchResponse response) {
-            if (response.ContentType == "application/json")
-                return TransformJsonResponseToFeatureCollection(response);
+        public override IOpenSearchResultCollection ReadNative(IOpenSearchResponse response) {
+            if (response.ObjectType == typeof(byte[])) {
+                if (response.ContentType == "application/json")
+                    return TransformJsonResponseToFeatureCollection(response);
 
-            throw new NotSupportedException("GeoJson extension does not transform OpenSearch response of contentType " + response.ContentType);
+                throw new NotSupportedException("GeoJson extension does not transform OpenSearch response of contentType " + response.ContentType);
+            }
+            throw new NotSupportedException("GeoJson extension does not transform response of type " + response.GetType());
+
         }
 
         public override string DiscoveryContentType {
@@ -77,21 +82,23 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
             }
         }
 
-        public override OpenSearchUrl FindOpenSearchDescriptionUrlFromResponse(OpenSearchResponse response) {
+        public override OpenSearchUrl FindOpenSearchDescriptionUrlFromResponse(IOpenSearchResponse response) {
 
-            if (response.ContentType == "application/json") {
+            if (response.ObjectType == typeof(byte[])) {
+                if (response.ContentType == "application/json") {
 
-                JsConfig.ConvertObjectTypesIntoStringDictionary = true;
+                    JsConfig.ConvertObjectTypesIntoStringDictionary = true;
 
-                FeatureCollectionResult col = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(response.GetResponseStream());
+                    FeatureCollectionResult col = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(new MemoryStream((byte[])response.GetResponseObject()));
 
 
-                var link = col.Links.FirstOrDefault(l => l.RelationshipType == "search");
-                if (link != null)
-                    return new OpenSearchUrl(link.Uri);
-                else
-                    return null;
+                    var link = col.Links.FirstOrDefault(l => l.RelationshipType == "search");
+                    if (link != null)
+                        return new OpenSearchUrl(link.Uri);
+                    else
+                        return null;
 
+                }
             }
 
             return null;
@@ -112,9 +119,9 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
 
         }
 
-        public static FeatureCollectionResult TransformJsonResponseToFeatureCollection(OpenSearchResponse response) {
+        public static FeatureCollectionResult TransformJsonResponseToFeatureCollection(IOpenSearchResponse response) {
 
-            return (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(response.GetResponseStream());
+            return (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(new MemoryStream((byte[])response.GetResponseObject()));
 
         }
 
