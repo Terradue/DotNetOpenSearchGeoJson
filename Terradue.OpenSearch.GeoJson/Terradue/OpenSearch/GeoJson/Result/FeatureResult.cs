@@ -30,6 +30,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             links = new Collection<SyndicationLink>();
             elementExtensions = new SyndicationElementExtensionCollection();
             Namespaces = InitNameSpaces;
+            authors = new Collection<SyndicationPerson>();
+            categories = new Collection<SyndicationCategory>();
+            contributors = new Collection<SyndicationPerson>();
         }
 
         public FeatureResult(Terradue.GeoJson.Feature.Feature feature) : base(feature.Geometry, feature.Properties) {
@@ -40,6 +43,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             elementExtensions = new SyndicationElementExtensionCollection();
             Properties = feature.Properties;
             Namespaces = InitNameSpaces;
+            authors = new Collection<SyndicationPerson>();
+            categories = new Collection<SyndicationCategory>();
+            contributors = new Collection<SyndicationPerson>();
         }
 
         public FeatureResult(FeatureResult result) : this((Terradue.GeoJson.Feature.Feature)result) {
