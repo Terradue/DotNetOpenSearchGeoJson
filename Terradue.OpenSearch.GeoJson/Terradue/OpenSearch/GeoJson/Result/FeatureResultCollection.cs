@@ -38,6 +38,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             ImportSyndicationElements(fc.Properties);
             InitNameSpaces();
             elementExtensions = new SyndicationElementExtensionCollection();
+            authors = new Collection<SyndicationPerson>();
+            categories = new Collection<SyndicationCategory>();
+            contributors = new Collection<SyndicationPerson>();
         }
 
         public FeatureCollectionResult() : base() {
@@ -45,6 +48,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             FeatureResults = new List<FeatureResult>();
             InitNameSpaces();
             elementExtensions = new SyndicationElementExtensionCollection();
+            authors = new Collection<SyndicationPerson>();
+            categories = new Collection<SyndicationCategory>();
+            contributors = new Collection<SyndicationPerson>();
         }
 
         public static FeatureCollectionResult FromOpenSearchResultCollection(IOpenSearchResultCollection results) {
@@ -74,7 +80,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     fc.FeatureResults.Add(FeatureResult.FromOpenSearchResultItem(item));
                 }
             }
-
 
             return fc;
         }
@@ -146,40 +151,64 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
 
             set {
-                // Start with an empty NameValueCollection
-                Dictionary <string,object> properties = value;
-
-                ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
-                    KeepNamespaces = ShowNamespaces,
-                    AsMixed = AlwaysAsMixed
-                });
-                foreach (SyndicationElementExtension e in util.PropertiesToSyndicationElementExtensions(properties)) {
-                    ElementExtensions.Add(e);
-                }
-                ImportSyndicationElements(value);
+                if (value != null)
+                    ImportSyndicationElements(value);
+                base.Properties = null;
             }
         }
 
         void ImportSyndicationElements(Dictionary <string,object> properties) {
-            if (properties.ContainsKey("links") && properties["links"] is List<object>) {
-                foreach (object link in (List<object>)properties["links"]) {
-                    if (link is Dictionary<string, object>) {
-                        Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link));
-                    }
+
+            ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
+                KeepNamespaces = ShowNamespaces,
+                AsMixed = AlwaysAsMixed
+            });
+
+            Dictionary <string,object> forExtensions = new Dictionary<string, object>();
+
+            foreach (var key in properties.Keys) {
+
+                if (key == "atom:title") {
+                    if (properties["atom:title"] is string)
+                        title = new TextSyndicationContent((string)properties["atom:title"]);
                 }
-            }
-            if (properties.ContainsKey("atom:links") && properties["atom:links"] is List<object>) {
-                foreach (object link in (List<object>)properties["atom:links"]) {
-                    if (link is Dictionary<string, object>) {
-                        Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link,"atom:"));
-                    }
+
+                if (key == "title") {
+                    if (properties["title"] is string)
+                        title = new TextSyndicationContent((string)properties["title"]);
+                    continue;
                 }
+
+                if (key == "links" && properties["links"] is List<object>) {
+                    foreach (object link in (List<object>)properties["links"]) {
+                        if (link is Dictionary<string, object>) {
+                            Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link));
+                        }
+                    }
+                    continue;
+                }
+                if (key == "atom:links" && properties["atom:links"] is List<object>) {
+                    foreach (object link in (List<object>)properties["atom:links"]) {
+                        if (link is Dictionary<string, object>) {
+                            Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link, "atom:"));
+                        }
+                    }
+                    continue;
+                }
+                if (key == "published" && properties["published"] is string) {
+                    DateTime.TryParse((string)properties["published"], out date);
+                    continue;
+                }
+                if (key == "atom:published" && properties["atom:published"] is string) {
+                    DateTime.TryParse((string)properties["atom:published"], out date);
+                    continue;
+                }
+
+                forExtensions.Add(key, properties[key]);
             }
-            if (properties.ContainsKey("published") && properties["published"] is string) {
-                DateTime.TryParse((string)properties["published"], out date);
-            }
-            if (properties.ContainsKey("atom:published") && properties["atom:published"] is string) {
-                DateTime.TryParse((string)properties["atom:published"], out date);
+
+            foreach (SyndicationElementExtension e in util.PropertiesToSyndicationElementExtensions(forExtensions)) {
+                ElementExtensions.Add(e);
             }
         }
 

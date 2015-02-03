@@ -30,6 +30,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             links = new Collection<SyndicationLink>();
             elementExtensions = new SyndicationElementExtensionCollection();
             Namespaces = InitNameSpaces;
+            authors = new Collection<SyndicationPerson>();
+            categories = new Collection<SyndicationCategory>();
+            contributors = new Collection<SyndicationPerson>();
         }
 
         public FeatureResult(Terradue.GeoJson.Feature.Feature feature) : base(feature.Geometry, feature.Properties) {
@@ -40,6 +43,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             elementExtensions = new SyndicationElementExtensionCollection();
             Properties = feature.Properties;
             Namespaces = InitNameSpaces;
+            authors = new Collection<SyndicationPerson>();
+            categories = new Collection<SyndicationCategory>();
+            contributors = new Collection<SyndicationPerson>();
         }
 
         public FeatureResult(FeatureResult result) : this((Terradue.GeoJson.Feature.Feature)result) {
@@ -175,7 +181,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     KeepNamespaces = ShowNamespaces,
                     AsMixed = AlwaysAsMixed
                 });
-                properties = properties.Concat(util.SyndicationElementExtensions(ElementExtensions, ref Namespaces)).ToDictionary(x => x.Key, x => x.Value);
+
+                var exts = util.SyndicationElementExtensions(ElementExtensions, ref Namespaces);
+
+                properties = properties.Concat(exts).ToDictionary(x => x.Key, x => x.Value);
 
                 if (ShowNamespaces)
                     properties.Add("@namespaces", Namespaces.AllKeys
@@ -197,34 +206,52 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 KeepNamespaces = ShowNamespaces,
                 AsMixed = AlwaysAsMixed
             });
-            foreach (SyndicationElementExtension e in util.PropertiesToSyndicationElementExtensions(properties)) {
+
+            Dictionary <string,object> forExtensions = new Dictionary<string, object>();
+
+            foreach (var key in properties.Keys) {
+
+                if (key == "atom:title") {
+                    if (properties["atom:title"] is string)
+                        title = new TextSyndicationContent((string)properties["atom:title"]);
+                }
+
+                if (key == "title") {
+                    if (properties["title"] is string)
+                        title = new TextSyndicationContent((string)properties["title"]);
+                    continue;
+                }
+
+                if (key == "links" && properties["links"] is List<object>) {
+                    foreach (object link in (List<object>)properties["links"]) {
+                        if (link is Dictionary<string, object>) {
+                            Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link));
+                        }
+                    }
+                    continue;
+                }
+                if (key == "atom:links" && properties["atom:links"] is List<object>) {
+                    foreach (object link in (List<object>)properties["atom:links"]) {
+                        if (link is Dictionary<string, object>) {
+                            Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link, "atom:"));
+                        }
+                    }
+                    continue;
+                }
+                if (key == "published" && properties["published"] is string) {
+                    DateTime.TryParse((string)properties["published"], out date);
+                    continue;
+                }
+                if (key == "atom:published" && properties["atom:published"] is string) {
+                    DateTime.TryParse((string)properties["atom:published"], out date);
+                    continue;
+                }
+
+                forExtensions.Add(key, properties[key]);
+            }
+
+            foreach (SyndicationElementExtension e in util.PropertiesToSyndicationElementExtensions(forExtensions)) {
                 ElementExtensions.Add(e);
-            }
-
-            if (properties.ContainsKey("atom:title")) {
-                if (properties["atom:title"] is string)
-                    title = new TextSyndicationContent((string)properties["atom:title"]);
-            }
-
-            if (properties.ContainsKey("links") && properties["links"] is List<object>) {
-                foreach (object link in (List<object>)properties["links"]) {
-                    if (link is Dictionary<string, object>) {
-                        Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link));
-                    }
-                }
-            }
-            if (properties.ContainsKey("atom:links") && properties["atom:links"] is List<object>) {
-                foreach (object link in (List<object>)properties["atom:links"]) {
-                    if (link is Dictionary<string, object>) {
-                        Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link, "atom:"));
-                    }
-                }
-            }
-            if (properties.ContainsKey("published") && properties["published"] is string) {
-                DateTime.TryParse((string)properties["published"], out date);
-            }
-            if (properties.ContainsKey("atom:published") && properties["atom:published"] is string) {
-                DateTime.TryParse((string)properties["atom:published"], out date);
             }
         }
 
