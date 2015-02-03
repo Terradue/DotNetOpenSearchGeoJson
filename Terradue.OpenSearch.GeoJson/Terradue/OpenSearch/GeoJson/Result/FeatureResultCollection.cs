@@ -38,6 +38,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             ImportSyndicationElements(fc.Properties);
             InitNameSpaces();
             elementExtensions = new SyndicationElementExtensionCollection();
+            authors = new Collection<SyndicationPerson>();
+            categories = new Collection<SyndicationCategory>();
+            contributors = new Collection<SyndicationPerson>();
         }
 
         public FeatureCollectionResult() : base() {
@@ -45,6 +48,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             FeatureResults = new List<FeatureResult>();
             InitNameSpaces();
             elementExtensions = new SyndicationElementExtensionCollection();
+            authors = new Collection<SyndicationPerson>();
+            categories = new Collection<SyndicationCategory>();
+            contributors = new Collection<SyndicationPerson>();
         }
 
         public static FeatureCollectionResult FromOpenSearchResultCollection(IOpenSearchResultCollection results) {
