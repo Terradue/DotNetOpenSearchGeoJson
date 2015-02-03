@@ -8,6 +8,7 @@ using System.IO;
 using Terradue.OpenSearch.Engine;
 using Mono.Addins;
 using ServiceStack.Text;
+using System.Linq;
 
 namespace Terradue.OpenSearch.GeoJson.Test {
 
@@ -31,6 +32,10 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             var results = ose.Query(entity, new System.Collections.Specialized.NameValueCollection(), "json");
             FeatureCollectionResult col = (FeatureCollectionResult)results.Result;
+
+            var feed = AtomFeed.CreateFromOpenSearchResultCollection(col);
+
+            var properties = col.FeatureResults.First().Properties;
 
             Assert.That(col.Features[0].Geometry != null);
 
