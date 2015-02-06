@@ -9,6 +9,7 @@ using Terradue.OpenSearch.Engine;
 using Mono.Addins;
 using ServiceStack.Text;
 using System.Linq;
+using Terradue.GeoJson.Geometry;
 
 namespace Terradue.OpenSearch.GeoJson.Test {
 
@@ -38,6 +39,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             var properties = col.FeatureResults.First().Properties;
 
             Assert.That(col.Features[0].Geometry != null);
+            Assert.That(!string.IsNullOrEmpty(col.Features[0].ToWkt()));
 
         }
 
