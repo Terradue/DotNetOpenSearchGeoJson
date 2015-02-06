@@ -71,8 +71,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        public static FeatureResult ParseJson(string json) {
-            return new FeatureResult(Terradue.GeoJson.Feature.Feature.ParseJson(json));
+        public new static FeatureResult ParseJson(string json) {
+            var feature = Terradue.GeoJson.Feature.Feature.ParseJson(json);
+            return new FeatureResult(feature);
         }
 
         public static FeatureResult FromOpenSearchResultItem(IOpenSearchResultItem result) {
