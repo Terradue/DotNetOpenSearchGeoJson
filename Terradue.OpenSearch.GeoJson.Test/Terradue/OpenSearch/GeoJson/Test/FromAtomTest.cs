@@ -4,6 +4,8 @@ using Terradue.ServiceModel.Syndication;
 using System.Xml;
 using Terradue.OpenSearch.Result;
 using Terradue.OpenSearch.GeoJson.Result;
+using ServiceStack.Text;
+using System.Linq;
 
 namespace Terradue.OpenSearch.GeoJson.Test {
 
@@ -20,6 +22,11 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             FeatureCollectionResult col = FeatureCollectionResult.FromOpenSearchResultCollection(atom);
 
             Assert.That(col.Features[0].Geometry != null);
+           
+            JsonObject json = JsonSerializer.DeserializeFromString<JsonObject>(col.SerializeToString());
+
+            Assert.AreEqual("ceos", json.Object("properties").ArrayObjects("authors").First().Child("identifier"));
+            Assert.AreEqual("eros", json.ArrayObjects("features").First().Object("properties").ArrayObjects("authors").First().Child("identifier"));
 
         }
 

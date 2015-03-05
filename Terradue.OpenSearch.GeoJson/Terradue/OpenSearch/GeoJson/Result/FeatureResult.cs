@@ -164,24 +164,26 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     properties[prefix + "content"] = content;
                 }
 
+                ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
+                    KeepNamespaces = ShowNamespaces,
+                    AsMixed = AlwaysAsMixed
+                });
+
                 if (Authors != null && Authors.Count > 0) {
                     foreach (var author in Authors) {
-                        var authord = new Dictionary<string, string>();
+                        var authord = util.SyndicationElementExtensions(author.ElementExtensions, ref Namespaces);
                         authord.Add("email", author.Email);
                         authord.Add("name", author.Name);
-                        authord.Add("uri", author.Uri.ToString());
+                        if ( author.Uri != null )
+                            authord.Add("uri", author.Uri.ToString());
                         properties[prefix + "authors"] = authord;
+
                     }
                 }
 
                 if (Copyright != null) {
                     properties[prefix + "copyright"] = this.Copyright.Text;
                 }
-
-                ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
-                    KeepNamespaces = ShowNamespaces,
-                    AsMixed = AlwaysAsMixed
-                });
 
                 var exts = util.SyndicationElementExtensions(ElementExtensions, ref Namespaces);
 
@@ -243,7 +245,13 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     DateTime.TryParse((string)properties["published"], out date);
                     continue;
                 }
+
                 if (key == "atom:published" && properties["atom:published"] is string) {
+                    DateTime.TryParse((string)properties["atom:published"], out date);
+                    continue;
+                }
+
+                if (key == "where" && properties["where"] is Dictionary<string, object>) {
                     DateTime.TryParse((string)properties["atom:published"], out date);
                     continue;
                 }

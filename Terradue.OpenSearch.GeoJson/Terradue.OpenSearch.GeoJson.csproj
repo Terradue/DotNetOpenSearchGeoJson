@@ -49,6 +49,7 @@
     </Reference>
     <Reference Include="Terradue.OpenSearch">
       <HintPath>..\packages\Terradue.OpenSearch.1.9.2\lib\net40\Terradue.OpenSearch.dll</HintPath>
+      <HintPath>..\packages\Terradue.GeoJson.1.4.10\lib\net40\Terradue.GeoJson.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -64,5 +65,11 @@
     <None Include="Terradue\OpenSearch\GeoJson\Import\SyndicationFeedImporter.cs" />
     <None Include="Terradue.OpenSearch.GeoJson.csproj" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DotNetOpenSearch\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
+      <Project>{997A44FD-EE4A-490A-855B-88305E0CD269}</Project>
+      <Name>Terradue.OpenSearch</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
