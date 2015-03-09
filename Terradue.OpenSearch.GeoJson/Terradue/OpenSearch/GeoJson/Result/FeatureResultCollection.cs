@@ -148,6 +148,16 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     }
                 }
 
+                if (Categories != null && Categories.Count > 0) {
+                    foreach (var cat in Categories) {
+                        var catd = util.SyndicationElementExtensions(cat.ElementExtensions, ref Namespaces);
+                        catd.Add("name", cat.Name);
+                        catd.Add("label", cat.Label);
+                        catd.Add("scheme", cat.Scheme);
+                        properties[prefix + "categories"] = catd;
+                    }
+                }
+
                 properties = properties.Concat(util.SyndicationElementExtensions(ElementExtensions, ref Namespaces)).ToDictionary(x => x.Key, x => x.Value);
 
                 if (ShowNamespaces)

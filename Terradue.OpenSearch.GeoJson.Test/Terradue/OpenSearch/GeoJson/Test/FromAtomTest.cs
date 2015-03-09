@@ -28,6 +28,8 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             Assert.AreEqual("ceos", json.Object("properties").ArrayObjects("authors").First().Child("identifier"));
             Assert.AreEqual("eros", json.ArrayObjects("features").First().Object("properties").ArrayObjects("authors").First().Child("identifier"));
 
+            Assert.AreEqual("private", json.ArrayObjects("features").First().Object("properties").ArrayObjects("categories").First().Child("@label"));
+
         }
 
         [Test()]

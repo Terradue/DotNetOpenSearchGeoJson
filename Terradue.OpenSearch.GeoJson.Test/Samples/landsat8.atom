@@ -27,6 +27,7 @@
 			<email>custserv@usgs.gov</email>
 			<dc:identifier>eros</dc:identifier>
 		</author>
+		<category term="visibility" label="private" />
 		<georss:box>146.06949 -8.28501 148.13161 -6.18308</georss:box>
 		<georss:polygon>-7.92128 146.06949 -6.18308 146.4462 -6.54314 148.13161 -8.28501 147.76145 -7.92128 146.06949</georss:polygon>
 		<dc:date>2014-11-26T00:19:43Z/2014-11-26T00:20:15Z</dc:date>

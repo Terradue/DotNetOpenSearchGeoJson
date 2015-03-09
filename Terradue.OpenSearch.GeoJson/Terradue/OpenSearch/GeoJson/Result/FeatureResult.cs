@@ -121,7 +121,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             feature.contributors = result.Contributors;
             feature.authors = result.Authors;
             feature.Title = result.Title;
-            feature.categories = feature.Categories;
+            feature.categories = result.Categories;
             feature.Copyright = result.Copyright;
             feature.Identifier = result.Identifier;
 
@@ -178,6 +178,16 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                             authord.Add("uri", author.Uri.ToString());
                         properties[prefix + "authors"] = authord;
 
+                    }
+                }
+
+                if (Categories != null && Categories.Count > 0) {
+                    foreach (var cat in Categories) {
+                        var catd = util.SyndicationElementExtensions(cat.ElementExtensions, ref Namespaces);
+                        catd.Add("@term", cat.Name);
+                        catd.Add("@label", cat.Label);
+                        catd.Add("@scheme", cat.Scheme);
+                        properties[prefix + "categories"] = catd;
                     }
                 }
 
