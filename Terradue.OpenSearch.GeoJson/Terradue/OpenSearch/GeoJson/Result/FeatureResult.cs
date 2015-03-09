@@ -121,7 +121,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             feature.contributors = result.Contributors;
             feature.authors = result.Authors;
             feature.Title = result.Title;
-            feature.categories = feature.Categories;
+            feature.categories = result.Categories;
             feature.Copyright = result.Copyright;
             feature.Identifier = result.Identifier;
 
@@ -164,24 +164,36 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     properties[prefix + "content"] = content;
                 }
 
+                ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
+                    KeepNamespaces = ShowNamespaces,
+                    AsMixed = AlwaysAsMixed
+                });
+
                 if (Authors != null && Authors.Count > 0) {
                     foreach (var author in Authors) {
-                        var authord = new Dictionary<string, string>();
+                        var authord = util.SyndicationElementExtensions(author.ElementExtensions, ref Namespaces);
                         authord.Add("email", author.Email);
                         authord.Add("name", author.Name);
-                        authord.Add("uri", author.Uri.ToString());
+                        if ( author.Uri != null )
+                            authord.Add("uri", author.Uri.ToString());
                         properties[prefix + "authors"] = authord;
+
+                    }
+                }
+
+                if (Categories != null && Categories.Count > 0) {
+                    foreach (var cat in Categories) {
+                        var catd = util.SyndicationElementExtensions(cat.ElementExtensions, ref Namespaces);
+                        catd.Add("@term", cat.Name);
+                        catd.Add("@label", cat.Label);
+                        catd.Add("@scheme", cat.Scheme);
+                        properties[prefix + "categories"] = catd;
                     }
                 }
 
                 if (Copyright != null) {
                     properties[prefix + "copyright"] = this.Copyright.Text;
                 }
-
-                ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
-                    KeepNamespaces = ShowNamespaces,
-                    AsMixed = AlwaysAsMixed
-                });
 
                 var exts = util.SyndicationElementExtensions(ElementExtensions, ref Namespaces);
 
@@ -243,7 +255,13 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     DateTime.TryParse((string)properties["published"], out date);
                     continue;
                 }
+
                 if (key == "atom:published" && properties["atom:published"] is string) {
+                    DateTime.TryParse((string)properties["atom:published"], out date);
+                    continue;
+                }
+
+                if (key == "where" && properties["where"] is Dictionary<string, object>) {
                     DateTime.TryParse((string)properties["atom:published"], out date);
                     continue;
                 }

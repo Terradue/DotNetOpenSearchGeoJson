@@ -41,6 +41,8 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             Assert.That(col.Features[0].Geometry != null);
             Assert.That(!string.IsNullOrEmpty(col.Features[0].ToWkt()));
 
+            results = ose.Query(entity, new System.Collections.Specialized.NameValueCollection(), "atom");
+
         }
 
     }

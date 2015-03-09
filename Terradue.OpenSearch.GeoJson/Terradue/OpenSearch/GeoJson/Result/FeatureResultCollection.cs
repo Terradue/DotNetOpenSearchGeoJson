@@ -135,6 +135,29 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     KeepNamespaces = ShowNamespaces,
                     AsMixed = AlwaysAsMixed
                 });
+
+                if (Authors != null && Authors.Count > 0) {
+                    foreach (var author in Authors) {
+                        var authord = util.SyndicationElementExtensions(author.ElementExtensions, ref Namespaces);
+                        authord.Add("email", author.Email);
+                        authord.Add("name", author.Name);
+                        if ( author.Uri != null )
+                            authord.Add("uri", author.Uri.ToString());
+                        properties[prefix + "authors"] = authord;
+
+                    }
+                }
+
+                if (Categories != null && Categories.Count > 0) {
+                    foreach (var cat in Categories) {
+                        var catd = util.SyndicationElementExtensions(cat.ElementExtensions, ref Namespaces);
+                        catd.Add("name", cat.Name);
+                        catd.Add("label", cat.Label);
+                        catd.Add("scheme", cat.Scheme);
+                        properties[prefix + "categories"] = catd;
+                    }
+                }
+
                 properties = properties.Concat(util.SyndicationElementExtensions(ElementExtensions, ref Namespaces)).ToDictionary(x => x.Key, x => x.Value);
 
                 if (ShowNamespaces)
