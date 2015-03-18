@@ -7,6 +7,9 @@ using Terradue.OpenSearch.GeoJson.Result;
 using Terradue.OpenSearch.GeoJson.Extensions;
 using Terradue.OpenSearch.Request;
 using System.IO;
+using Terradue.OpenSearch.Engine;
+using System.Linq;
+using Mono.Addins;
 
 namespace Terradue.OpenSearch.GeoJson.Test {
 
@@ -28,6 +31,18 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             fc = FeatureCollectionOpenSearchEngineExtension.TransformJsonResponseToFeatureCollection(response);
 
             Assert.That(fc.FeatureResults.Count == 50);
+
+            AddinManager.Initialize ();
+            AddinManager.Registry.Update ();
+
+            OpenSearchEngine ose = new OpenSearchEngine();
+            ose.LoadPlugins();
+
+            GenericOpenSearchable entity = new GenericOpenSearchable(new OpenSearchUrl("http://sb-10-16-10-20.dev.terradue.int/sbws/wps/dcs-doris-ifg/0000012-150204105530785-oozie-oozi-W/results/search?format=json&count=3&startPage=&startIndex=1&q=&lang=&id="), ose);
+
+            var results = ose.Query(entity, new System.Collections.Specialized.NameValueCollection());
+
+            Assert.That(results.Result.Items.Count() == 50);
 
         }
     }
