@@ -73,7 +73,8 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         public new static FeatureResult ParseJson(string json) {
             var feature = Terradue.GeoJson.Feature.Feature.ParseJson(json);
-            return new FeatureResult(feature);
+            var fr = new FeatureResult(feature);
+            return fr;
         }
 
         public static FeatureResult FromOpenSearchResultItem(IOpenSearchResultItem result) {
@@ -257,11 +258,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 }
 
                 if (key == "atom:published" && properties["atom:published"] is string) {
-                    DateTime.TryParse((string)properties["atom:published"], out date);
-                    continue;
-                }
-
-                if (key == "where" && properties["where"] is Dictionary<string, object>) {
                     DateTime.TryParse((string)properties["atom:published"], out date);
                     continue;
                 }

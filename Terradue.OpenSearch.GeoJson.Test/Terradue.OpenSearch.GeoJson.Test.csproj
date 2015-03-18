@@ -58,6 +58,7 @@
     <Compile Include="OpenSearchTest.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Test\ToAtomTest.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Test\FromAtomTest.cs" />
+    <Compile Include="Terradue\OpenSearch\GeoJson\Test\DeserializationTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -67,6 +68,7 @@
     <None Include="Samples\wps.atom" />
     <None Include="Samples\search.json" />
     <None Include="Samples\ASA_IM__0.json" />
+    <None Include="Samples\GDALDataResult.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />
