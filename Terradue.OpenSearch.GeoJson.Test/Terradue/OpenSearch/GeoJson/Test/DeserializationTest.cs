@@ -42,7 +42,13 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             var results = ose.Query(entity, new System.Collections.Specialized.NameValueCollection());
 
-            Assert.That(results.Result.Items.Count() == 50);
+            Assert.That(results.Result.Items.Count() == 3);
+
+            entity = new GenericOpenSearchable(new OpenSearchUrl("https://data.terradue.com/gs/catalogue/tepqw/gtfeature/search?format=json&uid=S1A_EW_RAW__0SDH_20150323T073730_20150323T073759_005156_0067FF_2E86"), ose);
+
+            results = ose.Query(entity, new System.Collections.Specialized.NameValueCollection());
+
+            Assert.That(results.Result.Items.Count() == 1);
 
         }
     }
