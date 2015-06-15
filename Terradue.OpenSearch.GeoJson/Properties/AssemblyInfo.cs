@@ -1,6 +1,27 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 
+/*!
+
+\namespace Terradue.OpenSearch.GeoJson
+@{
+    DotNetOpenSearchGeoJson Software Package
+
+    \xrefitem sw_version "Versions" "Software Package Version" 1.2.3
+
+    \xrefitem sw_link "Links" "Software Package List" [DotNetOpenSearchGeoJson](https://github.com/Terradue/DotNetOpenSearchGeoJson)
+
+    \xrefitem sw_license "License" "Software License" [GPLv3](https://github.com/Terradue/DotNetOpenSearchGeoJson/blob/master/LICENSE.txt)
+
+    \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.OpenSearch
+    
+    \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.GeoJson
+
+    \ingroup OpenSearch
+@}
+
+*/
+
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 [assembly: AssemblyTitle("Terradue.OpenSearch.GeoJson")]
