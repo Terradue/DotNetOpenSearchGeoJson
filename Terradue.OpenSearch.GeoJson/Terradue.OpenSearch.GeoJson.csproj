@@ -44,13 +44,13 @@
       <HintPath>..\packages\Terradue.ServiceModel.Syndication.1.0.0.0\lib\net40\Terradue.ServiceModel.Syndication.dll</HintPath>
     </Reference>
     <Reference Include="Terradue.GeoJson">
-      <HintPath>..\packages\Terradue.GeoJson.1.4.13\lib\net40\Terradue.GeoJson.dll</HintPath>
-    </Reference>
-    <Reference Include="Terradue.OpenSearch">
-      <HintPath>..\packages\Terradue.OpenSearch.1.9.5\lib\net40\Terradue.OpenSearch.dll</HintPath>
+      <HintPath>..\packages\Terradue.GeoJson.1.4.15\lib\net40\Terradue.GeoJson.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Addins">
       <HintPath>..\packages\Mono.Addins.1.2\lib\net40\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.OpenSearch">
+      <HintPath>..\packages\Terradue.OpenSearch.1.10.3\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

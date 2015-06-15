@@ -31,9 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="Terradue.ServiceModel.Syndication">
       <HintPath>..\packages\Terradue.ServiceModel.Syndication.1.0.0.0\lib\net40\Terradue.ServiceModel.Syndication.dll</HintPath>
     </Reference>
@@ -46,11 +43,17 @@
     <Reference Include="Mono.Addins">
       <HintPath>..\packages\Mono.Addins.1.2\lib\net40\Mono.Addins.dll</HintPath>
     </Reference>
-    <Reference Include="Terradue.OpenSearch">
-      <HintPath>..\packages\Terradue.OpenSearch.1.9.5\lib\net40\Terradue.OpenSearch.dll</HintPath>
-    </Reference>
     <Reference Include="Terradue.GeoJson">
-      <HintPath>..\packages\Terradue.GeoJson.1.4.13\lib\net40\Terradue.GeoJson.dll</HintPath>
+      <HintPath>..\packages\Terradue.GeoJson.1.4.15\lib\net40\Terradue.GeoJson.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.OpenSearch">
+      <HintPath>..\packages\Terradue.OpenSearch.1.10.3\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
