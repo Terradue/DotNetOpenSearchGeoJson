@@ -300,15 +300,18 @@ namespace Terradue.OpenSearch.GeoJson.Import {
 
             }   
             if (nav.MoveToFirstAttribute()) {
-                if (options.KeepNamespaces && !string.IsNullOrEmpty(nav.Prefix)) {
+                if ((options.KeepNamespaces || textNodeLocalName == "Query") && !string.IsNullOrEmpty(nav.Prefix)) {
                     prefix = nav.Prefix + ":";
                 }
                 properties.Add("@" + prefix + nav.LocalName, nav.Value);
                 while (nav.MoveToNextAttribute()) {
-                    if (options.KeepNamespaces && !string.IsNullOrEmpty(nav.Prefix) ) {
+                    if ((options.KeepNamespaces || textNodeLocalName == "Query") && !string.IsNullOrEmpty(nav.Prefix)  ) {
                         prefix = nav.Prefix + ":";
                     }
-                    properties.Add("@" + prefix + nav.LocalName, nav.Value);
+                    try {
+                        properties.Add("@" + prefix + nav.LocalName, nav.Value);
+                    } catch (ArgumentException){
+                    }
                 }
             }
 
