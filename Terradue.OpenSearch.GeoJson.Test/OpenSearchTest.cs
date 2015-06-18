@@ -19,8 +19,6 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void DiscoverDescription() {
 
-            FileStream stream = new FileStream("../Samples/search.json", FileMode.Open);
-
             AddinManager.Initialize();
             AddinManager.Registry.Update(null);
 
@@ -32,9 +30,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             GenericOpenSearchable entity = new GenericOpenSearchable(new OpenSearchUrl("http://data.terradue.com/gs/catalogue/tepqw/gtfeature/search?format=json&uid=ASA_IMS_1PNUPA20090201_092428_000000162076_00079_36205_2699.N1"), ose);
 
             var results = ose.Query(entity, new System.Collections.Specialized.NameValueCollection(), "json");
-            FeatureCollectionResult col = (FeatureCollectionResult)results.Result;
-
-            var feed = AtomFeed.CreateFromOpenSearchResultCollection(col);
+            FeatureCollectionResult col = (FeatureCollectionResult)results;
 
             var properties = col.FeatureResults.First().Properties;
 
