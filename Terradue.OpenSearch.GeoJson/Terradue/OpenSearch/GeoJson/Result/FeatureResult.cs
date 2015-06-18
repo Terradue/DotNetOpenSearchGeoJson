@@ -275,9 +275,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         [DataMember(Name = "id")]
         public new string Id {
             get {
-                var links = Links.Where(l => l.RelationshipType == "self").ToArray();
-                if (links.Count() > 0)
-                    return links[0].Uri.ToString();
                 return base.Id;
             }
             set {

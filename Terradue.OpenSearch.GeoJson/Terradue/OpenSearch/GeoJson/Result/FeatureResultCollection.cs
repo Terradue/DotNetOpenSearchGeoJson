@@ -18,6 +18,7 @@ using System.Xml;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.IO;
+using System.Xml.Linq;
 
 namespace Terradue.OpenSearch.GeoJson.Result {
 
@@ -237,13 +238,14 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         #region IResultCollection implementation
 
+        string id;
         public new string Id {
             get {
-                var links = Links.Where(l => l.RelationshipType == "self").ToArray();
-                if (links.Count() > 0) return links[0].Uri.ToString();
-                return null;
+                return id;
             }
-            set{ }
+            set{
+                id = value;
+            }
         }
 
         public List<string> GetSelfShortList() {
@@ -305,25 +307,27 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        string identifier;
         [IgnoreDataMember]
         public string Identifier {
             get {
-                return identifier;
+                var identifier = ElementExtensions.ReadElementExtensions<string>("identifier", "http://purl.org/dc/elements/1.1/");
+                return identifier.Count == 0 ? this.Id : identifier[0];
             }
             set {
-                identifier = value;
+                foreach (var ext in this.ElementExtensions.ToArray()) {
+                    if (ext.OuterName == "identifier" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/") {
+                        this.ElementExtensions.Remove(ext);
+                        continue;
+                    }
+                }
+                this.ElementExtensions.Add(new XElement(XName.Get("identifier", "http://purl.org/dc/elements/1.1/"), value).CreateReader());
             }
         }
 
-        long count;
         [IgnoreDataMember]
         public long Count {
             get {
-                return count;
-            }
-            set {
-                count = value;
+                return Items.Count();
             }
         }
 
@@ -366,7 +370,17 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         public long TotalResults {
             get {
-                return Items.Count();
+                var totalResults = ElementExtensions.ReadElementExtensions<string>("totalResults", "http://a9.com/-/spec/opensearch/1.1/");
+                return totalResults.Count == 0 ? 0 : long.Parse(totalResults[0]);
+            }
+            set {
+                foreach (var ext in this.ElementExtensions.ToArray()) {
+                    if (ext.OuterName == "totalResults" && ext.OuterNamespace == "http://a9.com/-/spec/opensearch/1.1//") {
+                        this.ElementExtensions.Remove(ext);
+                        continue;
+                    }
+                }
+                this.ElementExtensions.Add(new XElement(XName.Get("totalResults", "http://a9.com/-/spec/opensearch/1.1/"), value).CreateReader());
             }
         }
 
@@ -434,6 +448,42 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         public Collection<SyndicationPerson> Authors {
             get {
                 return authors;
+            }
+        }
+
+        IOpenSearchable openSearchable;
+        public IOpenSearchable OpenSearchable {
+            get {
+                return openSearchable;
+            }
+            set {
+                openSearchable = value;
+            }
+        }
+
+        NameValueCollection parameters;
+        public NameValueCollection Parameters {
+            get {
+                return parameters;
+            }
+            set {
+                parameters = value;
+            }
+        }
+
+        public TimeSpan Duration {
+            get {
+                var duration = ElementExtensions.ReadElementExtensions<double>("queryTime", "http://purl.org/dc/elements/1.1/");
+                return duration.Count == 0 ? new TimeSpan() : TimeSpan.FromMilliseconds(duration[0]);
+            }
+            set {
+                foreach (var ext in this.ElementExtensions.ToArray()) {
+                    if (ext.OuterName == "queryTime" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/") {
+                        this.ElementExtensions.Remove(ext);
+                        continue;
+                    }
+                }
+                this.ElementExtensions.Add(new XElement(XName.Get("queryTime", "http://purl.org/dc/elements/1.1/"), value.TotalMilliseconds).CreateReader());
             }
         }
 
