@@ -66,15 +66,16 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
             fc.ElementExtensions = new SyndicationElementExtensionCollection(results.ElementExtensions);
            
-            if (results.Date != null && fc.Properties.ContainsKey(prefix + "updated") == null)
-                fc.Properties.Add(prefix + "updated", results.Date.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"));
-
             if (results.Links != null && results.Links.Count > 0) {
                 fc.Links = results.Links;
             }
 
             fc.authors = results.Authors;
             fc.categories = results.Categories;
+            fc.Date = results.Date;
+            fc.Title = results.Title;
+            fc.TotalResults = results.TotalResults;
+            fc.OpenSearchable = results.OpenSearchable;
 
             if (results.Items != null) {
                 foreach (var item in results.Items) {
