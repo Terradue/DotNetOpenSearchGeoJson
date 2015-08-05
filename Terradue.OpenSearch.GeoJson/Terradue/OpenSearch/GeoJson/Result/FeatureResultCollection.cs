@@ -66,15 +66,16 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
             fc.ElementExtensions = new SyndicationElementExtensionCollection(results.ElementExtensions);
            
-            if (results.Date != null && fc.Properties.ContainsKey(prefix + "updated") == null)
-                fc.Properties.Add(prefix + "updated", results.Date.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"));
-
             if (results.Links != null && results.Links.Count > 0) {
                 fc.Links = results.Links;
             }
 
             fc.authors = results.Authors;
             fc.categories = results.Categories;
+            fc.Date = results.Date;
+            fc.Title = results.Title;
+            fc.TotalResults = results.TotalResults;
+            fc.OpenSearchable = results.OpenSearchable;
 
             if (results.Items != null) {
                 foreach (var item in results.Items) {
@@ -471,7 +472,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        public TimeSpan Duration {
+        public TimeSpan QueryTimeSpan {
             get {
                 var duration = ElementExtensions.ReadElementExtensions<double>("queryTime", "http://purl.org/dc/elements/1.1/");
                 return duration.Count == 0 ? new TimeSpan() : TimeSpan.FromMilliseconds(duration[0]);
@@ -485,6 +486,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 }
                 this.ElementExtensions.Add(new XElement(XName.Get("queryTime", "http://purl.org/dc/elements/1.1/"), value.TotalMilliseconds).CreateReader());
             }
+        }
+
+        public object Clone() {
+            return new FeatureCollectionResult(this);
         }
 
         #endregion
