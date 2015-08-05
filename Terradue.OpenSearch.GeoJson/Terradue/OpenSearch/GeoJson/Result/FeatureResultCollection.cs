@@ -472,7 +472,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        public TimeSpan Duration {
+        public TimeSpan QueryTimeSpan {
             get {
                 var duration = ElementExtensions.ReadElementExtensions<double>("queryTime", "http://purl.org/dc/elements/1.1/");
                 return duration.Count == 0 ? new TimeSpan() : TimeSpan.FromMilliseconds(duration[0]);
@@ -486,6 +486,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 }
                 this.ElementExtensions.Add(new XElement(XName.Get("queryTime", "http://purl.org/dc/elements/1.1/"), value.TotalMilliseconds).CreateReader());
             }
+        }
+
+        public object Clone() {
+            return new FeatureCollectionResult(this);
         }
 
         #endregion
