@@ -10,7 +10,6 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Terradue.OpenSearch.Result;
-using ServiceStack.Text;
 using System.Runtime.Serialization;
 using Terradue.ServiceModel.Syndication;
 using Terradue.OpenSearch.GeoJson.Import;
@@ -52,7 +51,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             links = new Collection<SyndicationLink>(result.Links);
             elementExtensions = new SyndicationElementExtensionCollection(result.elementExtensions);
             this.Title = result.Title;
-            this.Date = result.Date;
+            this.LastUpdatedTime = result.LastUpdatedTime;
             base.Id = result.Id;
             this.authors = result.Authors;
             this.categories = result.Categories;
@@ -69,12 +68,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 namespaces.Set("atom", "http://www.w3.org/2005/Atom");
                 return namespaces;
             }
-        }
-
-        public new static FeatureResult ParseJson(string json) {
-            var feature = Terradue.GeoJson.Feature.Feature.ParseJson(json);
-            var fr = new FeatureResult(feature);
-            return fr;
         }
 
         public static FeatureResult FromOpenSearchResultItem(IOpenSearchResultItem result) {
@@ -116,7 +109,8 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             string prefix = "";
 
             feature.Id = result.Id;
-            feature.Date = result.Date;
+            feature.LastUpdatedTime = result.LastUpdatedTime;
+            feature.PublishDate = result.PublishDate;
             feature.Summary = result.Summary;
             feature.Content = result.Content;
             feature.contributors = result.Contributors;
@@ -148,7 +142,8 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 if (Links != null && Links.Count > 0) {
                     properties[prefix + "links"] = FeatureCollectionResult.LinksToProperties(Links, ShowNamespaces);
                 }
-                properties[prefix + "published"] = this.Date.ToString("yyyy-MM-ddTHH:mm:ssZ");
+                properties[prefix + "updated"] = this.LastUpdatedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ");
+                properties[prefix + "published"] = this.PublishDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ");
                 if (Title != null)
                     properties[prefix + "title"] = this.Title.Text;
                 if (Summary != null)
@@ -253,12 +248,22 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                     continue;
                 }
                 if (key == "published" && properties["published"] is string) {
-                    DateTime.TryParse((string)properties["published"], out date);
+                    DateTime.TryParse((string)properties["published"], out publishDate);
                     continue;
                 }
 
                 if (key == "atom:published" && properties["atom:published"] is string) {
-                    DateTime.TryParse((string)properties["atom:published"], out date);
+                    DateTime.TryParse((string)properties["atom:published"], out publishDate);
+                    continue;
+                }
+
+                if (key == "updated" && properties["updated"] is string) {
+                    DateTime.TryParse((string)properties["updated"], out lastUpdatedTime);
+                    continue;
+                }
+
+                if (key == "atom:updated" && properties["atom:updated"] is string) {
+                    DateTime.TryParse((string)properties["atom:updated"], out lastUpdatedTime);
                     continue;
                 }
 
@@ -294,15 +299,27 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        DateTime date;
+        DateTime lastUpdatedTime;
 
         [IgnoreDataMember]
-        public DateTime Date {
+        public DateTime LastUpdatedTime {
             get {
-                return date;
+                return lastUpdatedTime;
             }
             set {
-                date = value;
+                lastUpdatedTime = value;
+            }
+        }
+
+        DateTime publishDate;
+
+        [IgnoreDataMember]
+        public DateTime PublishDate {
+            get {
+                return publishDate;
+            }
+            set {
+                publishDate = value;
             }
         }
 

@@ -11,6 +11,8 @@
     <UseMSBuildEngine>False</UseMSBuildEngine>
     <ReleaseVersion>1.0</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -32,9 +34,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\packages\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
-    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -43,6 +42,18 @@
     </Reference>
     <Reference Include="Mono.Addins">
       <HintPath>..\packages\Mono.Addins.1.2\lib\net40\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.GeoJson">
+      <HintPath>..\packages\Terradue.GeoJson.1.5.0\lib\net40\Terradue.GeoJson.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.OpenSearch">
+      <HintPath>..\packages\Terradue.OpenSearch.1.11.1\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -60,13 +71,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DotNetOpenSearch\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
-      <Project>{997A44FD-EE4A-490A-855B-88305E0CD269}</Project>
-      <Name>Terradue.OpenSearch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DotNetGeoJson\Terradue.GeoJson\Terradue.GeoJson.csproj">
-      <Project>{26AD29FF-862F-46D9-9F25-473E2977A7C3}</Project>
-      <Name>Terradue.GeoJson</Name>
-    </ProjectReference>
+    <Folder Include="Terradue\OpenSearch\GeoJson\Converter\" />
   </ItemGroup>
 </Project>

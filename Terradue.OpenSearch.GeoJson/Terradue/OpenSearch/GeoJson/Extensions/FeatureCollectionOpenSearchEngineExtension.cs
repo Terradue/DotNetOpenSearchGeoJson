@@ -22,7 +22,6 @@ using Terradue.OpenSearch.Response;
 using Terradue.OpenSearch.Schema;
 using Terradue.OpenSearch.Engine;
 using Terradue.OpenSearch.Result;
-using ServiceStack.Text;
 using System.IO;
 using System.Text;
 
@@ -88,11 +87,9 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
             if (response.ObjectType == typeof(byte[])) {
                 if (response.ContentType == "application/json") {
 
-                    JsConfig.ConvertObjectTypesIntoStringDictionary = true;
-
                     FeatureCollectionResult col = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(new MemoryStream((byte[])response.GetResponseObject()));
                     col.OpenSearchable = response.Entity;
-                    col.Duration = response.RequestTime;
+                    col.QueryTimeSpan = response.RequestTime;
 
                     var link = col.Links.FirstOrDefault(l => l.RelationshipType == "search");
                     if (link != null)
