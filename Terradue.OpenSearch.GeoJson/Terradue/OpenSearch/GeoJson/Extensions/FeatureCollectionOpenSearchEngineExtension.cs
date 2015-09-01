@@ -40,17 +40,6 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
         public FeatureCollectionOpenSearchEngineExtension() {
         }
 
-        static bool qualified;
-
-        public static bool Qualified {
-            get {
-                return qualified;
-            }
-            set {
-                qualified = value;
-            }
-        }
-
         #region OpenSearchEngineExtension implementation
 
         public override string Identifier {

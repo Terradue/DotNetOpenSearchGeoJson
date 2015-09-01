@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 @{
     DotNetOpenSearchGeoJson Software Package
 
-    \xrefitem sw_version "Versions" "Software Package Version" 1.2.6
+    \xrefitem sw_version "Versions" "Software Package Version" 1.2§2.6
 
     \xrefitem sw_link "Links" "Software Package List" [DotNetOpenSearchGeoJson](https://github.com/Terradue/DotNetOpenSearchGeoJson)
 

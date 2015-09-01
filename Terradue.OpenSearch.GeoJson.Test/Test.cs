@@ -5,7 +5,6 @@ using System.Xml;
 using System.IO;
 using Terradue.OpenSearch.Result;
 using Terradue.OpenSearch.GeoJson.Result;
-using ServiceStack.Text;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -19,12 +19,12 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Xml.Linq;
 using Newtonsoft.Json;
+using Terradue.OpenSearch.GeoJson.Converter;
+using Newtonsoft.Json.Linq;
 
 namespace Terradue.OpenSearch.GeoJson.Result {
 
     public class FeatureCollectionResult : Terradue.GeoJson.Feature.FeatureCollection, IOpenSearchResultCollection {
-
-        protected NameValueCollection Namespaces;
 
         public FeatureCollectionResult(Terradue.GeoJson.Feature.FeatureCollection fc) : base() {
             base.BoundingBoxes = fc.BoundingBoxes;
@@ -35,8 +35,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 FeatureResults.Add(new FeatureResult(f));
                 return false;
             });
-            ImportSyndicationElements(fc.Properties);
-            InitNameSpaces();
             elementExtensions = new SyndicationElementExtensionCollection();
             authors = new Collection<SyndicationPerson>();
             categories = new Collection<SyndicationCategory>();
@@ -46,7 +44,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         public FeatureCollectionResult() : base() {
             Links = new Collection<SyndicationLink>();
             FeatureResults = new List<FeatureResult>();
-            InitNameSpaces();
             elementExtensions = new SyndicationElementExtensionCollection();
             authors = new Collection<SyndicationPerson>();
             categories = new Collection<SyndicationCategory>();
@@ -59,10 +56,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 throw new ArgumentNullException("results");
 
             FeatureCollectionResult fc = new FeatureCollectionResult();
-
-            NameValueCollection namespaces = null;
-            XmlNamespaceManager xnsm = null;
-            string prefix = "";
 
             fc.ElementExtensions = new SyndicationElementExtensionCollection(results.ElementExtensions);
            
@@ -86,13 +79,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             return fc;
         }
 
-        void InitNameSpaces() {
-            Namespaces = new NameValueCollection();
-            Namespaces.Set("", "hresultsttp://geojson.org/ns#");
-            Namespaces.Set("atom", "http://www.w3.org/2005/Atom");
-            Namespaces.Set("os", "http://a9.com/-/spec/opensearch/1.1/");
-        }
-
         [JsonIgnore]
         public new List<Terradue.GeoJson.Feature.Feature> Features { 
             get{
@@ -100,140 +86,19 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             } 
         }
 
-        [DataMember(Name="features")]
+        [JsonProperty(PropertyName="features")]
+        [JsonConverter(typeof(FeatureResultJsonConverter))]
         public List<FeatureResult> FeatureResults { get; set; }
 
-        [DataMember(Name="properties")]
+        [JsonProperty(PropertyName = "properties")]
         public new Dictionary <string,object> Properties {
             get {
-                Dictionary <string,object> properties = base.Properties != null ? base.Properties : new Dictionary <string,object>();
-                if (properties.ContainsKey("links")) {
-                    properties.Remove("links");
-                }
-                string prefix = "";
-                if (ShowNamespaces) prefix = "atom:";
-                if (Links != null && Links.Count > 0) {
-                    List<Dictionary<string,object>> links = new List<Dictionary<string,object>>();
-                    foreach (SyndicationLink link in Links) {
-                        Dictionary<string,object> newlink = new Dictionary<string,object>();
-                        newlink.Add("@" + prefix + "href", link.Uri.ToString());
-                        if (link.RelationshipType != null) newlink.Add("@" + prefix + "rel", link.RelationshipType);
-                        if (link.Title != null) newlink.Add("@" + prefix + "title", link.Title);
-                        if (link.MediaType != null) newlink.Add("@" + prefix + "type", link.MediaType);
-                        if (link.Length != 0) newlink.Add("@" + prefix + "length", link.Length);
-
-                        links.Add(newlink);
-                    }
-                    properties["links"] = links.ToArray();
-                }
-
-                if (Links != null && Links.Count > 0) {
-                    properties[prefix + "links"] = LinksToProperties(Links, ShowNamespaces);
-                }
-                properties[prefix + "updated"] = this.LastUpdatedTime.ToString("yyyy-MM-ddTHH:mm:ssZ");
-                properties[prefix + "title"] = this.Title;
-
-                ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
-                    KeepNamespaces = ShowNamespaces,
-                    AsMixed = AlwaysAsMixed
-                });
-
-                if (Authors != null && Authors.Count > 0) {
-                    foreach (var author in Authors) {
-                        var authord = util.SyndicationElementExtensions(author.ElementExtensions, ref Namespaces);
-                        authord.Add("email", author.Email);
-                        authord.Add("name", author.Name);
-                        if ( author.Uri != null )
-                            authord.Add("uri", author.Uri.ToString());
-                        properties[prefix + "authors"] = authord;
-
-                    }
-                }
-
-                if (Categories != null && Categories.Count > 0) {
-                    foreach (var cat in Categories) {
-                        var catd = util.SyndicationElementExtensions(cat.ElementExtensions, ref Namespaces);
-                        catd.Add("name", cat.Name);
-                        catd.Add("label", cat.Label);
-                        catd.Add("scheme", cat.Scheme);
-                        properties[prefix + "categories"] = catd;
-                    }
-                }
-
-                properties = properties.Concat(util.SyndicationElementExtensions(ElementExtensions, ref Namespaces)).ToDictionary(x => x.Key, x => x.Value);
-
-                if (ShowNamespaces)
-                    prefix = "dc:";
-                if (!properties.ContainsKey(prefix + "identifier") && !string.IsNullOrEmpty(this.Identifier)) {
-                    properties[prefix + "identifier"] = this.Identifier;
-                }
-
-                if (ShowNamespaces)
-                    properties.Add("@namespaces", Namespaces.AllKeys
-                        .ToDictionary(p => p, p => Namespaces[p]));
-
-                return properties;
+                return GenericFunctions.ExportProperties(this);
             }
 
             set {
-                if (value != null)
-                    ImportSyndicationElements(value);
-                base.Properties = null;
-            }
-        }
-
-        void ImportSyndicationElements(Dictionary <string,object> properties) {
-
-            ImportUtils util = new ImportUtils(new Terradue.OpenSearch.GeoJson.Import.ImportOptions() {
-                KeepNamespaces = ShowNamespaces,
-                AsMixed = AlwaysAsMixed
-            });
-
-            Dictionary <string,object> forExtensions = new Dictionary<string, object>();
-
-            foreach (var key in properties.Keys) {
-
-                if (key == "atom:title") {
-                    if (properties["atom:title"] is string)
-                        title = new TextSyndicationContent((string)properties["atom:title"]);
-                }
-
-                if (key == "title") {
-                    if (properties["title"] is string)
-                        title = new TextSyndicationContent((string)properties["title"]);
-                    continue;
-                }
-
-                if (key == "links" && properties["links"] is List<object>) {
-                    foreach (object link in (List<object>)properties["links"]) {
-                        if (link is Dictionary<string, object>) {
-                            Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link));
-                        }
-                    }
-                    continue;
-                }
-                if (key == "atom:links" && properties["atom:links"] is List<object>) {
-                    foreach (object link in (List<object>)properties["atom:links"]) {
-                        if (link is Dictionary<string, object>) {
-                            Links.Add(ImportUtils.FromDictionnary((Dictionary<string, object>)link, "atom:"));
-                        }
-                    }
-                    continue;
-                }
-                if (key == "published" && properties["published"] is string) {
-                    DateTime.TryParse((string)properties["published"], out date);
-                    continue;
-                }
-                if (key == "atom:published" && properties["atom:published"] is string) {
-                    DateTime.TryParse((string)properties["atom:published"], out date);
-                    continue;
-                }
-
-                forExtensions.Add(key, properties[key]);
-            }
-
-            foreach (SyndicationElementExtension e in util.PropertiesToSyndicationElementExtensions(forExtensions)) {
-                ElementExtensions.Add(e);
+                var json = JsonConvert.SerializeObject(value);
+                GenericFunctions.ImportProperties(JToken.Parse(json), this);
             }
         }
 
@@ -247,10 +112,6 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             set{
                 id = value;
             }
-        }
-
-        public List<string> GetSelfShortList() {
-            return base.Features.Select(f => f.Id).ToList();
         }
 
         [JsonIgnore]
@@ -393,8 +254,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         public void SerializeToStream(System.IO.Stream stream) {
             JsonSerializer serializer = new JsonSerializer(){NullValueHandling = NullValueHandling.Ignore};
+            serializer.Converters.Add(new FeatureCollectionResultJsonConverter());
             StreamWriter sw = new StreamWriter(stream);
             serializer.Serialize(new JsonTextWriter(sw), this);
+            sw.Flush();
         }
 
         public string SerializeToString() {
@@ -408,37 +271,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         public static IOpenSearchResultCollection DeserializeFromStream(Stream stream) {
             StreamReader sr = new StreamReader(stream);
             JsonSerializer serializer = new JsonSerializer(){NullValueHandling = NullValueHandling.Ignore};
+            serializer.Converters.Add(new FeatureCollectionResultJsonConverter());
             FeatureCollectionResult fc = serializer.Deserialize<FeatureCollectionResult>(new JsonTextReader(sr));
             return fc;
-        }
-
-        bool alwaysAsMixed = false;
-
-        bool showNamespaces;
-        [JsonIgnore]
-        public bool ShowNamespaces {
-            get {
-                return showNamespaces;
-            }
-            set {
-                showNamespaces = value;
-                foreach (FeatureResult item in Items) {
-                    item.ShowNamespaces = value;
-                }
-            }
-        }
-
-        [JsonIgnore]
-        public bool AlwaysAsMixed {
-            get {
-                return alwaysAsMixed;
-            }
-            set {
-                alwaysAsMixed = value;
-                foreach (FeatureResult item in Items) {
-                    item.AlwaysAsMixed = value;
-                }
-            }
         }
 
         [JsonIgnore]
@@ -509,29 +344,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         #endregion
 
-        public static List<Dictionary<string,object>> LinksToProperties(Collection<Terradue.ServiceModel.Syndication.SyndicationLink> ilinks, bool showNamespaces) {
-            string prefix = "";
-            if (showNamespaces)
-                prefix = "atom:";
 
-            List<Dictionary<string,object>> links = new List<Dictionary<string,object>>();
-            foreach (SyndicationLink link in ilinks) {
-                Dictionary<string,object> newlink = new Dictionary<string,object>();
-                newlink.Add("@" + prefix + "href", link.Uri.ToString());
-                if (link.RelationshipType != null)
-                    newlink.Add("@" + prefix + "rel", link.RelationshipType);
-                if (link.Title != null)
-                    newlink.Add("@" + prefix + "title", link.Title);
-                if (link.MediaType != null)
-                    newlink.Add("@" + prefix + "type", link.MediaType);
-                if (link.Length != 0)
-                    newlink.Add("@" + prefix + "length", link.Length);
-
-                links.Add(newlink);
-            }
-
-            return links;
-        }
     }
 
 }

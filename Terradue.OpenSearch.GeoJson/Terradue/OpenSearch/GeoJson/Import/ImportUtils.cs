@@ -14,6 +14,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using Newtonsoft.Json.Linq;
 
 namespace Terradue.OpenSearch.GeoJson.Import {
     public class ImportUtils {
@@ -414,6 +415,30 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                     long.TryParse((string)r, out length);
                 else
                     length = (long)r;
+                SyndicationLink slink = new SyndicationLink(href, rel, title, type, length);
+                return slink;
+            }
+            throw new ArgumentException("Not a link");
+        }
+
+        public static SyndicationLink FromJTokenList(JToken link, string prefix = "") {
+            if (link.SelectToken("@" + prefix + "href") != null) {
+                long length = 0;
+                string rel = null;
+                string title = null;
+                string type = null;
+                Uri href = new Uri((string)link.SelectToken("@" + prefix + "href").ToString());
+                object r = null;
+                if (link.SelectToken("@" + prefix + "rel") != null )
+                    rel = link.SelectToken("@" + prefix + "rel").ToString();
+                if (link.SelectToken("@" + prefix + "title") != null)
+                    title = link.SelectToken("@" + prefix + "title").ToString();
+                if (link.SelectToken("@" + prefix + "type") != null)
+                    type = link.SelectToken("@" + prefix + "type").ToString();
+                if (link.SelectToken("@" + prefix + "size") != null)
+                    long.TryParse(link.SelectToken("@" + prefix + "size").ToString(), out length);
+                else
+                    length = 0;
                 SyndicationLink slink = new SyndicationLink(href, rel, title, type, length);
                 return slink;
             }
