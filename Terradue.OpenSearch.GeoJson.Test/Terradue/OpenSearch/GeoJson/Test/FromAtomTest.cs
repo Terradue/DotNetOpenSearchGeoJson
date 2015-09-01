@@ -4,8 +4,8 @@ using Terradue.ServiceModel.Syndication;
 using System.Xml;
 using Terradue.OpenSearch.Result;
 using Terradue.OpenSearch.GeoJson.Result;
-using ServiceStack.Text;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace Terradue.OpenSearch.GeoJson.Test {
 
@@ -23,12 +23,14 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             Assert.That(col.Features[0].Geometry != null);
            
-            JsonObject json = JsonSerializer.DeserializeFromString<JsonObject>(col.SerializeToString());
+            var jsont = col.SerializeToString();
 
-            Assert.AreEqual("ceos", json.Object("properties").ArrayObjects("authors").First().Child("identifier"));
-            Assert.AreEqual("eros", json.ArrayObjects("features").First().Object("properties").ArrayObjects("authors").First().Child("identifier"));
+            JToken json = JToken.Parse(jsont);
 
-            Assert.AreEqual("private", json.ArrayObjects("features").First().Object("properties").ArrayObjects("categories").First().Child("@label"));
+            Assert.AreEqual("ceos", json.SelectToken("properties").SelectToken("authors").First().SelectToken("identifier").ToString());
+            Assert.AreEqual("eros", json.SelectToken("features").First().SelectToken("properties").SelectToken("authors").First().SelectToken("identifier").ToString());
+
+            Assert.AreEqual("private", json.SelectToken("features").First().SelectToken("properties").SelectToken("categories").First().SelectToken("@label").ToString());
 
         }
 

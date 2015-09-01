@@ -11,6 +11,8 @@
     <UseMSBuildEngine>False</UseMSBuildEngine>
     <ReleaseVersion>1.0</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -32,9 +34,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\packages\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
-    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -44,14 +43,20 @@
     <Reference Include="Mono.Addins">
       <HintPath>..\packages\Mono.Addins.1.2\lib\net40\Mono.Addins.dll</HintPath>
     </Reference>
-    <Reference Include="Terradue.GeoJson">
-      <HintPath>..\packages\Terradue.GeoJson.1.4.15\lib\net40\Terradue.GeoJson.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.GeoJson">
+      <HintPath>..\packages\Terradue.GeoJson.1.5.1\lib\net40\Terradue.GeoJson.dll</HintPath>
+    </Reference>
     <Reference Include="Terradue.OpenSearch">
-      <HintPath>..\packages\Terradue.OpenSearch.1.11\lib\net40\Terradue.OpenSearch.dll</HintPath>
+      <HintPath>..\packages\Terradue.OpenSearch.1.11.1\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -60,12 +65,18 @@
     <Compile Include="Terradue\OpenSearch\GeoJson\Extensions\FeatureCollectionOpenSearchEngineExtension.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Import\ImportOptions.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Import\ImportUtils.cs" />
-    <Compile Include="Terradue\OpenSearch\GeoJson\Result\FeatureResultCollection.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Result\FeatureResult.cs" />
+    <Compile Include="Terradue\OpenSearch\GeoJson\Converter\FeatureResultJsonConverter.cs" />
+    <Compile Include="Terradue\OpenSearch\GeoJson\Converter\GenericFunctions.cs" />
+    <Compile Include="Terradue\OpenSearch\GeoJson\Result\FeatureCollectionResult.cs" />
+    <Compile Include="Terradue\OpenSearch\GeoJson\Converter\FeatureCollectionResultJsonConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Terradue\OpenSearch\GeoJson\Import\SyndicationFeedImporter.cs" />
     <None Include="Terradue.OpenSearch.GeoJson.csproj" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Terradue\OpenSearch\GeoJson\Converter\" />
   </ItemGroup>
 </Project>
