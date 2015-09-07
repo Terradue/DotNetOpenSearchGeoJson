@@ -72,6 +72,7 @@
     <None Include="Samples\search.json" />
     <None Include="Samples\ASA_IM__0.json" />
     <None Include="Samples\GDALDataResult.json" />
+    <None Include="Samples\test1.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />

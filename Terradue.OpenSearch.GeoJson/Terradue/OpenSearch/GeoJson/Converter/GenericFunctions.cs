@@ -10,6 +10,8 @@ using Terradue.OpenSearch.GeoJson.Result;
 using System.IO;
 using System.Xml;
 using Terradue.OpenSearch.GeoJson.Import;
+using System.Xml.XPath;
+using System.Collections.Specialized;
 
 namespace Terradue.OpenSearch.GeoJson.Converter {
     public class GenericFunctions {
@@ -194,14 +196,26 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
         }
 
         public static Dictionary<string, object> ExportSyndicationElementExtensions(SyndicationElementExtensionCollection exts) {
-            
-            var xml = XElement.Load(exts.GetReaderAtExtensionWrapper());
 
-            xml = RemoveAllNamespaces(xml);
+            Dictionary<string, object> dic = new Dictionary<string, object>();
 
-            string json = JsonConvert.SerializeXNode(xml, Newtonsoft.Json.Formatting.None, true);
+            foreach (var ext in exts) {
 
-            var dic = (Dictionary<string, object>)Deserialize(json);
+                if (ext.OuterName == "Query" && ext.OuterNamespace == "http://a9.com/-/spec/opensearch/1.1/") {
+                    var query = SyndicationElementExtensionsToDictionary(ext);
+                    dic.Add("Query", query.First().Value);
+                    continue;
+                }
+
+                var xml = XElement.Load(ext.GetReader());
+
+                xml = RemoveAllNamespaces(xml);
+
+                string json = JsonConvert.SerializeXNode(xml, Newtonsoft.Json.Formatting.None, true);
+
+                if (!dic.ContainsKey(ext.OuterName))
+                    dic.Add(ext.OuterName, Deserialize(json));
+            }
 
             return dic;
         }
@@ -277,9 +291,18 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                     continue;
                 }
 
-                var xmlReader = JsonConvert.DeserializeXNode("{" + child.ToString() + "}").CreateReader();
-
-                feature.ElementExtensions.Add(new SyndicationElementExtension(xmlReader));
+                try {
+                    if (child.Value.Type == JTokenType.Array) {
+                        foreach (var child1 in child.Value) {
+                            var xmlReader = JsonConvert.DeserializeXNode("{" + child.Name + ":" + child1.ToString() + "}").CreateReader();
+                            feature.ElementExtensions.Add(new SyndicationElementExtension(xmlReader));
+                        }
+                    } else {
+                        var xmlReader = JsonConvert.DeserializeXNode("{" + child.ToString() + "}").CreateReader();
+                        feature.ElementExtensions.Add(new SyndicationElementExtension(xmlReader));
+                    }
+                } catch (Exception) {
+                }
             }
         }
 
@@ -325,9 +348,20 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                     continue;
                 }
 
-                var xmlReader = JsonConvert.DeserializeXNode("{" + child.ToString() + "}").CreateReader();
+                try {
+                    if (child.Value.Type == JTokenType.Array) {
+                        foreach (var child1 in child.Value) {
+                            var xmlReader = JsonConvert.DeserializeXNode("{" + child.Name + ":" + child1.ToString() + "}").CreateReader();
+                            fc.ElementExtensions.Add(new SyndicationElementExtension(xmlReader));
+                        }
+                    } else {
+                        var xmlReader = JsonConvert.DeserializeXNode("{" + child.ToString() + "}").CreateReader();
+                        fc.ElementExtensions.Add(new SyndicationElementExtension(xmlReader));
+                    }
+                } catch (Exception) {
+                }
 
-                fc.ElementExtensions.Add(new SyndicationElementExtension(xmlReader));
+
             }
         }
 
@@ -383,16 +417,148 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
             throw new ArgumentException("Not a link");
         }
 
-        public static XElement RemoveAllNamespaces(XElement e)
-        {
+        public static XElement RemoveAllNamespaces(XElement e) {
             return new XElement(e.Name.LocalName,
-                        (from n in e.Nodes()
-            select ((n is XElement) ? RemoveAllNamespaces(n as XElement) : n)),
-                        (e.HasAttributes) ? 
-                        (from a in e.Attributes() 
-             where (!a.IsNamespaceDeclaration)  
-             select new XAttribute(a.Name.LocalName, a.Value)) : null);
-        }   
+                                (from n in e.Nodes()
+                                  select ((n is XElement) ? RemoveAllNamespaces(n as XElement) : n)),
+                                (e.HasAttributes) ? 
+                        (from a in e.Attributes()
+                                  where (!a.IsNamespaceDeclaration)
+                                  select new XAttribute(a.Name.LocalName, a.Value)) : null);
+        }
+
+        public static Dictionary<string, object> SyndicationElementExtensionsToDictionary(SyndicationElementExtension element) {
+            string prefix = "";
+            Dictionary<string,object> properties = new Dictionary<string, object>();
+
+            XPathDocument x = new XPathDocument(element.GetReader());
+            XPathNavigator nav = x.CreateNavigator();
+
+            nav.MoveToRoot();
+            var childnodes = nav.SelectChildren(XPathNodeType.Element);
+            XPathNavigator prev = null;
+            while (childnodes.MoveNext()) {
+                var childnode = childnodes.Current;
+                XmlNamespaceManager xnsm = new XmlNamespaceManager(childnode.NameTable);
+                prefix = childnode.Prefix + ":";
+                try {
+                    properties.Add(prefix + childnode.LocalName, ImportNode(childnode.Clone()));
+                } catch (ArgumentException) {
+                    if (properties.ContainsKey(prefix + childnode.LocalName) && properties[prefix + childnode.LocalName] is object[]) {
+                        object[] array = (object[])properties[prefix + childnode.LocalName];
+                        List<object> list = array.ToList();
+                        list.Add(ImportNode(childnode.Clone()));
+                        properties[prefix + childnode.LocalName] = list.ToArray();
+                    } else {
+                        List<object> list = new List<object>();
+                        list.Add(ImportNode(childnode.Clone()));
+                        properties[prefix + childnode.LocalName] = list.ToArray();
+                    }
+                }
+                prev = childnode.Clone();
+            }
+
+            return properties;
+
+        }
+
+        public static object ImportNode(XPathNavigator nav) {
+            string prefix = "";
+            string text = null;
+
+            var childnodes = nav.SelectChildren(XPathNodeType.All);
+            string textNodeLocalName = nav.LocalName;
+
+            Dictionary<string, object> properties = new Dictionary<string, object>();
+            while (childnodes.MoveNext()) {
+
+                textNodeLocalName = nav.LocalName;
+
+                var childnode = childnodes.Current;
+
+                if (childnode.Prefix == "xmlns")
+                    continue;
+
+                if (!string.IsNullOrEmpty(childnode.Prefix)) {
+                    prefix = childnode.Prefix + ":";
+                }
+
+                if (childnode.NodeType == XPathNodeType.Attribute) {
+                    properties.Add("@" + prefix + childnode.LocalName, childnode.Value);
+                    continue;
+                }
+                if (childnode.NodeType == XPathNodeType.Text) {
+                    text = childnode.Value;
+
+                    continue;
+                }
+                if (childnode.NodeType == XPathNodeType.Element) {
+                    try {
+                        var subprop = ImportNode(childnode.Clone());
+                        if (subprop is Dictionary<string, object> && ((Dictionary<string, object>)subprop).Count == 0) {
+                            continue;
+                        }
+                        if (properties.ContainsKey(prefix + childnode.LocalName)) {
+                            List<object> array = null;
+                            if (properties[prefix + childnode.LocalName] is List<object>) {
+                                array = (List<object>)properties[prefix + childnode.LocalName];
+                            } else {
+                                array = new List<object>();
+                                array.Add(properties[prefix + childnode.LocalName]);
+                                properties.Remove(prefix + childnode.LocalName);
+                                properties.Add(prefix + childnode.LocalName, array);
+                            }
+                            array.Add(subprop);
+
+                        } else {
+                            properties.Add(prefix + childnode.LocalName, subprop);
+                        }
+                    } catch (ArgumentException) {
+                        if (properties[prefix + childnode.LocalName] is object[]) {
+                            object[] array = (object[])properties[prefix + childnode.LocalName];
+                            List<object> list = array.ToList();
+                            list.Add(ImportNode(childnode));
+                            properties[prefix + childnode.LocalName] = list.ToArray();
+                        } else {
+                            List<object> list = new List<object>();
+                            list.Add(ImportNode(childnode));
+                            properties[prefix + childnode.LocalName] = list.ToArray();
+                        }
+                    }
+                }
+
+
+            }   
+            if (nav.MoveToFirstAttribute()) {
+                if ((textNodeLocalName == "Query") && !string.IsNullOrEmpty(nav.Prefix)) {
+                    prefix = nav.Prefix + ":";
+                }
+                properties.Add("@" + prefix + nav.LocalName, nav.Value);
+                while (nav.MoveToNextAttribute()) {
+                    if ((textNodeLocalName == "Query") && !string.IsNullOrEmpty(nav.Prefix)) {
+                        prefix = nav.Prefix + ":";
+                    }
+                    try {
+                        properties.Add("@" + prefix + nav.LocalName, nav.Value);
+                    } catch (ArgumentException) {
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(text))
+                return properties;
+
+
+            if (text != null) {
+                if (string.IsNullOrEmpty(nav.Prefix)) {
+                    prefix = nav.Prefix + ":";
+                }
+                properties.Add(prefix + textNodeLocalName, text);
+            }
+
+            return properties;
+
+        }
     }
 }
 

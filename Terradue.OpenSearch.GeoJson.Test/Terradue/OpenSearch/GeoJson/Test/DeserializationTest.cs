@@ -20,6 +20,19 @@ namespace Terradue.OpenSearch.GeoJson.Test {
     public class DeserializationTest{
 
         [Test()]
+        public void FromJson() {
+
+            var file = new FileStream("../Samples/test1.json", FileMode.Open, FileAccess.Read);
+
+            FeatureCollectionResult fc = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(file);
+
+            Assert.That(fc.FeatureResults.Count == 2);
+
+            file.Close();
+            file.Dispose();
+        }
+
+        [Test()]
         public void FromComplexJson() {
 
             FeatureCollectionResult fc = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(new FileStream("../Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read));
