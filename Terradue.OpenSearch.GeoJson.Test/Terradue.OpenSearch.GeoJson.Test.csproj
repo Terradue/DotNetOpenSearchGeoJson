@@ -73,6 +73,7 @@
     <None Include="Samples\ASA_IM__0.json" />
     <None Include="Samples\GDALDataResult.json" />
     <None Include="Samples\test1.json" />
+    <None Include="Samples\wps2.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />
@@ -80,7 +81,6 @@
     <Folder Include="Terradue\OpenSearch\" />
     <Folder Include="Terradue\OpenSearch\GeoJson\" />
     <Folder Include="Terradue\OpenSearch\GeoJson\Test\" />
-    <Folder Include="Samples\New Folder\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Terradue.OpenSearch.GeoJson\Terradue.OpenSearch.GeoJson.csproj">

@@ -47,6 +47,19 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             Assert.That(col.Features[0].Geometry != null);
 
         }
+
+        [Test()]
+        public void FromWPSAtomTest2() {
+
+            XmlReader reader = XmlReader.Create("../Samples/wps2.xml");
+            SyndicationFeed feed = SyndicationFeed.Load(reader);
+            AtomFeed atom = new AtomFeed(feed);
+
+            FeatureCollectionResult col = FeatureCollectionResult.FromOpenSearchResultCollection(atom);
+
+            Console.Out.Write(col.SerializeToString());
+
+        }
     }
 }
 
