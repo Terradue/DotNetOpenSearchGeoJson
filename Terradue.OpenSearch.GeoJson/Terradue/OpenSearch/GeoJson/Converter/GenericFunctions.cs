@@ -213,8 +213,12 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
 
                 string json = JsonConvert.SerializeXNode(xml, Newtonsoft.Json.Formatting.None, true);
 
-                if (!dic.ContainsKey(ext.OuterName))
-                    dic.Add(ext.OuterName, Deserialize(json));
+                if (string.IsNullOrEmpty(ext.OuterName)) {
+                    dic.Add(xml.Name.LocalName, Deserialize(json));
+                } else {
+                    if (!dic.ContainsKey(ext.OuterName))
+                        dic.Add(ext.OuterName, Deserialize(json));
+                }
             }
 
             return dic;
