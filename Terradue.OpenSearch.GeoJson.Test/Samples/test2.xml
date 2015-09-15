@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title type="text">
+	</title>
+	<id>https://data2.terradue.com:443/eop/scihub/dataset/search?count=1&amp;format=atomeop</id>
+	<updated>2015-09-10T20:02:18.872003Z</updated>
+	<link rel="self" type="application/atom+xml; profile=http://earth.esa.int/eop/2.1" title="Reference link" href="https://data2.terradue.com/eop/scihub/dataset/search?count=1&amp;format=atomeop" />
+	<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="https://data2.terradue.com/eop/scihub/dataset/description" />
+	<entry>
+		<id>https://data2.terradue.com:443/eop/scihub/dataset/search?format=atomeop&amp;uid=S1A_S3_RAW__0SDV_20141206T064837_20141206T064852_003595_0043FC_B907</id>
+		<title type="text">S1A RAW SM_DP L0 VH, VV 23 141206T074837-141206T074852</title>
+		<summary type="html">&lt;table&gt;	&lt;tbody&gt;		&lt;table&gt;			&lt;tr&gt;				&lt;td&gt;&lt;strong&gt;Product Type&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;RAW&lt;/td&gt;			&lt;/tr&gt;&lt;tr&gt;				&lt;td&gt;&lt;strong&gt;Swath&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;			&lt;/tr&gt;&lt;tr&gt;				&lt;td&gt;&lt;strong&gt;Orbit&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;3595 DESCENDING&lt;/td&gt;			&lt;/tr&gt;&lt;tr&gt;				&lt;td&gt;&lt;strong&gt;Track&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;23&lt;/td&gt;			&lt;/tr&gt;&lt;tr&gt;				&lt;td&gt;&lt;strong&gt;Start&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;2014-12-06T06:48:37.3390270Z&lt;/td&gt;			&lt;/tr&gt;&lt;tr&gt;				&lt;td&gt;&lt;strong&gt;End&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;2014-12-06T06:48:52.8978200Z&lt;/td&gt;			&lt;/tr&gt;		&lt;/table&gt;	&lt;/tbody&gt;&lt;/table&gt;</summary>
+		<published>2014-12-06T08:46:38.909Z</published>
+		<updated>0001-01-01T00:00:00Z</updated>
+		<link rel="enclosure" type="application/octet-stream" length="890282151" href="https://scihub.esa.int/dhus/odata/v1/Products('ae418d25-79cf-474e-9e98-d295276e3ac9')/$value" />
+		<link rel="self" type="application/atom+xml; profile=http://earth.esa.int/eop/2.1" title="Reference link" href="https://data2.terradue.com/eop/scihub/dataset/search?format=atomeop&amp;uid=S1A_S3_RAW__0SDV_20141206T064837_20141206T064852_003595_0043FC_B907" />
+		<link rel="alternate" type="application/xml" title="EOP profile" href="https://data2.terradue.com//eop/scihub/profile/xml?uid=S1A_S3_RAW__0SDV_20141206T064837_20141206T064852_003595_0043FC_B907" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="https://data2.terradue.com/eop/scihub/dataset/description" />
+		<where xmlns="http://www.georss.org/georss">
+			<MultiSurface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/gml/3.2">
+				<surfaceMembers>
+					<Polygon>
+						<exterior>
+							<LinearRing>
+								<posList srsDimension="2" count="5">47.6532 -8.6293 46.7177 -8.8848 46.615 -7.8641 47.5494 -7.5905 47.6532 -8.6293</posList>
+							</LinearRing>
+						</exterior>
+					</Polygon>
+				</surfaceMembers>
+			</MultiSurface>
+		</where>
+		<date xmlns="http://purl.org/dc/elements/1.1/">2014-12-06T06:48:37.3390270Z/2014-12-06T06:48:52.8978200Z</date>
+		<spatial xmlns="http://purl.org/dc/terms/">MULTIPOLYGON(((-8.6293 47.6532,-8.8848 46.7177,-7.8641 46.615,-7.5905 47.5494,-8.6293 47.6532)))</spatial>
+		<EarthObservation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/sar/2.1">
+			<boundedBy xsi:nil="true" xmlns="http://www.opengis.net/gml/3.2" />
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns="http://www.opengis.net/gml/3.2">
+					<beginPosition>2014-12-06T06:48:37.3390270Z</beginPosition>
+					<endPosition>2014-12-06T06:48:52.8978200Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<observedProperty xsi:nil="true" xmlns="http://www.opengis.net/om/2.0" />
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>S1A_S3_RAW__0SDV_20141206T064837_20141206T064852_003595_0043FC_B907</identifier>
+					<parentIdentifier>S3_RAW__0SDV</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>RAW</productType>
+					<status>ARCHIVED</status>
+					<processing>
+						<ProcessingInformation>
+							<processingCenter>Airbus DS UPA_ United Kingdom Farnborough</processingCenter>
+							<method>Generation of Sentinel-1 L0 SAR Product, dual polarisation</method>
+							<processingLevel>L0</processingLevel>
+							<nativeProductFormat>Sentinel-1 Level 0 Package</nativeProductFormat>
+						</ProcessingInformation>
+					</processing>
+					<processing>
+						<ProcessingInformation>
+							<method>Generation of Sentinel-1 SAR Slice L0 product single polarisation</method>
+							<nativeProductFormat>Raw Data</nativeProductFormat>
+						</ProcessingInformation>
+					</processing>
+					<processing>
+						<ProcessingInformation>
+							<method>Raw Data Downlink Channel1 1</method>
+							<nativeProductFormat>Raw Data</nativeProductFormat>
+						</ProcessingInformation>
+					</processing>
+					<processing>
+						<ProcessingInformation>
+							<method>Generation of Sentinel-1 SAR Slice L0 product single polarisation</method>
+							<nativeProductFormat>Raw Data</nativeProductFormat>
+						</ProcessingInformation>
+					</processing>
+					<processing>
+						<ProcessingInformation>
+							<method>Raw Data Downlink Channel2 2</method>
+							<nativeProductFormat>Raw Data</nativeProductFormat>
+						</ProcessingInformation>
+					</processing>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1">
+					<boundedBy xsi:nil="true" xmlns="http://www.opengis.net/gml/3.2" />
+					<product>
+						<ProductInformation>
+							<fileName>
+								<d7p1:ServiceReference d7p1:type="simple" d7p2:href="https://scihub.esa.int/dhus/odata/v1/Products(%27ae418d25-79cf-474e-9e98-d295276e3ac9%27)/$value" d7p2:title="simple" xmlns:d7p2="http://www.w3.org/1999/xlink" xmlns:d7p1="http://www.opengis.net/ows/2.0" xmlns="http://www.opengis.net/ows/2.0">
+									<d7p1:Identifier>ae418d25-79cf-474e-9e98-d295276e3ac9</d7p1:Identifier>
+									<d7p1:Format>SAFE</d7p1:Format>
+								</d7p1:ServiceReference>
+							</fileName>
+							<size>890282151</size>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1">
+					<boundedBy xsi:nil="true" xmlns="http://www.opengis.net/gml/3.2" />
+					<multiExtentOf>
+						<MultiSurface xmlns="http://www.opengis.net/gml/3.2">
+							<surfaceMembers>
+								<Polygon>
+									<exterior>
+										<LinearRing>
+											<posList srsDimension="2" count="5">47.6532 -8.6293 46.7177 -8.8848 46.615 -7.8641 47.5494 -7.5905 47.6532 -8.6293</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+				</Footprint>
+			</featureOfInterest>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1">
+					<boundedBy xsi:nil="true" xmlns="http://www.opengis.net/gml/3.2" />
+					<platform>
+						<Platform>
+							<shortName>S1A</shortName>
+							<serialIdentifier>0000-000A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>SAR</shortName>
+							<description>Synthetic Aperture Radar</description>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode codeSpace="urn:eop:SEN1:sensorMode">SM_DP</operationalMode>
+							<swathIdentifier codeSpace="urn:eop:SEN1:swathIdentifier">3</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition xmlns="http://www.opengis.net/sar/2.1">
+							<orbitNumber xmlns="http://www.opengis.net/eop/2.1">3595</orbitNumber>
+							<lastOrbitNumber xmlns="http://www.opengis.net/eop/2.1">0</lastOrbitNumber>
+							<wrsLongitudeGrid xmlns="http://www.opengis.net/eop/2.1">23</wrsLongitudeGrid>
+							<ascendingNodeDate xmlns="http://www.opengis.net/eop/2.1">0001-01-01T00:00:00</ascendingNodeDate>
+							<startTimeFromAscendingNode xmlns="http://www.opengis.net/eop/2.1">2177874.521</startTimeFromAscendingNode>
+							<completionTimeFromAscendingNode xmlns="http://www.opengis.net/eop/2.1">2193433.314</completionTimeFromAscendingNode>
+							<polarisationMode>D</polarisationMode>
+							<polarisationChannels>VH, VV</polarisationChannels>
+							<antennaLookDirection>RIGHT</antennaLookDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+		</EarthObservation>
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">S1A_S3_RAW__0SDV_20141206T064837_20141206T064852_003595_0043FC_B907</identifier>
+	</entry>
+	<queryTime xmlns="http://purl.org/dc/elements/1.1/">1</queryTime>
+	<totalResults xmlns="http://a9.com/-/spec/opensearch/1.1/">1136</totalResults>
+	<startIndex xmlns="http://a9.com/-/spec/opensearch/1.1/">1</startIndex>
+	<itemsPerPage xmlns="http://a9.com/-/spec/opensearch/1.1/">1</itemsPerPage>
+	<os:Query xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:param="http://a9.com/-/spec/opensearch/extensions/parameters/1.0/" xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/" xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" xmlns:eop="http://www.opengis.net/eop/2.0" os:count="1" />
+</feed>
