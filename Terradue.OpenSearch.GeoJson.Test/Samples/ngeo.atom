@@ -1,0 +1,2484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom">
+	<title type="text">Results for search on Native Dataset D01y</title>
+	<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?format=atom</id>
+	<updated>2015-09-15T10:33:22.240202Z</updated>
+	<link rel="first" type="application/atom+xml" href="http://127.0.0.1:8080/ngEOCatalogue/dataset/D01y/atom?startIndex=0&amp;count=20" />
+	<link rel="next" type="application/atom+xml" href="http://127.0.0.1:8080/ngEOCatalogue/dataset/D01y/atom?startIndex=20&amp;count=20" />
+	<link rel="last" type="application/atom+xml" href="http://127.0.0.1:8080/ngEOCatalogue/dataset/D01y/atom?startIndex=58440&amp;count=20" />
+	<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?format=atom" />
+	<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+	<subtitle type="html">
+        Found 58448 results.
+        Showing the first 20 results
+        &lt;br/&gt;
+        [ &lt;a href="http://127.0.0.1:8080/ngEOCatalogue/dataset/D01y/atom?startIndex=20&amp;count=20" &gt; Next &lt;/a&gt; ]
+        &lt;br/&gt;
+    </subtitle>
+	<generator>http://127.0.0.1:8080/ngEOCatalogue/dataset/D01y/atom</generator>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102043000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000102043000</title>
+		<published>2000-01-02T06:05:01.123Z</published>
+		<updated>2000-01-02T06:05:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000102043000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000102043000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102043000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-02 (2000-01-02T04:30:00Z/2000-01-02T06:00:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-02T06:05:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-02T04:30:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-02T06:00:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-02T04:30:00Z</beginPosition>
+					<endPosition>2000-01-02T06:00:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-02T06:00:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102043000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000102043000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102030000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000102030000</title>
+		<published>2000-01-02T04:35:01.123Z</published>
+		<updated>2000-01-02T04:35:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000102030000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000102030000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102030000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-02 (2000-01-02T03:00:00Z/2000-01-02T04:30:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-02T04:35:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-02T03:00:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-02T04:30:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-02T03:00:00Z</beginPosition>
+					<endPosition>2000-01-02T04:30:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-02T04:30:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102030000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000102030000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102013000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000102013000</title>
+		<published>2000-01-02T03:05:01.123Z</published>
+		<updated>2000-01-02T03:05:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000102013000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000102013000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102013000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-02 (2000-01-02T01:30:00Z/2000-01-02T03:00:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-02T03:05:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-02T01:30:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-02T03:00:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-02T01:30:00Z</beginPosition>
+					<endPosition>2000-01-02T03:00:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-02T03:00:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102013000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000102013000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102000000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000102000000</title>
+		<published>2000-01-02T01:35:01.123Z</published>
+		<updated>2000-01-02T01:35:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000102000000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000102000000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102000000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-02 (2000-01-02T00:00:00Z/2000-01-02T01:30:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-02T01:35:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-02T00:00:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-02T01:30:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-02T00:00:00Z</beginPosition>
+					<endPosition>2000-01-02T01:30:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-02T01:30:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000102000000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000102000000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101223000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101223000</title>
+		<published>2000-01-02T00:05:01.123Z</published>
+		<updated>2000-01-02T00:05:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101223000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101223000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101223000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T22:30:00Z/2000-01-02T00:00:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-02T00:05:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T22:30:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-02T00:00:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T22:30:00Z</beginPosition>
+					<endPosition>2000-01-02T00:00:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-02T00:00:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101223000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101223000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101210000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101210000</title>
+		<published>2000-01-01T22:35:01.123Z</published>
+		<updated>2000-01-01T22:35:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101210000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101210000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101210000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T21:00:00Z/2000-01-01T22:30:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T22:35:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T21:00:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T22:30:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T21:00:00Z</beginPosition>
+					<endPosition>2000-01-01T22:30:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T22:30:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101210000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101210000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101193000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101193000</title>
+		<published>2000-01-01T21:05:01.123Z</published>
+		<updated>2000-01-01T21:05:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101193000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101193000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101193000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T19:30:00Z/2000-01-01T21:00:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T21:05:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T19:30:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T21:00:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T19:30:00Z</beginPosition>
+					<endPosition>2000-01-01T21:00:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T21:00:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101193000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101193000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101180000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101180000</title>
+		<published>2000-01-01T19:35:01.123Z</published>
+		<updated>2000-01-01T19:35:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101180000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101180000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101180000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T18:00:00Z/2000-01-01T19:30:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T19:35:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T18:00:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T19:30:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T18:00:00Z</beginPosition>
+					<endPosition>2000-01-01T19:30:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T19:30:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101180000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101180000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101163000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101163000</title>
+		<published>2000-01-01T18:05:01.123Z</published>
+		<updated>2000-01-01T18:05:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101163000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101163000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101163000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T16:30:00Z/2000-01-01T18:00:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T18:05:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T16:30:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T18:00:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T16:30:00Z</beginPosition>
+					<endPosition>2000-01-01T18:00:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T18:00:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101163000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101163000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101150000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101150000</title>
+		<published>2000-01-01T16:35:01.123Z</published>
+		<updated>2000-01-01T16:35:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101150000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101150000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101150000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T15:00:00Z/2000-01-01T16:30:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T16:35:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T15:00:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T16:30:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T15:00:00Z</beginPosition>
+					<endPosition>2000-01-01T16:30:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T16:30:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101150000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101150000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101133000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101133000</title>
+		<published>2000-01-01T15:05:01.123Z</published>
+		<updated>2000-01-01T15:05:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101133000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101133000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101133000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T13:30:00Z/2000-01-01T15:00:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T15:05:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T13:30:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T15:00:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T13:30:00Z</beginPosition>
+					<endPosition>2000-01-01T15:00:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T15:00:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101133000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101133000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101120000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101120000</title>
+		<published>2000-01-01T13:35:01.123Z</published>
+		<updated>2000-01-01T13:35:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101120000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101120000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101120000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T12:00:00Z/2000-01-01T13:30:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T13:35:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T12:00:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T13:30:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T12:00:00Z</beginPosition>
+					<endPosition>2000-01-01T13:30:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T13:30:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101120000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101120000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101103000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101103000</title>
+		<published>2000-01-01T12:05:01.123Z</published>
+		<updated>2000-01-01T12:05:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101103000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101103000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101103000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T10:30:00Z/2000-01-01T12:00:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T12:05:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T10:30:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T12:00:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T10:30:00Z</beginPosition>
+					<endPosition>2000-01-01T12:00:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T12:00:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101103000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101103000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101090000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101090000</title>
+		<published>2000-01-01T10:35:01.123Z</published>
+		<updated>2000-01-01T10:35:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101090000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101090000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101090000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T09:00:00Z/2000-01-01T10:30:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T10:35:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T09:00:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T10:30:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T09:00:00Z</beginPosition>
+					<endPosition>2000-01-01T10:30:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T10:30:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101090000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101090000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101073000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101073000</title>
+		<published>2000-01-01T09:05:01.123Z</published>
+		<updated>2000-01-01T09:05:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101073000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101073000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101073000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T07:30:00Z/2000-01-01T09:00:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T09:05:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T07:30:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T09:00:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T07:30:00Z</beginPosition>
+					<endPosition>2000-01-01T09:00:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T09:00:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101073000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101073000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101060000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101060000</title>
+		<published>2000-01-01T07:35:01.123Z</published>
+		<updated>2000-01-01T07:35:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101060000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101060000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101060000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T06:00:00Z/2000-01-01T07:30:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T07:35:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T06:00:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T07:30:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T06:00:00Z</beginPosition>
+					<endPosition>2000-01-01T07:30:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T07:30:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101060000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101060000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101043000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101043000</title>
+		<published>2000-01-01T06:05:01.123Z</published>
+		<updated>2000-01-01T06:05:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101043000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101043000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101043000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T04:30:00Z/2000-01-01T06:00:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T06:05:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T04:30:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T06:00:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T04:30:00Z</beginPosition>
+					<endPosition>2000-01-01T06:00:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T06:00:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101043000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101043000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101030000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101030000</title>
+		<published>2000-01-01T04:35:01.123Z</published>
+		<updated>2000-01-01T04:35:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101030000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101030000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101030000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T03:00:00Z/2000-01-01T04:30:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T04:35:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T03:00:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T04:30:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T03:00:00Z</beginPosition>
+					<endPosition>2000-01-01T04:30:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T04:30:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101030000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101030000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101013000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101013000</title>
+		<published>2000-01-01T03:05:01.123Z</published>
+		<updated>2000-01-01T03:05:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101013000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101013000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101013000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T01:30:00Z/2000-01-01T03:00:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T03:05:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T01:30:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T03:00:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T01:30:00Z</beginPosition>
+					<endPosition>2000-01-01T03:00:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T03:00:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101013000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101013000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101000000/atom&amp;format=atom</id>
+		<title type="text">D01yFAKE20000101000000</title>
+		<published>2000-01-01T01:35:01.123Z</published>
+		<updated>2000-01-01T01:35:02.123Z</updated>
+		<link rel="enclosure" type="application/x-binary" title=" File D01yFAKE20000101000000 in the application/x-binary format" length="5400" href="https://storage.fake-eo-server.org/products/D01yFAKE20000101000000.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/search?id=http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101000000/atom&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/D01y/description" />
+		<content type="html">
+            &lt;ul&gt;
+            &lt;li&gt; Date: 2000-01-01 (2000-01-01T00:00:00Z/2000-01-01T01:30:00Z) &lt;/li&gt;
+            &lt;li&gt; Sensor: TEST
+            &lt;li&gt; Orbit Number: TEST &lt;/li&gt;
+            &lt;li&gt; Aquisition Station: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Center: TEST &lt;/li&gt;
+            &lt;li&gt; Processing Date: TEST &lt;/li&gt;
+            &lt;/ul&gt;
+        </content>
+		<dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2000-01-01T01:35:03.123Z</dc:date>
+		<gml:validTime xmlns:gml="http://www.opengis.net/gml">
+			<gml:TimePeriod>
+				<gml:beginPosition>2000-01-01T00:00:00Z</gml:beginPosition>
+				<gml:endPosition>2000-01-01T01:30:00Z</gml:endPosition>
+			</gml:TimePeriod>
+		</gml:validTime>
+		<EarthObservation xmlns:d1p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/opt/2.1" d1p1:id="1506125">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<TimePeriod xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506126">
+					<beginPosition>2000-01-01T00:00:00Z</beginPosition>
+					<endPosition>2000-01-01T01:30:00Z</endPosition>
+				</TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<TimeInstant xmlns:d3p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d3p1:id="1506127">
+					<timePosition>2000-01-01T01:30:00Z</timePosition>
+				</TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationEquipment xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506128">
+					<platform>
+						<Platform>
+							<shortName>ENVISAT-1</shortName>
+							<serialIdentifier>A</serialIdentifier>
+						</Platform>
+					</platform>
+					<instrument>
+						<Instrument>
+							<shortName>ASA</shortName>
+						</Instrument>
+					</instrument>
+					<sensor>
+						<Sensor>
+							<sensorType>RADAR</sensorType>
+							<operationalMode xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:sensorMode">IM</operationalMode>
+							<swathIdentifier>swath1091</swathIdentifier>
+						</Sensor>
+					</sensor>
+					<acquisitionParameters>
+						<Acquisition>
+							<orbitNumber>52494</orbitNumber>
+							<orbitDirection>DESCENDING</orbitDirection>
+						</Acquisition>
+					</acquisitionParameters>
+				</EarthObservationEquipment>
+			</procedure>
+			<observedProperty xmlns="http://www.opengis.net/om/2.0" nilReason="inapplicable" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<Footprint xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506129">
+					<multiExtentOf>
+						<MultiSurface xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506130" d5p2:srsName="EPSG:4326">
+							<surfaceMembers>
+								<Polygon xmlns:d7p1="http://www.opengis.net/gml/3.2" d7p1:id="1506131">
+									<exterior>
+										<LinearRing>
+											<posList>-34.99 151.36 -35.16 150.7 -33.25 150.01 -33.09 150.66 -34.99 151.36</posList>
+										</LinearRing>
+									</exterior>
+								</Polygon>
+							</surfaceMembers>
+						</MultiSurface>
+					</multiExtentOf>
+					<centerOf>
+						<Point xmlns:d5p2="http://www.opengis.net/gml/3.2" xmlns:d5p1="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2" d5p1:id="1506132" d5p2:srsName="EPSG:4326">
+							<pos>50.15 6.09</pos>
+						</Point>
+					</centerOf>
+				</Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<EarthObservationResult xmlns="http://www.opengis.net/eop/2.1" d1p1:id="1506133">
+					<product>
+						<ProductInformation>
+							<fileName>
+								<ServiceReference xmlns:d7p1="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/ows/2.0" d7p1:href="http://127.0.0.1:8080/ngEOCatalogue/eoproduct/D01y/D01yFAKE20000101000000/atom" />
+							</fileName>
+						</ProductInformation>
+					</product>
+				</EarthObservationResult>
+			</result>
+			<metaDataProperty xmlns="http://www.opengis.net/eop/2.1">
+				<EarthObservationMetaData>
+					<identifier>D01yFAKE20000101000000</identifier>
+					<parentIdentifier>ESA.EECF.ENVISAT_ASA_IMx_xS</parentIdentifier>
+					<acquisitionType>NOMINAL</acquisitionType>
+					<productType>ASA_IM__0P</productType>
+					<status>ARCHIVED</status>
+					<downlinkedTo>
+						<DownlinkInformation>
+							<acquisitionStation xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</acquisitionStation>
+						</DownlinkInformation>
+					</downlinkedTo>
+					<archivedIn>
+						<ArchivingInformation>
+							<archivingCenter xmlns:d6p1="http://www.opengis.net/eop/2.1" d6p1:codeSpace="any:stationCode">KS</archivingCenter>
+							<archivingDate>2001-08-22T11:02:47Z</archivingDate>
+						</ArchivingInformation>
+					</archivedIn>
+					<imageQualityStatus>DEGRADED</imageQualityStatus>
+					<imageQualityDegradationTag xmlns:d4p1="http://www.opengis.net/eop/2.1" d4p1:codeSpace="urn:eop:SEN1:QualityDegradationTag">PLATFORM_POINTING</imageQualityDegradationTag>
+				</EarthObservationMetaData>
+			</metaDataProperty>
+		</EarthObservation>
+	</entry>
+	<os:totalResults xmlns:os="http://a9.com/-/spec/opensearch/1.1/">58448</os:totalResults>
+	<queryTime xmlns="http://purl.org/dc/elements/1.1/">8.1323</queryTime>
+	<startIndex xmlns="http://a9.com/-/spec/opensearch/1.1/">1</startIndex>
+	<itemsPerPage xmlns="http://a9.com/-/spec/opensearch/1.1/">20</itemsPerPage>
+	<os:Query xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:param="http://a9.com/-/spec/opensearch/extensions/parameters/1.0/" />
+</feed>

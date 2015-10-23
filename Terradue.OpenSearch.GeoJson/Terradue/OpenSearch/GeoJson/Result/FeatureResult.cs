@@ -74,8 +74,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 }
 
                 XmlElement geometry = ImportUtils.FindGmlGeometry(elements.ToArray());
-                if (geometry != null)
-                    feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.GmlToFeature(geometry));
+                if (geometry != null) {
+                    var f = Terradue.GeoJson.Geometry.GeometryFactory.GmlToFeature(geometry);
+                    feature = new FeatureResult(f);
+                }
                 else {
                     geometry = ImportUtils.FindDctSpatialGeometry(elements.ToArray());
                     if (geometry != null)
@@ -109,6 +111,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
             feature.Links = new Collection<SyndicationLink>(result.Links);
 
+            feature.sortKey = result.SortKey;
 
             return feature;
         }
@@ -138,6 +141,18 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
             set {
                 
+            }
+        }
+
+        string sortKey;
+        public string SortKey {
+            get {
+                if (sortKey == null)
+                    return LastUpdatedTime.ToUniversalTime().ToString("O");
+                return sortKey.ToString();
+            }
+            set {
+                sortKey = value;
             }
         }
 
