@@ -49,11 +49,11 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Terradue.OpenSearch">
-      <HintPath>..\packages\Terradue.OpenSearch.1.11.3\lib\net40\Terradue.OpenSearch.dll</HintPath>
-    </Reference>
     <Reference Include="Terradue.GeoJson">
-      <HintPath>..\packages\Terradue.GeoJson.1.5.4\lib\net40\Terradue.GeoJson.dll</HintPath>
+      <HintPath>..\packages\Terradue.GeoJson.1.5.6\lib\net40\Terradue.GeoJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.OpenSearch">
+      <HintPath>..\packages\Terradue.OpenSearch.1.11.13\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +75,7 @@
     <None Include="Samples\test1.json" />
     <None Include="Samples\wps2.xml" />
     <None Include="Samples\test2.xml" />
+    <None Include="Samples\ngeo.atom" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />
@@ -82,7 +83,6 @@
     <Folder Include="Terradue\OpenSearch\" />
     <Folder Include="Terradue\OpenSearch\GeoJson\" />
     <Folder Include="Terradue\OpenSearch\GeoJson\Test\" />
-    <Folder Include="Samples\New Folder\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Terradue.OpenSearch.GeoJson\Terradue.OpenSearch.GeoJson.csproj">

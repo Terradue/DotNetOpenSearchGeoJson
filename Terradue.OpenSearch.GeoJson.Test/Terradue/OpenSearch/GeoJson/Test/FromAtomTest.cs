@@ -73,6 +73,19 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             Console.Out.Write(col.SerializeToString());
 
         }
+
+        [Test()]
+        public void FromWPSAtomNgeo() {
+
+            XmlReader reader = XmlReader.Create("../Samples/ngeo.atom");
+            SyndicationFeed feed = SyndicationFeed.Load(reader);
+            AtomFeed atom = new AtomFeed(feed);
+
+            FeatureCollectionResult col = FeatureCollectionResult.FromOpenSearchResultCollection(atom);
+
+            Console.Out.Write(col.SerializeToString());
+
+        }
     }
 }
 
