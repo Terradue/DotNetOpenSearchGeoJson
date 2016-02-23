@@ -243,7 +243,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
             set {
                 foreach (var ext in this.ElementExtensions.ToArray()) {
-                    if (ext.OuterName == "totalResults" && ext.OuterNamespace == "http://a9.com/-/spec/opensearch/1.1//") {
+                    if (ext.OuterName == "totalResults" && ext.OuterNamespace == "http://a9.com/-/spec/opensearch/1.1/") {
                         this.ElementExtensions.Remove(ext);
                         continue;
                     }
