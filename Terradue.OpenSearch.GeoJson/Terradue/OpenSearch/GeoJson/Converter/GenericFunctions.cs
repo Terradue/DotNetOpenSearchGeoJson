@@ -227,6 +227,7 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                     List<object> list = new List<object>();
                     list.Add(dic[key]);
                     list.Add(obj);
+                    dic.Remove(key);
                     dic.Add(key, list);
                 } 
                 if (!dic.ContainsKey(key)) {

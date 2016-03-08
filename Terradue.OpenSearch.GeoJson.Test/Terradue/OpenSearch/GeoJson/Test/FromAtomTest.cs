@@ -6,6 +6,7 @@ using Terradue.OpenSearch.Result;
 using Terradue.OpenSearch.GeoJson.Result;
 using System.Linq;
 using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace Terradue.OpenSearch.GeoJson.Test {
 
@@ -85,6 +86,24 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             Console.Out.Write(col.SerializeToString());
 
+        }
+
+        [Test()]
+        public void FromOwsAtom() {
+
+            FileStream file = new FileStream("../Samples/thematicapp.xml", FileMode.Open, FileAccess.Read);
+
+            var xr = XmlReader.Create(file,new XmlReaderSettings(){
+                IgnoreWhitespace = true
+            });
+
+            AtomFeed feed = AtomFeed.Load(xr);
+
+            file.Close();
+
+            FeatureCollectionResult fc = FeatureCollectionResult.FromOpenSearchResultCollection(feed);
+
+            string json = fc.SerializeToString();
         }
     }
 }
