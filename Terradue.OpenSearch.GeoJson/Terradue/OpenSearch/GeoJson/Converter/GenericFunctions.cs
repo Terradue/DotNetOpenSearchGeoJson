@@ -219,7 +219,6 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
 
                 string key = string.IsNullOrEmpty(ext.OuterName) ? xml.Name.LocalName : ext.OuterName;
 
-
                 if (dic.ContainsKey(key) && dic[key] is List<object> ) {
                     ((List<object>)dic[key]).Add(obj);
                 } 
