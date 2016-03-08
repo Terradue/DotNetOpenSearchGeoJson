@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+    <feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom" xmlns:t2="http://www.terradue.com/spec/opensearch/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" xmlns:owc="http://www.opengis.net/owc/1.0">
+    <title>Geohazards thematic applications search results</title>
+    <id>https://geohazards-tep.eo.esa.int/t2api/apps/search?q=global</id>
+    <subtitle type="text">This is the OWS context feed of the result of the search in the thematic applications</subtitle>
+    <updated>2016-03-07T19:11:19Z</updated>
+    <dc:publisher>Terradue</dc:publisher>
+    <generator uri="https://geohazards-tep.eo.esa.int/" version="1.0">Geohazards Thematic Exploitation Platform
+    </generator>
+    <rights>Terradue Srl.
+    Copyright (c) 2016. Some rights reserved.  This feed is licensed under a Creative Commons Attribution 3.0 License. 
+    </rights>
+    <georss:box>90 -180 -90 180</georss:box>
+    <category label="Thematic Application" scheme="http://www.terradue.com/feed" term="thematicapplication"/>
+    <link href="https://geohazards-tep.eo.esa.int/t2api/apps/search?q=global&amp;format=atom" rel="self" title="Reference link" type="application/atom+xml"/>
+    <link href="https://geohazards-tep.eo.esa.int/t2api/apps/description" rel="search" title="OpenSearch Description link" type="application/opensearchdescription+xml"/>
+    <entry>
+    <id>https://geohazards-tep.eo.esa.int/t2api/apps/search?uid=global</id>
+    <title>Geohazards global thematic application</title><!-- Title to display on the top of the thematic application -->
+    <summary>This is the OWS context definining the Geohazards thematic application as per version 1 of the platform.</summary><!-- Description to display in the list-->
+    <author>
+    <name>GEP Content Authority</name>
+    <email>geohazards-tep@esa.int</email>
+    <uri>https://geohazards-tep.eo.esa.int/t2api/users/geohazards-tep</uri>
+    </author>
+    <dc:publisher>Terradue</dc:publisher>
+    <updated>2016-03-07T19:11:19Z</updated>
+    <dc:rights>Fee:NONE / Contraints:NONE</dc:rights>
+    <dc:date>2009-01-23T09:08:56.000Z/2016-01-23T09:14:08.000Z</dc:date><!-- Define the initial star and stop of the time search bar if not defined in the search -->
+        <georss:box>90 -180 -90 180</georss:box>
+        <link href="https://geohazards-tep.eo.esa.int/t2api/apps/search?uid=global&amp;format=atom" rel="self" title="Reference link" type="application/atom+xml"/>
+        <link href="https://geohazards-tep.eo.esa.int/t2api/apps/description" rel="search" title="OpenSearch Description link" type="application/opensearchdescription+xml"/>
+        <content type="html"><![CDATA[
+            <div id="layoutContainer">
+            <div class="pane ui-layout-north" id="topBar">
+            <a class="logo" href="/"><img src="/styles/img/logo-geohazard.png"></a>
+            <div id="contextsMenu"></div>
+            <div id="loginDiv"></div>
+            <div id="advancedToolsDiv"></div>
+            </div>
+            <div class="pane ui-layout-center">
+            <div class="pane ui-layout-center" id="geobrowserMap"></div>
+            <div class="pane ui-layout-south">
+            <div class="row-fluid">
+            <div class="span6" style="position:relative">
+            <ul class="nav nav-tabs miniTabs" id="tabCurrentSearch">
+            <li class="active"><a href="#" data-toggle="tab" class="tabPaneCurrentSearchResult">Current search result</a></li>
+            <!-- <li><a href="#" data-toggle="tab" class="tabPaneCurrentSearchInfo">Current search info</a></li> -->
+            <a href="javascript://" class="text-warning searchWarning" style="display: none"><i class="fa fa-exclamation-triangle"></i></a>
+            </ul>
+            <div id="osResultsTable" class="miniTabsPane">
+            <p class="text-info"><small>You have no features selected.</small></p>
+            </div>
+            <div id="addFeaturesButtons">
+            <div class="addAllFeatures" data-title="Add all features to the basket"><i class="fa fa-arrow-circle-right"></i></i></div>
+            <div class="addSelectedFeatures" data-title="Add selected features to the basket"><i class="fa fa-arrow-circle-o-right"></i></div>
+            </div>
+            <div id="osCurrentSearchInfo" class="miniTabsPane">
+            <p class="text-info"><small>Current search info...</small></p>
+            </div>
+            </div>
+            <div class="span6" style="position:relative">
+            <ul class="nav nav-tabs miniTabs" id="tabDPFB">
+            <li class="active"><a href="#" data-toggle="tab" class="tabPaneFeaturesBasket">Features Basket</a></li>
+            <li><a href="#" data-toggle="tab" class="tabPaneDataPackages">Data Packages</a></li>
+            </ul>
+            <div id="featuresBasket" class="miniTabsPane">
+            <!-- <a class="switchToDataPackagesPanelBtn" href="javascript://"><i class="fa fa-inbox"></i> Data Packages</a> -->
+            <div id="basketOpensearchTable"></div>
+            <div class="dropMessage">
+            <p>Drop here<small>To add features to the basket</small></p>
+            </div>
+            </div>
+            <div id="dataPackagesPanel" class="miniTabsPane"></div>
+
+            </div>            
+            </div>
+            </div>  
+            </div>
+            <div class="pane ui-layout-east" id="servicesPanel"></div>
+            </div>]]>
+        </content>
+        <owc:offering code="http://www.terradue.com/spec/owc/1.0/req/atom/datacontext">
+        <owc:styleSet>
+        <owc:name>EO Data/Legacy Collections</owc:name>
+        <owc:title>Default Data Collections</owc:title>
+        <owc:abstract>Legacy collections to be discarded when all new collections shall be recovered</owc:abstract>
+        <owc:default>true</owc:default>
+        <owc:legendURL href="http://www.terradue.com/images/logo-t2.png" type="image/png"/>
+        </owc:styleSet>
+        <owc:styleSet>
+        <owc:name>EO-based products</owc:name>
+        <owc:title>EO based Data Collections</owc:title>
+        <owc:abstract>Data collection with dataset of products resulting of a processing on the platform</owc:abstract>
+        </owc:styleSet>
+        </owc:offering>
+        <owc:offering code="http://www.terradue.com/spec/owc/1.0/req/atom/opensearch">
+        <owc:operation code="DescribeDataset" href="https://data.terradue.com/gs/catalogue/tepqw/gtfeature/description" type="application/opensearchdescription+xml" method="GET">
+        <t2:datacontext>EO Data/Legacy Collections</t2:datacontext>
+        <!-- This define an entry in the menu EOData called 'Old Collections' with the opensearch description set to the href -->
+        </owc:operation>
+        <owc:operation code="SearchDataset" href="https://data.terradue.com/gs/catalogue/tepqw/gtfeature/search?q=envisat&amp;format=json" type="application/json" method="GET">
+        <t2:datacontext>EO Data/Test preset query</t2:datacontext>
+        <!-- This define an entry in the menu EOData called 'Old Collections' with the opensearch description set to the href -->
+        </owc:operation>
+        <owc:operation code="ListSeries" href="https://geohazards-tep.eo.esa.int/t2api/data/collection/search?format=json&amp;q=eodata" type="application/json" method="GET">
+        <t2:datacontext>EO Data/*</t2:datacontext>
+        <!-- This define a list of entries in the menu EOData from the search at the href -->
+      </owc:operation>
+      <owc:operation code="DescribeDataset" href="https://data.terradue.com/gs/catalogue/tepqwsr/gtfeature/description" type="application/opensearchdescription+xml" method="GET">
+        <t2:datacontext>EO-based products</t2:datacontext>
+        <!-- This define a list of entries in the menu EOData from the search at the href -->
+      </owc:operation>
+      <owc:operation code="DescribeDataset" href="https://data.terradue.com/gs/catalogue/tepqwpub/gtfeature/description" type="application/opensearchdescription+xml" method="GET">
+        <t2:datacontext>Publications</t2:datacontext>
+        <!-- This define a list of entries in the menu EOData from the search at the href -->
+      </owc:operation>
+      <owc:operation code="DescribeDataset" href="https://data.terradue.com/gs/catalogue/users/gtfeature/description" type="application/opensearchdescription+xml" method="GET">
+        <t2:datacontext>Community</t2:datacontext>
+        <!-- This define a list of entries in the menu EOData from the search at the href -->
+      </owc:operation>
+    </owc:offering>
+    <owc:offering code="http://www.terradue.com/spec/owc/1.0/req/atom/mapfeatures">
+      <owc:styleSet>
+        <owc:name>Default</owc:name>
+        <owc:abstract>Default map</owc:abstract>
+        <owc:default>true</owc:default>
+        <owc:legendURL href="http://www.terradue.com/images/logo-t2.png" type="image/png"/>
+        <owc:content>mapbox:tepgeohazards.l6mdm2gn</owc:content>
+        <t2:type>background</t2:type>
+      </owc:styleSet>
+      <owc:styleSet>
+        <owc:name>Light Map</owc:name>
+        <owc:abstract>Light Map</owc:abstract>
+        <owc:content>mapbox:tepgeohazards.l6md4p2l</owc:content>
+        <t2:type>background</t2:type>
+      </owc:styleSet>
+      <owc:styleSet>
+        <owc:name>Natural Earth</owc:name>
+        <owc:abstract>Natural Earth</owc:abstract>
+        <owc:content>mapbox:tepgeohazards.l6md2364</owc:content>
+        <t2:type>background</t2:type>
+      </owc:styleSet>
+      <owc:styleSet>
+        <owc:name>Dark Map</owc:name>
+        <owc:abstract>Dark Map</owc:abstract>
+        <owc:content>mapbox:tepgeohazards.l6mdoh89</owc:content>
+        <t2:type>background</t2:type>
+      </owc:styleSet>
+      <owc:styleSet>
+        <owc:name>Google Road Map</owc:name>
+        <owc:abstract>Google Road Map</owc:abstract>
+        <owc:content>google:ROADMAP</owc:content>
+        <t2:type>background</t2:type>
+      </owc:styleSet>
+      <owc:styleSet>
+        <owc:name>Charter Activations</owc:name>
+        <owc:abstract>Charter Activations</owc:abstract>
+        <owc:content href="/t2api/disastercharter" />
+        <owc:default>true</owc:default>
+        <t2:type>background</t2:type>
+      </owc:styleSet>
+      <owc:styleSet>
+        <owc:name>Sentinel-1A SAR IW Level-0 Density Map</owc:name>
+        <owc:abstract>Sentinel-1A SAR IW Level-0 Density Map</owc:abstract>
+        <owc:content href="https://va4h01.esa.int/geoserver/S1A_DENSITYMAPS_GLOBAL/S1A_IW_RAW_.global.spatial-coverage/ows" />
+        <t2:type>layer</t2:type>
+      </owc:styleSet>
+      <owc:styleSet>
+        <owc:name>Sentinel-1A SAR IW SLC Density Map</owc:name>
+        <owc:abstract>Sentinel-1A SAR IW SLC Density Map</owc:abstract>
+        <owc:content href="https://va4h01.esa.int/geoserver/S1A_DENSITYMAPS_GLOBAL/S1A_IW_SLC_.global.spatial-coverage/ows" />
+        <t2:type>layer</t2:type>
+      </owc:styleSet>
+      <owc:styleSet>
+        <owc:name>ERS+ENVISAT SAR IM Level-0 Density Map</owc:name>
+        <owc:abstract>ERS+ENVISAT SAR IM Level-0 Density Map</owc:abstract>
+        <owc:content href="https://va4h01.esa.int/geoserver/VA4_DENSITYMAPS_GLOBAL/L0-SAR-IM.global.spatial-coverage/ows" />
+        <t2:type>layer</t2:type>
+      </owc:styleSet>
+    </owc:offering>
+    <owc:offering code="http://www.opengis.net/spec/owc/1.0/req/atom/wps">
+      <owc:operation code="ListProcess" href="https://geohazards-tep.eo.esa.int/t2api/service/wps/search?format=json" type="application/json" method="GET" />
+    </owc:offering>
+  </entry>
+</feed>

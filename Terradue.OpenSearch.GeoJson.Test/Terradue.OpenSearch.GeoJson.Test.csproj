@@ -76,6 +76,7 @@
     <None Include="Samples\wps2.xml" />
     <None Include="Samples\test2.xml" />
     <None Include="Samples\ngeo.atom" />
+    <None Include="Samples\thematicapp.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />

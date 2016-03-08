@@ -16,7 +16,11 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void FromLandsat8AtomTest() {
 
-            var fc = FeatureCollectionResult.DeserializeFromStream(new FileStream("../Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read));
+            var fs = new FileStream("../Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read);
+
+            var fc = FeatureCollectionResult.DeserializeFromStream(fs);
+
+            fs.Close();
 
             var feed = AtomFeed.CreateFromOpenSearchResultCollection(fc);
 

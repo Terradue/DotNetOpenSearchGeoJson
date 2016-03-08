@@ -76,6 +76,9 @@
     <Reference Include="Terradue.OpenSearch">
       <HintPath>..\packages\Terradue.OpenSearch.1.11.14\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
+    <Reference Include="NuGet4Mono.Extensions">
+      <HintPath>..\packages\NuGet4Mono.Extensions.0.2.1\lib\net40\NuGet4Mono.Extensions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
