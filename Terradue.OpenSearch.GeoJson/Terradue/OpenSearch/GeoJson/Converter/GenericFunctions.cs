@@ -199,6 +199,8 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
 
             Dictionary<string, object> dic = new Dictionary<string, object>();
 
+            List<object> entries = new List<object>();
+
             foreach (var ext in exts) {
 
                 if (ext.OuterName == "Query" && ext.OuterNamespace == "http://a9.com/-/spec/opensearch/1.1/") {
@@ -213,12 +215,20 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
 
                 string json = JsonConvert.SerializeXNode(xml, Newtonsoft.Json.Formatting.None, true);
 
-                if (string.IsNullOrEmpty(ext.OuterName)) {
-                    dic.Add(xml.Name.LocalName, Deserialize(json));
-                } else {
-                    if (!dic.ContainsKey(ext.OuterName))
-                        dic.Add(ext.OuterName, Deserialize(json));
-                }
+                object obj = Deserialize(json);
+
+                string key = string.IsNullOrEmpty(ext.OuterName) ? xml.Name.LocalName : ext.OuterName;
+
+
+                if (dic.ContainsKey(key) && dic[key] is List<object> ) {
+                    ((List<object>)dic[key]).Add(obj);
+                } 
+                if (dic.ContainsKey(key) && ! dic[key] is List<object> ) {
+                    List<object> list = new List<object>();
+                    list.Add(dic[key]);
+                    list.Add(obj);
+                    dic.Add(key, list);
+                } 
             }
 
             return dic;
@@ -424,7 +434,7 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
         public static XElement RemoveAllNamespaces(XElement e) {
             return new XElement(e.Name.LocalName,
                                 (from n in e.Nodes()
-                                  select ((n is XElement) ? RemoveAllNamespaces(n as XElement) : n)),
+                                          select ((n is XElement) ? RemoveAllNamespaces(n as XElement) : n)),
                                 (e.HasAttributes) ? 
                         (from a in e.Attributes()
                                   where (!a.IsNamespaceDeclaration)
