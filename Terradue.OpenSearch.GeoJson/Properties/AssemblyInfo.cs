@@ -28,7 +28,7 @@ using NuGet4Mono.Extensions;
 
 
 [assembly: AssemblyTitle("Terradue.OpenSearch.GeoJson")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Terradue.OpenSearch.GeoJson is a library targeting .NET 4.0 and above that provides an extension to Terradue.OpenSearch to query from a class or an URL from/to GeoJson format")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Terradue")]
 [assembly: AssemblyProduct("")]
@@ -36,8 +36,8 @@ using NuGet4Mono.Extensions;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyAuthors("Emmanuel Mathot")]
-[assembly: AssemblyProjectUrl("https://github.com/Terradue/DotNetGeoJson")]
-[assembly: AssemblyLicenseUrl("https://github.com/Terradue/DotNetGeoJson/blob/master/LICENSE")]
+[assembly: AssemblyProjectUrl("https://github.com/Terradue/DotNetOpenSearchGeoJson")]
+[assembly: AssemblyLicenseUrl("https://github.com/Terradue/DotNetOpenSearchGeoJson/blob/master/LICENSE")]
 [assembly: AssemblyVersion("1.3.5.*")]
 [assembly: AssemblyInformationalVersion("1.3.5")]
 // The following attributes are used to specify the signing key for the assembly,
