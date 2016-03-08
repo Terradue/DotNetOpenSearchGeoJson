@@ -229,6 +229,9 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                     list.Add(obj);
                     dic.Add(key, list);
                 } 
+                if (!dic.ContainsKey(key)) {
+                    dic.Add(key, obj);
+                }
             }
 
             return dic;

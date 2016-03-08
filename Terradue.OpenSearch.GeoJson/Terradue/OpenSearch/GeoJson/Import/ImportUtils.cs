@@ -98,6 +98,7 @@ namespace Terradue.OpenSearch.GeoJson.Import {
 
                 xdoc.Add(prop);
                 XmlReader xreader = xdoc.CreateReader();
+                xreader.Settings.IgnoreWhitespace = true;
                 xmlns = new XmlNamespaceManager(xreader.NameTable);
 
                 foreach (var prefix in namespaces.AllKeys) {

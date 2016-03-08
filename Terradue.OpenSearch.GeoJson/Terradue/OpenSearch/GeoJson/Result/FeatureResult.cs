@@ -69,7 +69,11 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
                 List<XmlElement> elements = new List<XmlElement>();
                 foreach (var ext in result.ElementExtensions) {
-                    XmlElement element = ext.GetObject<XmlElement>();
+                    var xr = ext.GetReader();
+                    //xr.Settings.IgnoreWhitespace = true;
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load(xr);
+                    XmlElement element = doc.DocumentElement;
                     elements.Add(element);
                 }
 
