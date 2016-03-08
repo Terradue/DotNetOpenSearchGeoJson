@@ -39,7 +39,7 @@ using NuGet4Mono.Extensions;
 [assembly: AssemblyProjectUrl("https://github.com/Terradue/DotNetOpenSearchGeoJson")]
 [assembly: AssemblyLicenseUrl("https://github.com/Terradue/DotNetOpenSearchGeoJson/blob/master/LICENSE")]
 [assembly: AssemblyVersion("1.3.5.*")]
-[assembly: AssemblyInformationalVersion("1.3.5.1")]
+[assembly: AssemblyInformationalVersion("1.3.5")]
 // The following attributes are used to specify the signing key for the assembly,
 // if desired. See the Mono documentation for more information about signing.
 //[assembly: AssemblyDelaySign(false)]
