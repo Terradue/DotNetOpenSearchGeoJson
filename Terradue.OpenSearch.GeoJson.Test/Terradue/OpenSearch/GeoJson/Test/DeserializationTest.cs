@@ -35,7 +35,11 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void FromComplexJson() {
 
-            FeatureCollectionResult fc = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(new FileStream("../Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read));
+            var fs = new FileStream("../Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read);
+
+            FeatureCollectionResult fc = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(fs);
+
+            fs.Close();
 
             Assert.That(fc.FeatureResults.Count == 1);
 
