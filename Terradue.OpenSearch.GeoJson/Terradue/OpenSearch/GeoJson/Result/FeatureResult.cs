@@ -22,6 +22,8 @@ using System.IO;
 using Newtonsoft.Json;
 using Terradue.OpenSearch.GeoJson.Converter;
 using Newtonsoft.Json.Linq;
+using Terradue.GeoJson.Geometry;
+using Terradue.GeoJson.Feature;
 
 namespace Terradue.OpenSearch.GeoJson.Result {
 
@@ -65,42 +67,14 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
             FeatureResult feature;
 
-            if (result.ElementExtensions != null && result.ElementExtensions.Count > 0) {
+            var geom = ImportUtils.FindGeometry(result);
 
-                List<XmlElement> elements = new List<XmlElement>();
-                foreach (var ext in result.ElementExtensions) {
-                    var xr = ext.GetReader();
-                    //xr.Settings.IgnoreWhitespace = true;
-                    XmlDocument doc = new XmlDocument();
-                    doc.Load(xr);
-                    XmlElement element = doc.DocumentElement;
-                    elements.Add(element);
-                }
-
-                XmlElement geometry = ImportUtils.FindGmlGeometry(elements.ToArray());
-                if (geometry != null) {
-                    var f = Terradue.GeoJson.Geometry.GeometryFactory.GmlToFeature(geometry);
-                    feature = new FeatureResult(f);
-                }
-                else {
-                    geometry = ImportUtils.FindDctSpatialGeometry(elements.ToArray());
-                    if (geometry != null)
-                        feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(geometry.InnerXml));
-                    else {
-                        geometry = ImportUtils.FindGeoRssGeometry(elements.ToArray());
-                        if (geometry != null)
-                            feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.GeoRSSToFeature(geometry));
-                        else
-                            feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(null));
-                    }
-                }
-
-                feature.ElementExtensions = new SyndicationElementExtensionCollection(result.ElementExtensions);
-            } else {
-                feature = new FeatureResult(Terradue.GeoJson.Geometry.GeometryFactory.WktToFeature(null));
-                feature.ElementExtensions = new SyndicationElementExtensionCollection();
-            }
-
+            if (geom != null)
+                feature = new FeatureResult(new Feature(geom, null));
+            else
+                feature = new FeatureResult();
+          
+            feature.ElementExtensions = new SyndicationElementExtensionCollection(result.ElementExtensions);
             feature.Id = result.Id;
             feature.LastUpdatedTime = result.LastUpdatedTime;
             feature.PublishDate = result.PublishDate;
@@ -172,10 +146,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        DateTime lastUpdatedTime;
+        DateTimeOffset lastUpdatedTime;
 
         [JsonIgnore]
-        public DateTime LastUpdatedTime {
+        public DateTimeOffset LastUpdatedTime {
             get {
                 return lastUpdatedTime;
             }
@@ -184,10 +158,10 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        DateTime publishDate;
+        DateTimeOffset publishDate;
 
         [JsonIgnore]
-        public DateTime PublishDate {
+        public DateTimeOffset PublishDate {
             get {
                 return publishDate;
             }

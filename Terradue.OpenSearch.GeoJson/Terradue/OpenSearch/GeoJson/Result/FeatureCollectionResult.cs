@@ -158,9 +158,9 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             }
         }
 
-        DateTime date;
+        DateTimeOffset date;
         [JsonIgnore]
-        public DateTime LastUpdatedTime {
+        public DateTimeOffset LastUpdatedTime {
             get {
                 return date;
             }
