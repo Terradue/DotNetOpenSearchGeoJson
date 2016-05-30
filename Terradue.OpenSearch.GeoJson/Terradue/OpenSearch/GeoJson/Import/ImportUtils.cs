@@ -15,6 +15,10 @@ using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using Newtonsoft.Json.Linq;
+using Terradue.OpenSearch.Result;
+using Terradue.GeoJson.Geometry;
+using Terradue.GeoJson.GeoRss;
+using Terradue.GeoJson.GeoRss10;
 
 namespace Terradue.OpenSearch.GeoJson.Import {
     public class ImportUtils {
@@ -335,67 +339,51 @@ namespace Terradue.OpenSearch.GeoJson.Import {
 
         }
 
-        public static XmlElement FindGeoRssGeometry(XmlElement[] elements) {
-            foreach (XmlElement element in elements) {
-                if (element.NamespaceURI == "http://www.georss.org/georss"|| element.NamespaceURI == "http://www.georss.org/georss/10") {
-                    return element;
+        public static GeometryObject FindGeometry(IOpenSearchResultItem item ){
+
+            GeometryObject savegeom = null;
+
+            if (item.ElementExtensions != null && item.ElementExtensions.Count > 0) {
+
+                foreach (var ext in item.ElementExtensions) {
+
+                    XmlReader xr = ext.GetReader();
+
+                    switch (xr.NamespaceURI) {
+                        // 1) search for georss
+                        case "http://www.georss.org/georss":
+                            savegeom = Terradue.GeoJson.GeoRss.GeoRssHelper.Deserialize(xr).ToGeometry();
+                            if (xr.LocalName != "box" || xr.LocalName != "point") {
+                                return savegeom;
+                            }
+                            break;
+                            // 2) search for georss10
+                        case "http://www.georss.org/georss/10":
+                            savegeom = GeoRss10Extensions.ToGeometry(GeoRss10Helper.Deserialize(xr));
+                            if (xr.LocalName != "box" || xr.LocalName != "point") {
+                                return savegeom;
+                            }
+                            break;
+                            // 3) search for dct:spatial
+                        case "http://purl.org/dc/terms/":
+                            if (xr.LocalName == "spatial")
+                                savegeom = WktExtensions.WktToGeometry(xr.ReadContentAsString());
+                            if (! (savegeom is Point)) {
+                                return savegeom;
+                            }
+                            break;
+                        default:
+                            continue;
+                    }
+
                 }
+
             }
-            return null;
+
+            return savegeom;
+
         }
 
-        public static XmlElement FindGmlGeometry(XmlElement[] elements) {
-            foreach (XmlElement element in elements) {
-                XmlElement geom = FindGmlGeometry(element);
-                if (geom != null)
-                    return geom;
-            }
-            return null;
-        }
-
-        public static XmlElement FindGmlGeometry(XmlElement element) {
-            // OGC 13-026
-            if (element.NamespaceURI == "http://www.georss.org/georss") {
-                // TODO implement a seperate class for GeoRSS Schema (schemas/georss/1.1/georss.rnc)
-                if (element.LocalName == "where") {
-                    if (element.ChildNodes[0] != null && element.ChildNodes[0].NodeType == XmlNodeType.Element)
-                        return (XmlElement)element.ChildNodes[0];
-                }
-            }
-            if (element.LocalName == "EarthObservation") {
-                XmlNamespaceManager xnsm = new XmlNamespaceManager(element.OwnerDocument.NameTable);
-                xnsm.AddNamespace("om", "http://www.opengis.net/om/2.0");
-                xnsm.AddNamespace("eop", "http://www.opengis.net/eop/2.0");
-                xnsm.AddNamespace("alt", "http://www.opengis.net/alt/2.0");
-                xnsm.AddNamespace("opt", "http://www.opengis.net/opt/2.0");
-                xnsm.AddNamespace("om21", "http://www.opengis.net/om/2.1");
-                xnsm.AddNamespace("eop21", "http://www.opengis.net/eop/2.1");
-                xnsm.AddNamespace("alt21", "http://www.opengis.net/alt/2.1");
-                xnsm.AddNamespace("opt21", "http://www.opengis.net/opt/2.1");
-                XmlNode node = element.SelectSingleNode("om:featureOfInterest/eop:Footprint/eop:multiExtentOf", xnsm);
-                if (node != null && node.FirstChild != null) return (XmlElement)node.FirstChild;
-                node = element.SelectSingleNode("om:featureOfInterest/alt:Footprint/alt:nominalTrack", xnsm);
-                if (node != null) return (XmlElement)node.FirstChild;
-                node = element.SelectSingleNode("om:featureOfInterest/eop21:Footprint/eop21:multiExtentOf", xnsm);
-                if (node != null && node.FirstChild != null) return (XmlElement)node.FirstChild;
-                node = element.SelectSingleNode("om:featureOfInterest/alt21:Footprint/alt21:nominalTrack", xnsm);
-                if (node != null) return (XmlElement)node.FirstChild;
-            }
-            return null;
-        }
-
-        public static XmlElement FindDctSpatialGeometry(XmlElement[] elements) {
-            foreach (XmlNode node in elements) {
-                XmlNamespaceManager xnsm = new XmlNamespaceManager(node.OwnerDocument.NameTable);
-                xnsm.AddNamespace("dct", "http://purl.org/dc/terms/");
-                if (node.NamespaceURI == "http://purl.org/dc/terms/" && node.LocalName == "spatial")
-                    return (XmlElement)node;
-                var spatial = (XmlElement)node.SelectSingleNode("dct:spatial", xnsm);
-                if (spatial != null)
-                    return spatial;
-            }
-            return null;
-        }
 
         public static SyndicationLink FromDictionnary(Dictionary<string,object> link, string prefix = "") {
             if (link.ContainsKey("@" + prefix + "href")) {
