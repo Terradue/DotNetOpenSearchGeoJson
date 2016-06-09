@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 
     \xrefitem sw_link "Links" "Software Package List" [DotNetOpenSearchGeoJson](https://github.com/Terradue/DotNetOpenSearchGeoJson)
 
-    \xrefitem sw_license "License" "Software License" [GPLv3](https://github.com/Terradue/DotNetOpenSearchGeoJson/blob/master/LICENSE.txt)
+    \xrefitem sw_license "License" "Software License" [AGPL](https://github.com/Terradue/DotNetOpenSearchGeoJson/blob/master/LICENSE)
 
     \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.OpenSearch
     
