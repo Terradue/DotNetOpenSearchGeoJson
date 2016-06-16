@@ -366,8 +366,9 @@ namespace Terradue.OpenSearch.GeoJson.Import {
                             break;
                             // 3) search for dct:spatial
                         case "http://purl.org/dc/terms/":
-                            if (xr.LocalName == "spatial")
-                                savegeom = WktExtensions.WktToGeometry(xr.ReadContentAsString());
+						if (xr.LocalName == "spatial")
+							xr.Read();
+							savegeom = WktExtensions.WktToGeometry(xr.Value);
                             if (! (savegeom is Point)) {
                                 return savegeom;
                             }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title type="text">
+	</title>
+	<id>urn:uuid:ba6fed2a-c3c2-4f9c-8b67-b4d7a87ac343</id>
+	<updated>2016-06-16T08:40:43.977664Z</updated>
+	<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="https://hydrology-tep.eo.esa.int/t2api/data/package/TEPDP-WOISLakeVictoriaFTP/description?key=877fd5fa-8c97-472c-8069-a1d6f2425ab1" />
+	<link rel="self" type="application/atom+xml" title="OpenSearch Search link" href="https://hydrology-tep.eo.esa.int/t2api/data/package/TEPDP-WOISLakeVictoriaFTP/search" />
+	<entry>
+		<id>https://data2.terradue.com:443/eop/va4-envisat/dataset/search?format=atom&amp;uid=ATS_TOA_1PRBCM20110125_074730_000000863098_00422_46557_0001</id>
+		<title type="text">AATSR    L1  2011-01-25T06:55:20 2011-01-25T08:44:08</title>
+		<summary type="html">&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;table&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Identifier&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;ATS_TOA_1PRBCM20110125_074730_000000863098_00422_46557_0001&lt;/td&gt;
+      &lt;/tr&gt;&lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Product Type&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;&lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Orbit&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;0 ASCENDING&lt;/td&gt;
+      &lt;/tr&gt;&lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Start&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;2011-01-25T06:55:20.0000000Z&lt;/td&gt;
+      &lt;/tr&gt;&lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;End&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;2011-01-25T08:44:08.0000000Z&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</summary>
+		<published>2012-01-25T04:41:08.878Z</published>
+		<updated>2016-06-13T08:23:09.29266Z</updated>
+		<link rel="enclosure" type="application/binary" title="Data" length="826010781" href="ftp://213.63.139.36@ftp.deimos.com.pt/TEPDP-WOISLakeVictoria/ATS_TOA_1PRBCM20110125_074730_000000863098_00422_46557_0001.N1" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="https://data2.terradue.com/eop/va4-envisat/dataset/search?format=atom&amp;uid=ATS_TOA_1PRBCM20110125_074730_000000863098_00422_46557_0001" />
+		<link rel="alternate" type="application/xml" title="EOP profile" href="https://data2.terradue.com//eop/va4-envisat/profile/xml?uid=ATS_TOA_1PRBCM20110125_074730_000000863098_00422_46557_0001" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="https://data2.terradue.com/eop/va4-envisat/dataset/description" />
+		<ical:dtstart xmlns:ical="http://www.w3.org/2002/12/cal/ical#">01/25/2011 06:55:20</ical:dtstart>
+		<ical:dtend xmlns:ical="http://www.w3.org/2002/12/cal/ical#">01/25/2011 08:44:08</ical:dtend>
+		<spatial xmlns="http://purl.org/dc/terms/">MULTIPOLYGON(((-134.393 -9.46151,-129.511 -8.38623,-140.013 37.8349,-143.811 50.2895,-147.592 59.2732,-152.748 67.3088,-155.857 70.5777,-159.628 73.522,-167.928 77.6422,-180 80.735,-180 73.4849,-169.813 69.142,-162.5 64.0868,-156.347 57.4457,-151.143 48.9536,-146.94 39.1846,-143.188 27.6073,-139.285 12.5276,-134.393 -9.46151)),((180 80.735,163.809 82.7874,143.313 83.8178,119.019 83.8779,97.8465 82.9429,84.3372 81.531,73.0657 79.3395,64.5051 76.3889,57.4413 72.1969,53.1135 68.1359,49.44 63.1762,46.179 57.042,42.9797 48.8859,37.9391 31.0188,28.9735 -9.22971,24.9109 -25.4381,20.3101 -39.8082,15.3058 -50.9111,12.1078 -56.094,8.48943 -60.65,4.70691 -64.3163,0.235783 -67.617,-5.08338 -70.5312,-10.7577 -72.815,-24.2293 -76.2025,-37.6524 -77.9758,-54.3905 -78.9461,-72.5347 -78.9011,-87.7792 -77.9731,-100.213 -76.3703,-110.541 -74.0919,-119.821 -70.7609,-126.78 -66.8603,-131.57 -63.0114,-135.921 -58.2427,-139.778 -52.5487,-143.187 -45.9324,-147.119 -35.8727,-151.086 -22.5928,-161.286 22.198,-166.468 21.098,-153.956 -33.6472,-150.745 -45.2468,-147.453 -54.5196,-144.565 -60.6526,-141.238 -65.8976,-137.652 -69.9825,-133.733 -73.1905,-129.282 -75.7957,-123.778 -78.0526,-116.985 -79.942,-108.777 -81.4454,-95.591 -82.873,-79.943 -83.7075,-61.3692 -83.9811,-43.0517 -83.6212,-27.9405 -82.7213,-15.3188 -81.247,-5.62373 -79.2558,1.63835 -76.8178,7.93504 -73.4606,13.3148 -68.9064,17.8806 -62.8754,21.6963 -55.3662,24.8955 -46.6642,27.8999 -36.2082,39.4913 14.8185,45.3092 35.5334,48.8467 44.7912,52.7591 52.5455,57.0594 58.799,61.8673 63.8321,68.186 68.4105,75.614 71.983,84.5725 74.7722,95.845 76.9268,117.764 78.8218,143.383 78.7584,163.834 76.9237,180 73.4849,180 80.735)))</spatial>
+		<where xmlns="http://www.georss.org/georss">
+			<MultiSurface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/gml/3.2">
+				<surfaceMembers>
+					<Polygon>
+						<exterior>
+							<LinearRing>
+								<posList srsDimension="2" count="19">-9.46151 -134.393 -8.38623 -129.511 37.8349 -140.013 50.2895 -143.811 59.2732 -147.592 67.3088 -152.748 70.5777 -155.857 73.522 -159.628 77.6422 -167.928 80.735 -180 73.4849 -180 69.142 -169.813 64.0868 -162.5 57.4457 -156.347 48.9536 -151.143 39.1846 -146.94 27.6073 -143.188 12.5276 -139.285 -9.46151 -134.393</posList>
+							</LinearRing>
+						</exterior>
+					</Polygon>
+					<Polygon>
+						<exterior>
+							<LinearRing>
+								<posList srsDimension="2" count="81">80.735 180 82.7874 163.809 83.8178 143.313 83.8779 119.019 82.9429 97.8465 81.531 84.3372 79.3395 73.0657 76.3889 64.5051 72.1969 57.4413 68.1359 53.1135 63.1762 49.44 57.042 46.179 48.8859 42.9797 31.0188 37.9391 -9.22971 28.9735 -25.4381 24.9109 -39.8082 20.3101 -50.9111 15.3058 -56.094 12.1078 -60.65 8.48943 -64.3163 4.70691 -67.617 0.235783 -70.5312 -5.08338 -72.815 -10.7577 -76.2025 -24.2293 -77.9758 -37.6524 -78.9461 -54.3905 -78.9011 -72.5347 -77.9731 -87.7792 -76.3703 -100.213 -74.0919 -110.541 -70.7609 -119.821 -66.8603 -126.78 -63.0114 -131.57 -58.2427 -135.921 -52.5487 -139.778 -45.9324 -143.187 -35.8727 -147.119 -22.5928 -151.086 22.198 -161.286 21.098 -166.468 -33.6472 -153.956 -45.2468 -150.745 -54.5196 -147.453 -60.6526 -144.565 -65.8976 -141.238 -69.9825 -137.652 -73.1905 -133.733 -75.7957 -129.282 -78.0526 -123.778 -79.942 -116.985 -81.4454 -108.777 -82.873 -95.591 -83.7075 -79.943 -83.9811 -61.3692 -83.6212 -43.0517 -82.7213 -27.9405 -81.247 -15.3188 -79.2558 -5.62373 -76.8178 1.63835 -73.4606 7.93504 -68.9064 13.3148 -62.8754 17.8806 -55.3662 21.6963 -46.6642 24.8955 -36.2082 27.8999 14.8185 39.4913 35.5334 45.3092 44.7912 48.8467 52.5455 52.7591 58.799 57.0594 63.8321 61.8673 68.4105 68.186 71.983 75.614 74.7722 84.5725 76.9268 95.845 78.8218 117.764 78.7584 143.383 76.9237 163.834 73.4849 180 80.735 180</posList>
+							</LinearRing>
+						</exterior>
+					</Polygon>
+				</surfaceMembers>
+			</MultiSurface>
+		</where>
+		<box xmlns="http://www.georss.org/georss">-83.9811 -180 83.8779 180</box>
+		<date xmlns="http://purl.org/dc/elements/1.1/">2011-01-25T06:55:20.0000000Z/2011-01-25T08:44:08.0000000Z</date>
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">ATS_TOA_1PRBCM20110125_074730_000000863098_00422_46557_0001</identifier>
+	</entry>
+	<totalResults xmlns="http://a9.com/-/spec/opensearch/1.1/">1</totalResults>
+	<queryTime xmlns="http://purl.org/dc/elements/1.1/">8.848</queryTime>
+	<startIndex xmlns="http://a9.com/-/spec/opensearch/1.1/">1</startIndex>
+	<itemsPerPage xmlns="http://a9.com/-/spec/opensearch/1.1/">20</itemsPerPage>
+	<os:Query xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:param="http://a9.com/-/spec/opensearch/extensions/parameters/1.0/" />
+</feed>
