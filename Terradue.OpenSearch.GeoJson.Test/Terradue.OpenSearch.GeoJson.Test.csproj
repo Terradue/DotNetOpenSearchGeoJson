@@ -105,6 +105,7 @@
     <None Include="Samples\test2.xml" />
     <None Include="Samples\ngeo.atom" />
     <None Include="Samples\thematicapp.xml" />
+    <None Include="Samples\dp.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />
