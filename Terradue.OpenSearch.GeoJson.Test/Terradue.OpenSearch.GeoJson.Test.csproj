@@ -106,6 +106,7 @@
     <None Include="Samples\ngeo.atom" />
     <None Include="Samples\thematicapp.xml" />
     <None Include="Samples\dp.xml" />
+    <None Include="Samples\ASAR.atom" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />
