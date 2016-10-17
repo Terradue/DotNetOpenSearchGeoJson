@@ -71,17 +71,17 @@
     <Reference Include="NuGet4Mono.Extensions">
       <HintPath>..\packages\NuGet4Mono.Extensions.0.3.0\lib\net40\NuGet4Mono.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Terradue.ServiceModel.Ogc">
-      <HintPath>..\packages\Terradue.ServiceModel.Ogc.1.1.0\lib\net40\Terradue.ServiceModel.Ogc.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Terradue.OpenSearch">
       <HintPath>..\packages\Terradue.OpenSearch.1.12.1\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
+    <Reference Include="Terradue.ServiceModel.Ogc">
+      <HintPath>..\packages\Terradue.ServiceModel.Ogc.1.1.5\lib\net40\Terradue.ServiceModel.Ogc.dll</HintPath>
+    </Reference>
     <Reference Include="Terradue.GeoJson">
-      <HintPath>..\packages\Terradue.GeoJson.1.7.2\lib\net40\Terradue.GeoJson.dll</HintPath>
+      <HintPath>..\packages\Terradue.GeoJson.1.7.10\lib\net40\Terradue.GeoJson.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +107,7 @@
     <None Include="Samples\thematicapp.xml" />
     <None Include="Samples\dp.xml" />
     <None Include="Samples\ASAR.atom" />
+    <None Include="Samples\S1multipoly.atom" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />

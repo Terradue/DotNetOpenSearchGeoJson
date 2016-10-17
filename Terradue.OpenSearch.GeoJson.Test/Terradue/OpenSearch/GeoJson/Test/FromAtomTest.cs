@@ -7,6 +7,7 @@ using Terradue.OpenSearch.GeoJson.Result;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using System.IO;
+using Terradue.GeoJson.Geometry;
 
 namespace Terradue.OpenSearch.GeoJson.Test {
 
@@ -143,6 +144,28 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
 			string json = fc.SerializeToString();
 		}
+
+        [Test()]
+        public void FromS1MultiPolyAtom()
+        {
+
+            FileStream file = new FileStream("../Samples/S1multipoly.atom", FileMode.Open, FileAccess.Read);
+
+            var xr = XmlReader.Create(file, new XmlReaderSettings()
+            {
+                IgnoreWhitespace = true
+            });
+
+            AtomFeed feed = AtomFeed.Load(xr);
+
+            file.Close();
+
+            FeatureCollectionResult fc = FeatureCollectionResult.FromOpenSearchResultCollection(feed);
+
+            string json = fc.SerializeToString();
+
+            Assert.That(fc.Features.First().Geometry is MultiPolygon);
+        }
     }
 }
 
