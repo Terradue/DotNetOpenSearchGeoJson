@@ -37,6 +37,29 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         }
 
         [Test()]
+        public void FromLandsat8_2AtomTest()
+        {
+
+            XmlReader reader = XmlReader.Create("../Samples/landsat8-2.atom");
+            SyndicationFeed feed = SyndicationFeed.Load(reader);
+            AtomFeed atom = new AtomFeed(feed);
+
+            FeatureCollectionResult col = FeatureCollectionResult.FromOpenSearchResultCollection(atom);
+
+            Assert.That(col.Features[0].Geometry != null);
+
+            var jsont = col.SerializeToString();
+
+            JToken json = JToken.Parse(jsont);
+
+            Assert.That(json.SelectToken("features").First().SelectToken("properties").SelectToken("authors").First().SelectToken("name").ToString().Contains("EROS"));
+
+            Assert.AreEqual(json.SelectToken("features").First().SelectToken("properties").SelectToken("polygon").ToString().Split(' ').First(),
+                            (col.Features[0].Geometry as Polygon).Coordinates.First().First()[1].ToString());
+
+        }
+
+        [Test()]
         public void FromWPSAtomTest() {
 
             XmlReader reader = XmlReader.Create("../Samples/wps.atom");
