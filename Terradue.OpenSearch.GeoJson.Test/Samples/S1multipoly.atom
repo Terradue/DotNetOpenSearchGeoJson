@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title type="text">Results for search on Native Dataset S1_SAR_EW_DP</title>
+	<id>http://127.0.0.1:8082/ngeo/catalogue/S1_SAR_EW_DP/search?id=S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400_5&amp;format=atom</id>
+	<updated>2016-10-17T15:24:37.795092Z</updated>
+	<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/S1_SAR_EW_DP/search?id=S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400_5&amp;format=atom" />
+	<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/S1_SAR_EW_DP/description" />
+	<generator>https://ngeopro.magellium.fr/aiv_acs/eoproduct/S1_SAR_EW_DP?id=S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400_5</generator>
+	<entry>
+		<id>http://127.0.0.1:8082/ngeo/catalogue/S1_SAR_EW_DP/search?id=S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400_5&amp;format=atom</id>
+		<title type="text">S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400_5 (UPA)</title>
+		<published>2016-10-12T12:27:49.889Z</published>
+		<updated>2016-10-12T12:27:49.889Z</updated>
+		<link rel="via" type="application/atom+xml" title="Catalogue source" href="https://ngeopro.magellium.fr/aiv_acs/eoproduct?id=S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400_5" />
+		<link rel="self" type="application/atom+xml" title="Reference link" href="http://127.0.0.1:8082/ngeo/catalogue/S1_SAR_EW_DP/search?id=S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400_5&amp;format=atom" />
+		<link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="http://127.0.0.1:8082/ngeo/catalogue/S1_SAR_EW_DP/description" />
+		<link rel="enclosure" type="application/x-binary" title="S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400_5" length="376432552" href="https://s1-pdmcdmz-oda-v-20.sentinel1.eo.esa.int/odabroker/rest/ngEO//S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400" />
+		<identifier xmlns="http://purl.org/dc/elements/1.1/">S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400_5</identifier>
+		<georss:where xmlns:gml="http://www.opengis.net/gml" type="multipolygon" xmlns:georss="http://www.georss.org/georss">
+			<gml:MultiPolygon>
+				<gml:Polygon>
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList count="5">-22.590622 39.202515 -25.680344 38.328693 -26.632673 42.42318 -23.519297 43.203957 -22.590622 39.202515</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+				<gml:Polygon>
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList count="5">0 0 0 10 10 10 10 0 0 0</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</gml:MultiPolygon>
+		</georss:where>
+		<sar:EarthObservation xmlns:eop="http://www.opengis.net/eop/2.1" xmlns:om="http://www.opengis.net/om" xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="ID-96270" xmlns:sar="http://www.opengis.net/sar/2.1">
+			<phenomenonTime xmlns="http://www.opengis.net/om/2.0">
+				<gml:TimePeriod gml:id="ID-96271">
+					<gml:beginPosition>2018-07-18T02:44:58.47Z</gml:beginPosition>
+					<gml:endPosition>2018-07-18T02:45:50.18Z</gml:endPosition>
+				</gml:TimePeriod>
+			</phenomenonTime>
+			<resultTime xmlns="http://www.opengis.net/om/2.0">
+				<gml:TimeInstant gml:id="ID-96272">
+					<gml:timePosition>2018-07-18T04:47:43.54Z</gml:timePosition>
+				</gml:TimeInstant>
+			</resultTime>
+			<procedure xmlns="http://www.opengis.net/om/2.0">
+				<eop:EarthObservationEquipment gml:id="ID-96273">
+					<eop:platform>
+						<eop:Platform>
+							<eop:shortName>Sentinel-1</eop:shortName>
+						</eop:Platform>
+					</eop:platform>
+					<eop:instrument>
+						<eop:Instrument>
+							<eop:shortName>SAR</eop:shortName>
+						</eop:Instrument>
+					</eop:instrument>
+					<eop:sensor>
+						<eop:Sensor>
+							<eop:sensorType>RADAR</eop:sensorType>
+							<eop:operationalMode codeSpace="urn:eop:SEN1:sensorMode">EW_DP</eop:operationalMode>
+							<eop:swathIdentifier>EW</eop:swathIdentifier>
+						</eop:Sensor>
+					</eop:sensor>
+				</eop:EarthObservationEquipment>
+			</procedure>
+			<observedProperty nilReason="inapplicable" xmlns="http://www.opengis.net/om/2.0" />
+			<featureOfInterest xmlns="http://www.opengis.net/om/2.0">
+				<eop:Footprint gml:id="ID-96274">
+					<eop:multiExtentOf>
+						<gml:MultiSurface gml:id="ID-96275" srsName="EPSG:4326">
+							<gml:surfaceMembers>
+								<gml:Polygon gml:id="ID-96276">
+									<gml:exterior>
+										<gml:LinearRing>
+											<gml:posList>-22.590622 39.202515 -25.680344 38.328693 -26.632673 42.423180 -23.519297 43.203957 -22.590622 39.202515</gml:posList>
+										</gml:LinearRing>
+									</gml:exterior>
+								</gml:Polygon>
+								<gml:Polygon gml:id="ID-96277">
+									<gml:exterior>
+										<gml:LinearRing>
+											<gml:posList>0 0 0 10 10 10 10 0 0 0</gml:posList>
+										</gml:LinearRing>
+									</gml:exterior>
+								</gml:Polygon>
+							</gml:surfaceMembers>
+						</gml:MultiSurface>
+					</eop:multiExtentOf>
+				</eop:Footprint>
+			</featureOfInterest>
+			<result xmlns="http://www.opengis.net/om/2.0">
+				<eop:EarthObservationResult gml:id="ID-96278">
+					<eop:product>
+						<eop:ProductInformation>
+							<eop:fileName>
+								<ServiceReference d7p1:type="simple" d7p2:href="https://s1-pdmcdmz-oda-v-20.sentinel1.eo.esa.int/odabroker/rest/ngEO//S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400" xmlns:d7p2="http://www.w3.org/1999/xlink" xmlns:d7p1="http://www.opengis.net/ows/2.0" xmlns="http://www.opengis.net/ows/2.0">
+									<RequestMessage />
+								</ServiceReference>
+							</eop:fileName>
+							<eop:size uom="Bytes">376432552</eop:size>
+							<eop:timeliness>Fast-24h</eop:timeliness>
+						</eop:ProductInformation>
+					</eop:product>
+				</eop:EarthObservationResult>
+			</result>
+			<eop:metaDataProperty>
+				<eop:EarthObservationMetaData>
+					<eop:identifier>S1A_EW_RAW__0SDV_20180718T024454_20180718T024549_006859_009400_5</eop:identifier>
+					<eop:acquisitionType>NOMINAL</eop:acquisitionType>
+					<eop:productType>N/A</eop:productType>
+					<eop:status>ARCHIVED</eop:status>
+					<eop:vendorSpecific>
+						<eop:SpecificInformation>
+							<eop:localAttribute>lby</eop:localAttribute>
+							<eop:localValue>val_lby</eop:localValue>
+						</eop:SpecificInformation>
+					</eop:vendorSpecific>
+					<eop:vendorSpecific>
+						<eop:SpecificInformation>
+							<eop:localAttribute>toto</eop:localAttribute>
+							<eop:localValue>val_toto</eop:localValue>
+						</eop:SpecificInformation>
+					</eop:vendorSpecific>
+					<eop:vendorSpecific>
+						<eop:SpecificInformation>
+							<eop:localAttribute>nativeDatasetId</eop:localAttribute>
+							<eop:localValue>S1_SAR_EW_DP</eop:localValue>
+						</eop:SpecificInformation>
+					</eop:vendorSpecific>
+				</eop:EarthObservationMetaData>
+			</eop:metaDataProperty>
+		</sar:EarthObservation>
+	</entry>
+	<opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+	<queryTime xmlns="http://purl.org/dc/elements/1.1/">1354.7707</queryTime>
+	<startIndex xmlns="http://a9.com/-/spec/opensearch/1.1/">1</startIndex>
+	<itemsPerPage xmlns="http://a9.com/-/spec/opensearch/1.1/">20</itemsPerPage>
+	<os:Query xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:param="http://a9.com/-/spec/opensearch/extensions/parameters/1.0/" />
+</feed>

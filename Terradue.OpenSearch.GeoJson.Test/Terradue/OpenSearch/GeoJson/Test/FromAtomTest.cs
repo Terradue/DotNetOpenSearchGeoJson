@@ -7,6 +7,7 @@ using Terradue.OpenSearch.GeoJson.Result;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using System.IO;
+using Terradue.GeoJson.Geometry;
 
 namespace Terradue.OpenSearch.GeoJson.Test {
 
@@ -32,6 +33,29 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             Assert.AreEqual("eros", json.SelectToken("features").First().SelectToken("properties").SelectToken("authors").First().SelectToken("identifier").ToString());
 
             Assert.AreEqual("private", json.SelectToken("features").First().SelectToken("properties").SelectToken("categories").First().SelectToken("@label").ToString());
+
+        }
+
+        [Test()]
+        public void FromLandsat8_2AtomTest()
+        {
+
+            XmlReader reader = XmlReader.Create("../Samples/landsat8-2.atom");
+            SyndicationFeed feed = SyndicationFeed.Load(reader);
+            AtomFeed atom = new AtomFeed(feed);
+
+            FeatureCollectionResult col = FeatureCollectionResult.FromOpenSearchResultCollection(atom);
+
+            Assert.That(col.Features[0].Geometry != null);
+
+            var jsont = col.SerializeToString();
+
+            JToken json = JToken.Parse(jsont);
+
+            Assert.That(json.SelectToken("features").First().SelectToken("properties").SelectToken("authors").First().SelectToken("name").ToString().Contains("EROS"));
+
+            Assert.AreEqual(json.SelectToken("features").First().SelectToken("properties").SelectToken("polygon").ToString().Split(' ').First(),
+                            (col.Features[0].Geometry as Polygon).Coordinates.First().First()[1].ToString());
 
         }
 
@@ -143,6 +167,28 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
 			string json = fc.SerializeToString();
 		}
+
+        [Test()]
+        public void FromS1MultiPolyAtom()
+        {
+
+            FileStream file = new FileStream("../Samples/S1multipoly.atom", FileMode.Open, FileAccess.Read);
+
+            var xr = XmlReader.Create(file, new XmlReaderSettings()
+            {
+                IgnoreWhitespace = true
+            });
+
+            AtomFeed feed = AtomFeed.Load(xr);
+
+            file.Close();
+
+            FeatureCollectionResult fc = FeatureCollectionResult.FromOpenSearchResultCollection(feed);
+
+            string json = fc.SerializeToString();
+
+            Assert.That(fc.Features.First().Geometry is MultiPolygon);
+        }
     }
 }
 

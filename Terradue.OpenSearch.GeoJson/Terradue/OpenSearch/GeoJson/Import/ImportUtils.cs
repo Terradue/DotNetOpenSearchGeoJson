@@ -357,19 +357,23 @@ namespace Terradue.OpenSearch.GeoJson.Import
 				foreach (var ext in item.ElementExtensions) {
 
 					XmlReader xr = ext.GetReader();
+                    if ( string.IsNullOrEmpty(xr.LocalName))
+                        xr.Read();
+
+                    var name = xr.LocalName;
 
 					switch (xr.NamespaceURI) {
 					// 1) search for georss
 					case "http://www.georss.org/georss":
 						savegeom = Terradue.GeoJson.GeoRss.GeoRssHelper.Deserialize(xr).ToGeometry();
-						if (xr.LocalName != "box" || xr.LocalName != "point") {
+						if (name != "box" && name != "point") {
 							return savegeom;
 						}
 						break;
 					// 2) search for georss10
 					case "http://www.georss.org/georss/10":
 						savegeom = GeoRss10Extensions.ToGeometry(GeoRss10Helper.Deserialize(xr));
-						if (xr.LocalName != "box" || xr.LocalName != "point") {
+						if (name != "box" && name != "point") {
 							return savegeom;
 						}
 						break;
