@@ -70,20 +70,31 @@
     <Reference Include="NetTopologySuite.IO.PostGis">
       <HintPath>..\packages\NetTopologySuite.IO.1.13.3.2\lib\net40-client\NetTopologySuite.IO.PostGis.dll</HintPath>
     </Reference>
-    <Reference Include="NuGet4Mono.Extensions">
-      <HintPath>..\packages\NuGet4Mono.Extensions.0.3.0\lib\net40\NuGet4Mono.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="Terradue.OpenSearch">
-      <HintPath>..\packages\Terradue.OpenSearch.1.13.1\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
     <Reference Include="Terradue.ServiceModel.Ogc">
       <HintPath>..\packages\Terradue.ServiceModel.Ogc.1.1.6\lib\net40\Terradue.ServiceModel.Ogc.dll</HintPath>
     </Reference>
+    <Reference Include="Terradue.OpenSearch">
+      <HintPath>..\packages\Terradue.OpenSearch.1.13.2\lib\net40\Terradue.OpenSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform">
+      <HintPath>..\..\..\..\system\GeoSquare\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
     <Reference Include="Terradue.GeoJson">
       <HintPath>..\packages\Terradue.GeoJson.1.7.11\lib\net40\Terradue.GeoJson.dll</HintPath>
+    <Reference Include="NuGet.Core">
+      <HintPath>..\..\..\..\system\GeoSquare\packages\NuGet.Core.2.10.1\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet4Mono">
+      <HintPath>..\..\..\..\system\GeoSquare\packages\NuGet4Mono.0.3.0\lib\net40\NuGet4Mono.exe</HintPath>
+    </Reference>
+    <Reference Include="NuGet4Mono.Extensions">
+      <HintPath>..\..\..\..\system\GeoSquare\packages\NuGet4Mono.0.3.0\lib\net40\NuGet4Mono.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.ServiceModel.Ogc.OwsContext">
+      <HintPath>..\..\..\..\system\GeoSquare\packages\Terradue.ServiceModel.Ogc.OwsContext.1.1.1\lib\net40\Terradue.ServiceModel.Ogc.OwsContext.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -97,6 +108,7 @@
     <Compile Include="Terradue\OpenSearch\GeoJson\Converter\GenericFunctions.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Result\FeatureCollectionResult.cs" />
     <Compile Include="Terradue\OpenSearch\GeoJson\Converter\FeatureCollectionResultJsonConverter.cs" />
+    <Compile Include="Mono.Options\Options.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Terradue\OpenSearch\GeoJson\Import\SyndicationFeedImporter.cs" />

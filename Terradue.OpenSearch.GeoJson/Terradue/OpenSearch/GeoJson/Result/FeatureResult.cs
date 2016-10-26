@@ -24,13 +24,17 @@ using Terradue.OpenSearch.GeoJson.Converter;
 using Newtonsoft.Json.Linq;
 using Terradue.GeoJson.Geometry;
 using Terradue.GeoJson.Feature;
+using Terradue.ServiceModel.Ogc.Owc.AtomEncoding;
 
-namespace Terradue.OpenSearch.GeoJson.Result {
+namespace Terradue.OpenSearch.GeoJson.Result
+{
 
     [DataContract]
-    public class FeatureResult : Terradue.GeoJson.Feature.Feature, IOpenSearchResultItem {
+    public class FeatureResult : Terradue.GeoJson.Feature.Feature, IOpenSearchResultItem
+    {
 
-        public FeatureResult() : base() {
+        public FeatureResult() : base()
+        {
             links = new Collection<SyndicationLink>();
             elementExtensions = new SyndicationElementExtensionCollection();
             authors = new Collection<SyndicationPerson>();
@@ -38,7 +42,8 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             contributors = new Collection<SyndicationPerson>();
         }
 
-        public FeatureResult(Terradue.GeoJson.Feature.Feature feature) : base(feature.Geometry, feature.Properties) {
+        public FeatureResult(Terradue.GeoJson.Feature.Feature feature) : base(feature.Geometry, feature.Properties)
+        {
             base.Id = feature.Id;
             base.BoundingBoxes = feature.BoundingBoxes;
             base.CRS = feature.CRS;
@@ -50,7 +55,8 @@ namespace Terradue.OpenSearch.GeoJson.Result {
             contributors = new Collection<SyndicationPerson>();
         }
 
-        public FeatureResult(FeatureResult result) : this((Terradue.GeoJson.Feature.Feature)result) {
+        public FeatureResult(FeatureResult result) : this((Terradue.GeoJson.Feature.Feature)result)
+        {
             links = new Collection<SyndicationLink>(result.Links);
             elementExtensions = new SyndicationElementExtensionCollection(result.elementExtensions);
             this.Title = result.Title;
@@ -61,7 +67,8 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         }
 
-        public static FeatureResult FromOpenSearchResultItem(IOpenSearchResultItem result) {
+        public static FeatureResult FromOpenSearchResultItem(IOpenSearchResultItem result)
+        {
             if (result == null)
                 throw new ArgumentNullException("result");
 
@@ -73,7 +80,7 @@ namespace Terradue.OpenSearch.GeoJson.Result {
                 feature = new FeatureResult(new Feature(geom, null));
             else
                 feature = new FeatureResult();
-          
+
             feature.ElementExtensions = new SyndicationElementExtensionCollection(result.ElementExtensions);
             feature.Id = result.Id;
             feature.LastUpdatedTime = result.LastUpdatedTime;
@@ -99,37 +106,46 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         /// </summary>
         /// <value>The properties are read-only in this class since it is intented for serialization purpose only</value>
         [JsonProperty(PropertyName = "properties")]
-        public new Dictionary <string,object> Properties {
-            get {
+        public new Dictionary<string, object> Properties
+        {
+            get
+            {
                 return GenericFunctions.ExportProperties(this);
             }
 
-            set {
+            set
+            {
                 var json = JsonConvert.SerializeObject(value);
                 GenericFunctions.ImportProperties(JToken.Parse(json), this);
             }
         }
-            
+
 
         #region IOpenSearchResultItem implementation
 
-        public bool ShowNamespaces {
-            get {
+        public bool ShowNamespaces
+        {
+            get
+            {
                 return false;
             }
-            set {
-                
+            set
+            {
+
             }
         }
 
         string sortKey;
-        public string SortKey {
-            get {
+        public string SortKey
+        {
+            get
+            {
                 if (sortKey == null)
                     return LastUpdatedTime.ToUniversalTime().ToString("O");
                 return sortKey.ToString();
             }
-            set {
+            set
+            {
                 sortKey = value;
             }
         }
@@ -137,11 +153,21 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         TextSyndicationContent title;
 
         [JsonIgnore]
-        public TextSyndicationContent Title {
-            get {
-                return title;
+        public TextSyndicationContent Title
+        {
+            get
+            {
+                if (title != null)
+                    return title;
+                var titles = ElementExtensions.ReadElementExtensions<string>("title", "");
+                if (titles.Count > 0)
+                    return new TextSyndicationContent(titles[0]);
+                if (Identifier != null)
+                    return new TextSyndicationContent(Identifier);
+                return null;
             }
-            set {
+            set
+            {
                 title = value;
             }
         }
@@ -149,11 +175,14 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         DateTimeOffset lastUpdatedTime;
 
         [JsonIgnore]
-        public DateTimeOffset LastUpdatedTime {
-            get {
+        public DateTimeOffset LastUpdatedTime
+        {
+            get
+            {
                 return lastUpdatedTime;
             }
-            set {
+            set
+            {
                 lastUpdatedTime = value;
             }
         }
@@ -161,26 +190,44 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         DateTimeOffset publishDate;
 
         [JsonIgnore]
-        public DateTimeOffset PublishDate {
-            get {
+        public DateTimeOffset PublishDate
+        {
+            get
+            {
                 return publishDate;
             }
-            set {
+            set
+            {
                 publishDate = value;
             }
         }
 
         [JsonIgnore]
-        public string Identifier {
-            get {
+        public string Identifier
+        {
+            get
+            {
                 var identifier = ElementExtensions.ReadElementExtensions<string>("identifier", "http://purl.org/dc/elements/1.1/");
-                return identifier.Count == 0 ? base.Id : identifier[0];
+                if (identifier.Count > 0)
+                    return identifier[0];
+                if (!string.IsNullOrEmpty(base.Id))
+                    return base.Id;
+                identifier = ElementExtensions.ReadElementExtensions<string>("identifier", "");
+                if (identifier.Count > 0)
+                    return identifier[0];
+                identifier = ElementExtensions.ReadElementExtensions<string>("id", "");
+                if (identifier.Count > 0)
+                    return identifier[0];
+                return Guid.NewGuid().ToString();
             }
-            set {
+            set
+            {
                 if (value == null)
                     return;
-                foreach (var ext in this.ElementExtensions.ToArray()) {
-                    if (ext.OuterName == "identifier" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/") {
+                foreach (var ext in this.ElementExtensions.ToArray())
+                {
+                    if (ext.OuterName == "identifier" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/")
+                    {
                         this.ElementExtensions.Remove(ext);
                         continue;
                     }
@@ -191,11 +238,14 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         Collection<Terradue.ServiceModel.Syndication.SyndicationLink> links;
         [JsonIgnore]
-        public Collection<Terradue.ServiceModel.Syndication.SyndicationLink> Links {
-            get {
+        public Collection<Terradue.ServiceModel.Syndication.SyndicationLink> Links
+        {
+            get
+            {
                 return links;
             }
-            set {
+            set
+            {
                 links = value;
             }
         }
@@ -203,11 +253,14 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         SyndicationElementExtensionCollection elementExtensions;
 
         [JsonIgnore]
-        public SyndicationElementExtensionCollection ElementExtensions {
-            get {
+        public SyndicationElementExtensionCollection ElementExtensions
+        {
+            get
+            {
                 return elementExtensions;
             }
-            set {
+            set
+            {
                 elementExtensions = value;
             }
         }
@@ -215,61 +268,105 @@ namespace Terradue.OpenSearch.GeoJson.Result {
 
         Collection<SyndicationCategory> categories;
         [JsonIgnore]
-        public Collection<SyndicationCategory> Categories {
-            get {
+        public Collection<SyndicationCategory> Categories
+        {
+            get
+            {
                 return categories;
             }
         }
 
         Collection<SyndicationPerson> authors;
         [JsonIgnore]
-        public Collection<SyndicationPerson> Authors {
-            get {
+        public Collection<SyndicationPerson> Authors
+        {
+            get
+            {
                 return authors;
             }
         }
 
         TextSyndicationContent summary;
         [JsonIgnore]
-        public TextSyndicationContent Summary {
-            get {
+        public TextSyndicationContent Summary
+        {
+            get
+            {
                 return summary;
             }
-            set {
+            set
+            {
                 summary = value;
             }
         }
 
         Collection<SyndicationPerson> contributors;
         [JsonIgnore]
-        public Collection<SyndicationPerson> Contributors {
-            get {
+        public Collection<SyndicationPerson> Contributors
+        {
+            get
+            {
                 return contributors;
             }
         }
 
         TextSyndicationContent copyright;
         [JsonIgnore]
-        public TextSyndicationContent Copyright {
-            get {
+        public TextSyndicationContent Copyright
+        {
+            get
+            {
                 return copyright;
             }
-            set {
+            set
+            {
                 copyright = value;
             }
         }
 
         SyndicationContent content;
         [JsonIgnore]
-        public SyndicationContent Content {
-            get {
+        public SyndicationContent Content
+        {
+            get
+            {
                 return content;
             }
-            set {
+            set
+            {
                 content = value;
             }
         }
 
         #endregion
+
+        [JsonIgnore]
+        public DateTimeInterval DateTimeInterval
+        {
+            get
+            {
+                var date = ElementExtensions.ReadElementExtensions<string>("date", "http://purl.org/dc/elements/1.1/");
+                if (date.Count > 0)
+                    return DateTimeInterval.Parse(date[0]);
+                date = ElementExtensions.ReadElementExtensions<string>("date", "");
+                if (date.Count > 0)
+                    return DateTimeInterval.Parse(date[0]);
+                return null;
+            }
+            set
+            {
+                if (value == null)
+                    return;
+                foreach (var ext in this.ElementExtensions.ToArray())
+                {
+                    if (ext.OuterName == "date" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/")
+                    {
+                        this.ElementExtensions.Remove(ext);
+                        continue;
+                    }
+                }
+                this.ElementExtensions.Add(new XElement(XName.Get("date", "http://purl.org/dc/elements/1.1/"), value.ToString()).CreateReader());
+            }
+        }
     }
 }
