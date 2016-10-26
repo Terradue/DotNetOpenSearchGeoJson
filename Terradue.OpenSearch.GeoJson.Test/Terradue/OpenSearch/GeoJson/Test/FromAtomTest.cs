@@ -8,6 +8,7 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using Terradue.GeoJson.Geometry;
+using System.Collections.Generic;
 
 namespace Terradue.OpenSearch.GeoJson.Test {
 
@@ -188,6 +189,30 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             string json = fc.SerializeToString();
 
             Assert.That(fc.Features.First().Geometry is MultiPolygon);
+        }
+
+        [Test()]
+        public void FromThemApp()
+        {
+
+            FileStream file = new FileStream("../Samples/themapp.xml", FileMode.Open, FileAccess.Read);
+
+            var xr = XmlReader.Create(file, new XmlReaderSettings()
+            {
+                IgnoreWhitespace = true
+            });
+
+            AtomFeed feed = AtomFeed.Load(xr);
+
+            file.Close();
+
+            FeatureCollectionResult fc = FeatureCollectionResult.FromOpenSearchResultCollection(feed);
+
+            var prop = fc.FeatureResults.First().Properties;
+
+            Assert.AreEqual("/geobrowser/nigerAppContent.html", (fc.FeatureResults.First().Properties["content"] as Dictionary<string, object>)["src"]);
+
+            string json = fc.SerializeToString();
         }
     }
 }

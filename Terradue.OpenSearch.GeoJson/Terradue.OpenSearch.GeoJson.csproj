@@ -37,9 +37,6 @@
 		<Reference Include="System.Runtime.Serialization" />
 		<Reference Include="System.Xml.Linq" />
 		<Reference Include="Microsoft.VisualBasic" />
-		<Reference Include="Terradue.ServiceModel.Syndication">
-			<HintPath>..\packages\Terradue.ServiceModel.Syndication.1.0.0.0\lib\net40\Terradue.ServiceModel.Syndication.dll</HintPath>
-		</Reference>
 		<Reference Include="Mono.Addins">
 			<HintPath>..\packages\Mono.Addins.1.2\lib\net40\Mono.Addins.dll</HintPath>
 		</Reference>
@@ -82,9 +79,6 @@
 		<Reference Include="Microsoft.Web.XmlTransform">
 			<HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
 		</Reference>
-		<Reference Include="Terradue.GeoJson">
-			<HintPath>..\packages\Terradue.GeoJson.1.7.11\lib\net40\Terradue.GeoJson.dll</HintPath>
-		</Reference>	
 		<Reference Include="NuGet.Core">
 			<HintPath>..\packages\NuGet.Core.2.10.1\lib\net40-Client\NuGet.Core.dll</HintPath>
 		</Reference>
@@ -96,6 +90,12 @@
 		</Reference>
 		<Reference Include="Terradue.ServiceModel.Ogc.OwsContext">
 			<HintPath>..\packages\Terradue.ServiceModel.Ogc.OwsContext.1.1.1\lib\net40\Terradue.ServiceModel.Ogc.OwsContext.dll</HintPath>
+		</Reference>
+		<Reference Include="Terradue.ServiceModel.Syndication">
+		  <HintPath>..\packages\Terradue.ServiceModel.Syndication.1.0.1\lib\net40\Terradue.ServiceModel.Syndication.dll</HintPath>
+		</Reference>
+		<Reference Include="Terradue.GeoJson">
+		  <HintPath>..\packages\Terradue.GeoJson.1.7.12\lib\net40\Terradue.GeoJson.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
