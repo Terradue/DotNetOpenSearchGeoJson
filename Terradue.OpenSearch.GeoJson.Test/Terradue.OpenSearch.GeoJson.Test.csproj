@@ -74,14 +74,14 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Terradue.OpenSearch">
-      <HintPath>..\packages\Terradue.OpenSearch.1.13.1\lib\net40\Terradue.OpenSearch.dll</HintPath>
-    </Reference>
     <Reference Include="Terradue.ServiceModel.Ogc">
       <HintPath>..\packages\Terradue.ServiceModel.Ogc.1.1.6\lib\net40\Terradue.ServiceModel.Ogc.dll</HintPath>
     </Reference>
     <Reference Include="Terradue.GeoJson">
       <HintPath>..\packages\Terradue.GeoJson.1.7.11\lib\net40\Terradue.GeoJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.OpenSearch">
+      <HintPath>..\packages\Terradue.OpenSearch.1.13.2\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
