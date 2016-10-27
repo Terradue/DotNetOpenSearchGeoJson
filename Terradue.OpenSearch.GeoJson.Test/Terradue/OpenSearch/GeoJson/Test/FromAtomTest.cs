@@ -206,11 +206,15 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             file.Close();
 
+            Uri relativeUri = new Uri("/test/test.html", UriKind.RelativeOrAbsolute);
+
             FeatureCollectionResult fc = FeatureCollectionResult.FromOpenSearchResultCollection(feed);
 
-            var prop = fc.FeatureResults.First().Properties;
+            Dictionary<string, object> prop = (Dictionary<string, object>)fc.FeatureResults.First().Properties;
 
-            Assert.AreEqual("/geobrowser/nigerAppContent.html", (fc.FeatureResults.First().Properties["content"] as Dictionary<string, object>)["src"]);
+            Dictionary<string, string> content = (Dictionary<string, string>)prop["content"];
+
+            Assert.AreEqual("/geobrowser/nigerAppContent.html", content["src"]);
 
             string json = fc.SerializeToString();
         }
