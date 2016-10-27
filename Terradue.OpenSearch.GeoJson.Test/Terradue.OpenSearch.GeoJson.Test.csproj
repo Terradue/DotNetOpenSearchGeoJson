@@ -31,9 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Terradue.ServiceModel.Syndication">
-      <HintPath>..\packages\Terradue.ServiceModel.Syndication.1.0.0.0\lib\net40\Terradue.ServiceModel.Syndication.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml.Serialization" />
@@ -77,11 +74,14 @@
     <Reference Include="Terradue.ServiceModel.Ogc">
       <HintPath>..\packages\Terradue.ServiceModel.Ogc.1.1.6\lib\net40\Terradue.ServiceModel.Ogc.dll</HintPath>
     </Reference>
-    <Reference Include="Terradue.GeoJson">
-      <HintPath>..\packages\Terradue.GeoJson.1.7.11\lib\net40\Terradue.GeoJson.dll</HintPath>
-    </Reference>
     <Reference Include="Terradue.OpenSearch">
       <HintPath>..\packages\Terradue.OpenSearch.1.13.2\lib\net40\Terradue.OpenSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.ServiceModel.Syndication">
+      <HintPath>..\packages\Terradue.ServiceModel.Syndication.1.0.1\lib\net40\Terradue.ServiceModel.Syndication.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.GeoJson">
+      <HintPath>..\packages\Terradue.GeoJson.1.7.12\lib\net40\Terradue.GeoJson.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +108,7 @@
     <None Include="Samples\dp.xml" />
     <None Include="Samples\ASAR.atom" />
     <None Include="Samples\S1multipoly.atom" />
+    <None Include="Samples\themapp.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />

@@ -35,12 +35,27 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
             if (feature.Summary != null)
                 properties["summary"] = feature.Summary.Text;
             if (feature.Content != null) {
-                MemoryStream ms = new MemoryStream();
-                var xw = XmlWriter.Create(ms);
-                feature.Content.WriteTo(xw, "content", "");
-                xw.Flush();
-                ms.Seek(0, SeekOrigin.Begin);
-                properties["content"] = XElement.Load(XmlReader.Create(ms)).Value;
+                var dic = new Dictionary<string, string>();
+                if (!string.IsNullOrEmpty(feature.Content.Type))
+                    dic.Add("type", feature.Content.Type);
+                if (feature.Content is XmlSyndicationContent)
+                {
+                    MemoryStream ms = new MemoryStream();
+                    var xw = XmlWriter.Create(ms);
+                    (feature.Content as XmlSyndicationContent).WriteTo(xw, "content", "");
+                    xw.Flush();
+                    ms.Seek(0, SeekOrigin.Begin);
+                    dic.Add("value", XElement.Load(XmlReader.Create(ms)).Value);
+                }
+                if (feature.Content is TextSyndicationContent)
+                {
+                    dic.Add("value", (feature.Content as TextSyndicationContent).Text);
+                }
+                if (feature.Content is UrlSyndicationContent)
+                {
+                    dic.Add("src", (feature.Content as UrlSyndicationContent).Url.ToString());
+                }
+                properties["content"] = dic;
             }
 
             if (feature.Authors != null && feature.Authors.Count > 0) {
