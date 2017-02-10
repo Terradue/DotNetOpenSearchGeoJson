@@ -225,6 +225,7 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
 
                 if (ext.OuterName == "Query" && ext.OuterNamespace == "http://a9.com/-/spec/opensearch/1.1/") {
                     var query = SyndicationElementExtensionsToDictionary(ext);
+                    dic.Remove ("Query");
                     dic.Add("Query", query.First().Value);
                     continue;
                 }
