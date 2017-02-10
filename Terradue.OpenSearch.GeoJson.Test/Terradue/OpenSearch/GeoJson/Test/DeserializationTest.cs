@@ -9,7 +9,6 @@ using Terradue.OpenSearch.Request;
 using System.IO;
 using Terradue.OpenSearch.Engine;
 using System.Linq;
-using Mono.Addins;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using Terradue.OpenSearch.GeoJson.Converter;
