@@ -95,7 +95,12 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
 
             var exts = GenericFunctions.ExportSyndicationElementExtensions(feature.ElementExtensions);
 
-            properties = properties.Concat(exts).ToDictionary(x => x.Key, x => x.Value);
+            properties = properties.Concat(exts.Where(
+                x =>
+                {
+                return !properties.ContainsKey(x.Key);
+                }
+            )).ToDictionary(x => x.Key, x => x.Value);
 
             return properties;
         }
