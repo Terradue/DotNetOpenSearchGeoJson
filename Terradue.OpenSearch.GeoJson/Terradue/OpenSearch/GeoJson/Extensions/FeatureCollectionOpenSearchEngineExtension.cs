@@ -7,7 +7,6 @@
 //  Copyright (c) 2014 Terradue
 
 using System;
-using Mono.Addins;
 using Terradue.ServiceModel.Syndication;
 using System.Collections.Generic;
 using System.Xml;
@@ -25,16 +24,12 @@ using Terradue.OpenSearch.Result;
 using System.IO;
 using System.Text;
 
-[assembly:Addin]
-[assembly:AddinDependency ("OpenSearchEngine", "1.0")]
-
 namespace Terradue.OpenSearch.GeoJson.Extensions {
 
     /// <summary>
     /// Atom open search engine extension.
     /// </summary>
-    [Extension(typeof(IOpenSearchEngineExtension))]
-    [ExtensionNode("GeoJson", "GeoJson native query")]
+    [OpenSearchEngineExtension("GeoJson", "GeoJson native query")]
     public class FeatureCollectionOpenSearchEngineExtension : OpenSearchEngineExtension<FeatureCollectionResult> {
 
         public FeatureCollectionOpenSearchEngineExtension() {

@@ -6,7 +6,6 @@ using Terradue.OpenSearch.Result;
 using Terradue.OpenSearch.GeoJson.Result;
 using System.IO;
 using Terradue.OpenSearch.Engine;
-using Mono.Addins;
 using System.Linq;
 using Terradue.GeoJson.Geometry;
 
@@ -17,9 +16,6 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
         [Test()]
         public void DiscoverDescription() {
-
-            AddinManager.Initialize();
-            AddinManager.Registry.Update(null);
 
             var ose = new OpenSearchEngine();
             ose.LoadPlugins();
