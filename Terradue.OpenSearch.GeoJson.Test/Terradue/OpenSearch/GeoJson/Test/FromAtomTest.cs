@@ -218,6 +218,26 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             string json = fc.SerializeToString();
         }
+
+        [Test()]
+        public void FromASA_INS_AXAtom()
+        {
+
+            FileStream file = new FileStream("../Samples/ASA_INS_AX.xml", FileMode.Open, FileAccess.Read);
+
+            var xr = XmlReader.Create(file, new XmlReaderSettings()
+            {
+                IgnoreWhitespace = true
+            });
+
+            AtomFeed feed = AtomFeed.Load(xr);
+
+            file.Close();
+
+            FeatureCollectionResult fc = FeatureCollectionResult.FromOpenSearchResultCollection(feed);
+
+            string json = fc.SerializeToString();
+        }
     }
 }
 
