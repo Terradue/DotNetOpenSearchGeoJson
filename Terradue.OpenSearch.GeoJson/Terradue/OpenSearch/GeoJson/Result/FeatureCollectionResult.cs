@@ -239,11 +239,13 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         public long TotalResults {
             get {
                 var totalResults = ElementExtensions.ReadElementExtensions<string>("totalResults", "http://a9.com/-/spec/opensearch/1.1/");
+                if ( totalResults.Count == 0 )
+                     totalResults = ElementExtensions.ReadElementExtensions<string>("totalResults", "");
                 return totalResults.Count == 0 ? 0 : long.Parse(totalResults[0]);
             }
             set {
                 foreach (var ext in this.ElementExtensions.ToArray()) {
-                    if (ext.OuterName == "totalResults" && ext.OuterNamespace == "http://a9.com/-/spec/opensearch/1.1/") {
+                    if (ext.OuterName == "totalResults" ) {
                         this.ElementExtensions.Remove(ext);
                         continue;
                     }
@@ -325,11 +327,13 @@ namespace Terradue.OpenSearch.GeoJson.Result {
         public TimeSpan QueryTimeSpan {
             get {
                 var duration = ElementExtensions.ReadElementExtensions<double>("queryTime", "http://purl.org/dc/elements/1.1/");
+                if ( duration.Count == 0 )
+                    duration = ElementExtensions.ReadElementExtensions<double>("queryTime", "");
                 return duration.Count == 0 ? new TimeSpan() : TimeSpan.FromMilliseconds(duration[0]);
             }
             set {
                 foreach (var ext in this.ElementExtensions.ToArray()) {
-                    if (ext.OuterName == "queryTime" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/") {
+                    if (ext.OuterName == "queryTime" ) {
                         this.ElementExtensions.Remove(ext);
                         continue;
                     }
