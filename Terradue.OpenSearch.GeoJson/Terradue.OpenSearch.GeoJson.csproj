@@ -41,23 +41,14 @@
 		<Reference Include="Terradue.ServiceModel.Ogc">
 			<HintPath>..\packages\Terradue.ServiceModel.Ogc.1.1.6\lib\net40\Terradue.ServiceModel.Ogc.dll</HintPath>
 		</Reference>
-		<Reference Include="Terradue.ServiceModel.Ogc.OwsContext">
-			<HintPath>..\packages\Terradue.ServiceModel.Ogc.OwsContext.1.1.1\lib\net40\Terradue.ServiceModel.Ogc.OwsContext.dll</HintPath>
-		</Reference>
 		<Reference Include="Terradue.ServiceModel.Syndication">
 		  <HintPath>..\packages\Terradue.ServiceModel.Syndication.1.0.2\lib\net40\Terradue.ServiceModel.Syndication.dll</HintPath>
-		</Reference>
-		<Reference Include="Terradue.OpenSearch">
-		  <HintPath>..\packages\Terradue.OpenSearch.1.14.0\lib\net40\Terradue.OpenSearch.dll</HintPath>
 		</Reference>
 		<Reference Include="Terradue.GeoJson">
 		  <HintPath>..\packages\Terradue.GeoJson.1.8.6250\lib\net45\Terradue.GeoJson.dll</HintPath>
 		</Reference>
 		<Reference Include="GeoAPI">
 		  <HintPath>..\packages\GeoAPI.1.7.4\lib\net45\GeoAPI.dll</HintPath>
-		</Reference>
-		<Reference Include="log4net">
-		  <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Web.XmlTransform">
 		  <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
@@ -103,6 +94,15 @@
 		</Reference>
 		<Reference Include="HtmlAgilityPack">
 		  <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+		</Reference>
+		<Reference Include="log4net">
+		  <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+		</Reference>
+		<Reference Include="Terradue.OpenSearch">
+		  <HintPath>..\packages\Terradue.OpenSearch.1.14.6\lib\net40\Terradue.OpenSearch.dll</HintPath>
+		</Reference>
+		<Reference Include="Terradue.ServiceModel.Ogc.OwsContext">
+		  <HintPath>..\packages\Terradue.ServiceModel.Ogc.OwsContext.1.1.2\lib\net45\Terradue.ServiceModel.Ogc.OwsContext.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
