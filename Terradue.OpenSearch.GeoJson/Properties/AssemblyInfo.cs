@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 @{
     DotNetOpenSearchGeoJson Software Package
 
-    \xrefitem sw_version "Versions" "Software Package Version" 1.3.15
+    \xrefitem sw_version "Versions" "Software Package Version" 1.3.16
 
     \xrefitem sw_link "Links" "Software Package List" [DotNetOpenSearchGeoJson](https://github.com/Terradue/DotNetOpenSearchGeoJson)
 
@@ -38,8 +38,8 @@ using NuGet4Mono.Extensions;
 [assembly: AssemblyAuthors("Emmanuel Mathot")]
 [assembly: AssemblyProjectUrl("https://github.com/Terradue/DotNetOpenSearchGeoJson")]
 [assembly: AssemblyLicenseUrl("https://github.com/Terradue/DotNetOpenSearchGeoJson/blob/master/LICENSE")]
-[assembly: AssemblyVersion("1.3.15.*")]
-[assembly: AssemblyInformationalVersion("1.3.15")]
+[assembly: AssemblyVersion("1.3.16.*")]
+[assembly: AssemblyInformationalVersion("1.3.16")]
 // The following attributes are used to specify the signing key for the assembly,
 // if desired. See the Mono documentation for more information about signing.
 //[assembly: AssemblyDelaySign(false)]
