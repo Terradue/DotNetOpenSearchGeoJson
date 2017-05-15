@@ -238,6 +238,27 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             string json = fc.SerializeToString();
         }
+
+        [Test()]
+        public void FromAtomS1doublepoly()
+        {
+
+            FileStream file = new FileStream("../Samples/S1doublepoly.atom", FileMode.Open, FileAccess.Read);
+
+            var xr = XmlReader.Create(file, new XmlReaderSettings()
+            {
+                IgnoreWhitespace = true
+            });
+
+            AtomFeed feed = AtomFeed.Load(xr);
+
+            file.Close();
+
+            FeatureCollectionResult fc = FeatureCollectionResult.FromOpenSearchResultCollection(feed);
+
+            Assert.That(fc.Features.First().Geometry is Polygon);
+
+        }
     }
 }
 

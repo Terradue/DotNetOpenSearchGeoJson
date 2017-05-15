@@ -112,6 +112,8 @@
     <None Include="Samples\ASAR.atom" />
     <None Include="Samples\S1multipoly.atom" />
     <None Include="Samples\themapp.xml" />
+    <None Include="Samples\S1doublepoly.atom" />
+    <None Include="Samples\S1doublepoly.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Samples\" />

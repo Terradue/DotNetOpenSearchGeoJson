@@ -12,6 +12,7 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using Terradue.OpenSearch.GeoJson.Converter;
+using Terradue.GeoJson.Geometry;
 
 namespace Terradue.OpenSearch.GeoJson.Test {
 
@@ -84,6 +85,24 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             Assert.IsTrue(JToken.DeepEquals(jsonin, jsonout));
 
            
+        }
+
+        [Test()]
+        public void FromJsonS1doublePoly()
+        {
+
+            var file = new FileStream("../Samples/S1doublepoly.json", FileMode.Open, FileAccess.Read);
+
+            FeatureCollectionResult fc = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(file);
+
+            file.Close();
+            file.Dispose();
+
+            Assert.That(fc.FeatureResults.Count == 1);
+
+            Assert.That(fc.Features.First().Geometry is Polygon);
+
+
         }
     }
 }
