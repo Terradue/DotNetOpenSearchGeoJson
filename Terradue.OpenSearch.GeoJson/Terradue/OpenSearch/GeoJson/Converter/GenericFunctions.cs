@@ -287,7 +287,7 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                     continue;
                 }
 
-                if (child.Path == "properties.contirbutors") {
+                if (child.Path == "properties.contributors") {
                     foreach (var linkObject in child.Values())
                         feature.Contributors.Add(SyndicationPersonFromJTokenList(linkObject));
                     continue;
@@ -326,6 +326,12 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
 
                 if (child.Path == "properties.copyright") {
                     feature.Copyright = GenericFunctions.TryTextSyndicationContent(child);
+                    continue;
+                }
+
+                if (child.Path == "properties.identifier")
+                {
+                    feature.Identifier = child.Values().First().Value<string>();
                     continue;
                 }
 
