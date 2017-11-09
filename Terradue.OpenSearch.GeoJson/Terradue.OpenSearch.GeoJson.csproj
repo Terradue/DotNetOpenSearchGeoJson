@@ -98,11 +98,11 @@
 		<Reference Include="log4net">
 		  <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
 		</Reference>
-		<Reference Include="Terradue.OpenSearch">
-		  <HintPath>..\packages\Terradue.OpenSearch.1.14.6\lib\net40\Terradue.OpenSearch.dll</HintPath>
-		</Reference>
 		<Reference Include="Terradue.ServiceModel.Ogc.OwsContext">
 		  <HintPath>..\packages\Terradue.ServiceModel.Ogc.OwsContext.1.1.2\lib\net45\Terradue.ServiceModel.Ogc.OwsContext.dll</HintPath>
+		</Reference>
+		<Reference Include="Terradue.OpenSearch">
+		  <HintPath>..\packages\Terradue.OpenSearch.1.15.5\lib\net45\Terradue.OpenSearch.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

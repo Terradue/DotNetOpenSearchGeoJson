@@ -170,6 +170,10 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                     newlink.Add("@type", link.MediaType);
                 if (link.Length != 0)
                     newlink.Add("@length", link.Length);
+                foreach (var attr in link.AttributeExtensions)
+                {
+                    newlink.Add("@"+attr.Key.Name, attr.Value);
+                }
 
                 links.Add(newlink);
             }

@@ -14,7 +14,7 @@
 		<link rel="enclosure" type="application/octet-stream" length="996287390" href="http://scihub.terradue.com/apihub/odata/v1/Products('f34f1d90-a0c9-4309-b764-d6c736f71e6d')/$value" />
 		<link rel="alternate" type="application/xml" title="EOP profile" href="https://catalog.terradue.com//eop/sentinel1/profile/xml?uid=S1A_IW_GRDH_1SDV_20160719T181151_20160719T181219_012221_012F93_3E0B" />
 		<link rel="self" type="application/atom+xml" title="Reference link" href="https://catalog.terradue.com//sentinel1/series/GRD/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20160719T181151_20160719T181219_012221_012F93_3E0B" />
-		<link rel="results" type="application/atom+xml" title="GRD pairs" href="https://catalog.terradue.com//sentinel1/series/GRD/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20160719T181151_20160719T181219_012221_012F93_3E0B&amp;corFunction=geotime&amp;count=5&amp;spatialCover=50&amp;timeCover=-400%2c400&amp;correlatedTo=GRD" />
+		<link rel="results" level="warning" type="application/atom+xml" title="GRD pairs" href="https://catalog.terradue.com//sentinel1/series/GRD/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20160719T181151_20160719T181219_012221_012F93_3E0B&amp;corFunction=geotime&amp;count=5&amp;spatialCover=50&amp;timeCover=-400%2c400&amp;correlatedTo=GRD" />
 		<link rel="results" type="application/atom+xml" title="Series results" href="https://catalog.terradue.com//sentinel1/series/GRD/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20160719T181151_20160719T181219_012221_012F93_3E0B" />
 		<georss:polygon xmlns:georss="http://www.georss.org/georss">14.952571 -1.61551 15.387428 0.682615 13.718582 1.009324 13.279668 -1.27103 14.952571 -1.61551</georss:polygon>
 		<box xmlns="http://www.georss.org/georss">13.279668 -1.61551 15.387428 1.009324</box>

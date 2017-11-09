@@ -20,7 +20,9 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             var ose = new OpenSearchEngine();
             ose.LoadPlugins();
 
-            GenericOpenSearchable entity = new GenericOpenSearchable(new OpenSearchUrl("https://catalog.terradue.com/noa-cosmoskymed/search?uid=CSKS4_SCS_B_HI_09_HH_RA_SF_20150911040406_20150911040413&format=json"), ose);
+            var settings = new OpenSearchableFactorySettings(ose);
+
+            GenericOpenSearchable entity = new GenericOpenSearchable(new OpenSearchUrl("https://catalog.terradue.com/noa-cosmoskymed/search?uid=CSKS4_SCS_B_HI_09_HH_RA_SF_20150911040406_20150911040413&format=json"), settings);
 
             var results = ose.Query(entity, new System.Collections.Specialized.NameValueCollection(), "json");
             FeatureCollectionResult col = (FeatureCollectionResult)results;
