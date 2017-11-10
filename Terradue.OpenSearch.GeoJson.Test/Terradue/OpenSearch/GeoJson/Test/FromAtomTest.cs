@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using NUnit.Framework;
 using Terradue.ServiceModel.Syndication;
 using System.Xml;
@@ -238,6 +238,57 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             string json = fc.SerializeToString();
         }
+
+        [Test()]
+        public void FromAtomS1doublepoly()
+        {
+
+            FileStream file = new FileStream("../Samples/S1doublepoly.atom", FileMode.Open, FileAccess.Read);
+
+            var xr = XmlReader.Create(file, new XmlReaderSettings()
+            {
+                IgnoreWhitespace = true
+            });
+
+            AtomFeed feed = AtomFeed.Load(xr);
+
+            file.Close();
+
+            FeatureCollectionResult fc = FeatureCollectionResult.FromOpenSearchResultCollection(feed);
+
+            Assert.That(fc.Features.First().Geometry is Polygon);
+
+            FileStream outs = new FileStream("../out/S1doublepoly.json", FileMode.Create, FileAccess.Write);
+
+            fc.SerializeToStream(outs);
+
+            outs.Close();
+
+        }
+        
+        [Test()]
+        public void FromIt4IAtom()
+        {
+            
+            FileStream file = new FileStream("../Samples/it4i.xml", FileMode.Open, FileAccess.Read);
+            
+            var xr = XmlReader.Create(file, new XmlReaderSettings()
+            {
+                IgnoreWhitespace = true
+            });
+            
+            AtomFeed feed = AtomFeed.Load(xr);
+            
+            file.Close();
+            
+            FeatureCollectionResult fc = FeatureCollectionResult.FromOpenSearchResultCollection(feed);
+            
+            Assert.That(fc.Features[0].Geometry != null);
+            
+            string json = fc.SerializeToString();
+            
+        }
+
     }
 }
 
