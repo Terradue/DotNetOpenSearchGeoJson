@@ -371,7 +371,7 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                     continue;
                 }
 
-                if (child.Path == "properties.contirbutors") {
+                if (child.Path == "properties.contributors") {
                     foreach (var linkObject in child.Values())
                         fc.Contributors.Add(SyndicationPersonFromJTokenList(linkObject));
                     continue;
