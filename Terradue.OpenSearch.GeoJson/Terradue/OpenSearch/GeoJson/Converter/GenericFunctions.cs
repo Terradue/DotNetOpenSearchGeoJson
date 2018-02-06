@@ -308,6 +308,13 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                     continue;
                 }
 
+                if (child.Path == "properties.categories")
+                {
+                    foreach (var catObject in child.Values())
+                        feature.Categories.Add(SyndicationCategoryFromJTokenList(catObject));
+                    continue;
+                }
+
                 if (child.Path == "properties.published") {
                     feature.PublishDate = child.Values().First().Value<DateTime>();
                     continue;
@@ -435,6 +442,26 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                 return slink;
             }
             throw new ArgumentException("Not a link");
+        }
+
+        public static SyndicationCategory SyndicationCategoryFromJTokenList(JToken link, string prefix = "")
+        {
+            if (link.SelectToken("@term") != null)
+            {
+                long length = 0;
+                string term = null;
+                string label = null;
+                string scheme = null;
+                if (link.SelectToken("@term") != null)
+                    term = link.SelectToken("@term").ToString();
+                if (link.SelectToken("@label") != null)
+                    label = link.SelectToken("@label").ToString();
+                if (link.SelectToken("@scheme") != null)
+                    scheme = link.SelectToken("@scheme").ToString();
+                SyndicationCategory category = new SyndicationCategory(term, scheme, label);
+                return category;
+            }
+            throw new ArgumentException("Not a category");
         }
 
         public static SyndicationPerson SyndicationPersonFromJTokenList(JToken person, string prefix = "") {
