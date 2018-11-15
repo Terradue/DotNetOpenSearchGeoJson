@@ -22,18 +22,15 @@ pipeline {
     }
     stage('Package') {
       steps {
-        parallel(
-          "Package": {
-            sh "nuget4mono -g ${env.BRANCH_NAME} -p Terradue.OpenSearch.GeoJson/packages.config Terradue.OpenSearch.GeoJson/bin/Terradue.OpenSearch.GeoJson.dll"
+          sh "nuget4mono -g ${env.BRANCH_NAME} -p Terradue.OpenSearch.GeoJson/packages.config Terradue.OpenSearch.GeoJson/bin/Terradue.OpenSearch.GeoJson.dll"
             sh 'cat *.nuspec'
             sh 'nuget pack -OutputDirectory build'
             sh "echo ${params.NUGET_PUBLISH}"
-            
-          },
-          "Test": {
-            sh 'nunit-console4 *.Test/bin/*.Test.dll -xml build/TestResult.xml'
-          }
-        )
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'nunit-console4 *.Test/bin/*.Test.dll -xml build/TestResult.xml'
       }
     }
     stage('Publish') {
