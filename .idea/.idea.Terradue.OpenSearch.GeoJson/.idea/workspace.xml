@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="de0c4545-ef45-424c-a170-eb7af7c2c484" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Log4net.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Terradue.OpenSearch.GeoJson.Test.csproj" afterPath="$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Terradue.OpenSearch.GeoJson.Test.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Terradue/OpenSearch/GeoJson/Test/ToAtomTest.cs" afterPath="$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Terradue/OpenSearch/GeoJson/Test/ToAtomTest.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.sln" afterPath="$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.sln" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Terradue.OpenSearch.GeoJson/Terradue.OpenSearch.GeoJson.csproj" afterPath="$PROJECT_DIR$/Terradue.OpenSearch.GeoJson/Terradue.OpenSearch.GeoJson.csproj" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.idea/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="ToAtomTest.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Terradue/OpenSearch/GeoJson/Test/ToAtomTest.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="56" column="43" lean-forward="false" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+              <folding>
+                <marker date="1544542884631" expanded="true" signature="6:288" ph="..." />
+                <marker date="1544542884631" expanded="true" signature="332:2193" ph="{...}" />
+                <marker date="1544542884631" expanded="true" signature="383:2191" ph="{...}" />
+                <marker date="1544542884631" expanded="true" signature="450:783" ph="{...}" />
+                <marker date="1544542884631" expanded="true" signature="865:1525" ph="{...}" />
+                <marker date="1544542884631" expanded="true" signature="1583:2185" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="37" column="70" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="70" />
+              <folding>
+                <marker date="1544545561798" expanded="true" signature="6:129" ph="..." />
+                <marker date="1544545561798" expanded="true" signature="177:2409" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="206:2406" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="556:1993" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="600:1588" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="707:803" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="905:979" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="1124:1214" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="1609:1944" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="1694:1776" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="2020:2156" ph="/// Xml pretty print ... " />
+                <marker date="1544545561798" expanded="true" signature="2201:2399" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="2219:2327" ph="{...}" />
+                <marker date="1544545561798" expanded="true" signature="2346:2389" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Terradue.Opensearch.GeoJson.Client.csproj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Terradue.Opensearch.GeoJson.Client.csproj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="111" column="14" lean-forward="false" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Log4net.config" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Log4net.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssemblyInfo.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Properties/AssemblyInfo.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="37" column="87" lean-forward="false" selection-start-line="37" selection-start-column="87" selection-end-line="37" selection-end-column="87" />
+              <folding>
+                <marker date="1544544988585" expanded="false" signature="6:101" ph="..." />
+                <marker date="1544544988585" expanded="true" signature="103:290" ph="/* General Information about an assembly is controlled through the following ... */" />
+                <marker date="1544544988585" expanded="true" signature="645:855" ph="/* Setting ComVisible to false makes the types in this assembly not visible ... */" />
+                <marker date="1544544988585" expanded="true" signature="1030:1357" ph="/* Version information for an assembly consists of the following four values: ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="packages.config" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/packages.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeatureCollectionResult.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson/Terradue/OpenSearch/GeoJson/Result/FeatureCollectionResult.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="272" column="50" lean-forward="false" selection-start-line="272" selection-start-column="50" selection-end-line="272" selection-end-column="50" />
+              <folding>
+                <marker date="1544539838920" expanded="true" signature="0:139" ph="/* FeatureCollectionResult.cs ... */" />
+                <marker date="1544539838920" expanded="false" signature="147:590" ph="..." />
+                <marker date="1544539838920" expanded="true" signature="637:11544" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="755:11541" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="853:1460" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="1081:1184" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="1512:1898" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="2015:2970" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="2367:2424" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="2760:2936" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="2814:2922" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="3060:3193" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="3078:3182" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="3477:3757" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="3495:3574" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="3592:3747" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="3767:11533" ph="IResultCollection implementation" />
+                <marker date="1544539838920" expanded="true" signature="3857:3986" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="3875:3917" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="3933:3976" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="4065:4289" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="4083:4176" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="4193:4279" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="4467:4645" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="4485:4563" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="4580:4635" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="4804:4964" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="4822:4879" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="4896:4954" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5069:5205" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5087:5132" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5149:5195" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5303:5437" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5321:5365" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5382:5427" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5493:6236" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5511:5730" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5747:6226" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5819:6071" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="5936:6053" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="6285:6366" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="6303:6356" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="6508:6588" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="6526:6578" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="6701:6845" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="6719:6768" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="6785:6835" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="6962:7110" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="6980:7031" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="7048:7100" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="7192:7336" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="7210:7259" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="7276:7326" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="7392:8254" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="7410:7799" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="7816:8244" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="7888:8083" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="7948:8065" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="8319:8665" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="8709:8934" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="9023:9418" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="9475:9561" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="9493:9551" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="9694:9772" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="9712:9762" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="9895:9970" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="9913:9960" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="10079:10233" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="10097:10151" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="10168:10223" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="10342:10488" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="10360:10410" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="10427:10478" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="10549:11416" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="10567:10953" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="10970:11406" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="11042:11234" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="11099:11216" ph="{...}" />
+                <marker date="1544539838920" expanded="true" signature="11448:11513" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>app.</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Log4net.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/out/S1doublepoly.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/packages.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Terradue/OpenSearch/GeoJson/Test/FromAtomTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/OpenSearchTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Terradue/OpenSearch/GeoJson/Test/ToAtomTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Test.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson/Terradue/OpenSearch/GeoJson/Result/FeatureCollectionResult.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
+        <option value="$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/App.config" />
+        <option value="$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Terradue.Opensearch.GeoJson.Client.csproj" />
+        <option value="$PROJECT_DIR$/Terradue.OpenSearch.GeoJson/Log4net.config" />
+        <option value="$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Terradue/OpenSearch/GeoJson/Test/ToAtomTest.cs" />
+        <option value="$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Program.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1920" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1013" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Terradue.OpenSearch.GeoJson (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Terradue.OpenSearch.GeoJson (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Terradue.Opensearch.GeoJson.Client" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Project.Terradue.Opensearch.GeoJson.Client">
+    <configuration default="false" name="Terradue.Opensearch.GeoJson.Client" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Terradue.Opensearch.GeoJson.Client.csproj" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.5" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/bin/Debug/Terradue.Opensearch.GeoJson.Client.exe" />
+      <option name="PROGRAM_PARAMETERS" value="qweqwe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ApexTest" factoryName="Apex Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="riderModule" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="riderModule" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="riderModule" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="riderModule" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration />
+    <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+      <item index="1" class="java.lang.String" itemvalue=".NET Project.Terradue.Opensearch.GeoJson.Client" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue=".NET Project.Terradue.Opensearch.GeoJson.Client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de0c4545-ef45-424c-a170-eb7af7c2c484" name="Default" comment="" />
+      <created>1544540075494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544540075494</updated>
+      <workItem from="1544540079599" duration="3592000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3592000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1920" y="23" width="1920" height="1013" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25239617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/OpenSearchTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1544539838886" expanded="false" signature="6:274" ph="..." />
+            <marker date="1544539838886" expanded="true" signature="319:1329" ph="{...}" />
+            <marker date="1544539838886" expanded="true" signature="374:1327" ph="{...}" />
+            <marker date="1544539838886" expanded="true" signature="436:1320" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Terradue/OpenSearch/GeoJson/Test/FromAtomTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1544539838912" expanded="true" signature="6:302" ph="..." />
+            <marker date="1544539838912" expanded="true" signature="347:9089" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="400:9087" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="463:1419" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="1482:2384" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="2441:2860" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="2918:3278" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="3336:3697" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="3754:4115" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="4168:4643" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="4346:4401" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="4682:5072" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="4838:4872" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="5113:5506" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="5272:5306" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="5566:6137" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="5768:5823" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="6189:7060" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="6386:6441" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="7119:7616" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="7319:7374" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="7677:8372" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="7880:7935" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="8433:9080" ph="{...}" />
+            <marker date="1544539838912" expanded="true" signature="8651:8706" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/out/S1doublepoly.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Test.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1544539838913" expanded="false" signature="6:241" ph="..." />
+            <marker date="1544539838913" expanded="true" signature="286:1110" ph="{...}" />
+            <marker date="1544539838913" expanded="true" signature="331:1108" ph="{...}" />
+            <marker date="1544539838913" expanded="true" signature="391:796" ph="{...}" />
+            <marker date="1544539838913" expanded="true" signature="866:1102" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/out/ASA_IM__0.atom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#732#737#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <folding>
+            <marker date="1544543049289" expanded="false" signature="6:47" ph="..." />
+            <marker date="1544543049289" expanded="true" signature="78:171" ph="{...}" />
+            <marker date="1544543049289" expanded="true" signature="108:168" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/App.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Terradue.Opensearch.GeoJson.Client.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="111" column="14" lean-forward="false" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson/Log4net.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Log4net.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="37" column="87" lean-forward="false" selection-start-line="37" selection-start-column="87" selection-end-line="37" selection-end-column="87" />
+          <folding>
+            <marker date="1544544988585" expanded="false" signature="6:101" ph="..." />
+            <marker date="1544544988585" expanded="true" signature="103:290" ph="/* General Information about an assembly is controlled through the following ... */" />
+            <marker date="1544544988585" expanded="true" signature="645:855" ph="/* Setting ComVisible to false makes the types in this assembly not visible ... */" />
+            <marker date="1544544988585" expanded="true" signature="1030:1357" ph="/* Version information for an assembly consists of the following four values: ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/packages.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson/Terradue/OpenSearch/GeoJson/Result/FeatureCollectionResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="272" column="50" lean-forward="false" selection-start-line="272" selection-start-column="50" selection-end-line="272" selection-end-column="50" />
+          <folding>
+            <marker date="1544539838920" expanded="true" signature="0:139" ph="/* FeatureCollectionResult.cs ... */" />
+            <marker date="1544539838920" expanded="false" signature="147:590" ph="..." />
+            <marker date="1544539838920" expanded="true" signature="637:11544" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="755:11541" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="853:1460" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="1081:1184" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="1512:1898" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="2015:2970" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="2367:2424" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="2760:2936" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="2814:2922" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="3060:3193" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="3078:3182" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="3477:3757" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="3495:3574" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="3592:3747" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="3767:11533" ph="IResultCollection implementation" />
+            <marker date="1544539838920" expanded="true" signature="3857:3986" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="3875:3917" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="3933:3976" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="4065:4289" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="4083:4176" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="4193:4279" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="4467:4645" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="4485:4563" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="4580:4635" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="4804:4964" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="4822:4879" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="4896:4954" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5069:5205" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5087:5132" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5149:5195" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5303:5437" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5321:5365" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5382:5427" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5493:6236" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5511:5730" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5747:6226" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5819:6071" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="5936:6053" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="6285:6366" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="6303:6356" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="6508:6588" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="6526:6578" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="6701:6845" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="6719:6768" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="6785:6835" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="6962:7110" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="6980:7031" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="7048:7100" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="7192:7336" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="7210:7259" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="7276:7326" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="7392:8254" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="7410:7799" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="7816:8244" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="7888:8083" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="7948:8065" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="8319:8665" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="8709:8934" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="9023:9418" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="9475:9561" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="9493:9551" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="9694:9772" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="9712:9762" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="9895:9970" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="9913:9960" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="10079:10233" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="10097:10151" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="10168:10223" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="10342:10488" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="10360:10410" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="10427:10478" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="10549:11416" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="10567:10953" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="10970:11406" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="11042:11234" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="11099:11216" ph="{...}" />
+            <marker date="1544539838920" expanded="true" signature="11448:11513" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.OpenSearch.GeoJson.Test/Terradue/OpenSearch/GeoJson/Test/ToAtomTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="56" column="43" lean-forward="false" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+          <folding>
+            <marker date="1544542884631" expanded="true" signature="6:288" ph="..." />
+            <marker date="1544542884631" expanded="true" signature="332:2193" ph="{...}" />
+            <marker date="1544542884631" expanded="true" signature="383:2191" ph="{...}" />
+            <marker date="1544542884631" expanded="true" signature="450:783" ph="{...}" />
+            <marker date="1544542884631" expanded="true" signature="865:1525" ph="{...}" />
+            <marker date="1544542884631" expanded="true" signature="1583:2185" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terradue.Opensearch.GeoJson.Client/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="37" column="70" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="70" />
+          <folding>
+            <marker date="1544545561798" expanded="true" signature="6:129" ph="..." />
+            <marker date="1544545561798" expanded="true" signature="177:2409" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="206:2406" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="556:1993" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="600:1588" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="707:803" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="905:979" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="1124:1214" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="1609:1944" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="1694:1776" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="2020:2156" ph="/// Xml pretty print ... " />
+            <marker date="1544545561798" expanded="true" signature="2201:2399" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="2219:2327" ph="{...}" />
+            <marker date="1544545561798" expanded="true" signature="2346:2389" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

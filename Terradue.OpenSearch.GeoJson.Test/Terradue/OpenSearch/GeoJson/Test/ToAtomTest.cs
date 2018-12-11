@@ -31,6 +31,36 @@ namespace Terradue.OpenSearch.GeoJson.Test
             Assert.That(feed != null);
 
         }
+        
+        
+        [Test()]
+        public void FromLandsat8AtomFileTest()
+        {
+            
+            
+            
+
+            
+            
+            
+
+            var fs = new FileStream("../Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read);
+
+            var fc = FeatureCollectionResult.DeserializeFromStream(fs);
+
+            fs.Close();
+
+            var feed = AtomFeed.CreateFromOpenSearchResultCollection(fc);
+
+            string outputRelativePath = "../out";
+            FileStream testS1 = new FileStream(outputRelativePath + "/ASA_IM__0.atom.xml", FileMode.Create);
+            feed.SerializeToStream(testS1);
+            testS1.Close();
+   
+            
+            Assert.That(feed != null);
+
+        }
 
         [Test()]
         public void FromS1GRDJsonTest()
