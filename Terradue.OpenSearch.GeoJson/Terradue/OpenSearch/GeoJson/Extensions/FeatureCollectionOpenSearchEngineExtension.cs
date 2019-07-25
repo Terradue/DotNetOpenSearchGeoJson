@@ -73,7 +73,6 @@ namespace Terradue.OpenSearch.GeoJson.Extensions {
 
                     FeatureCollectionResult col = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(new MemoryStream((byte[])response.GetResponseObject()));
                     col.OpenSearchable = response.Entity;
-                    col.QueryTimeSpan = response.RequestTime;
 
                     var link = col.Links.FirstOrDefault(l => l.RelationshipType == "search");
                     if (link != null)

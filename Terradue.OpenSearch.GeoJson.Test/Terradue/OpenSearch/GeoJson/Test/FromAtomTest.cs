@@ -18,7 +18,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void FromLandsat8AtomTest() {
 
-            XmlReader reader = XmlReader.Create("../Samples/landsat8.atom");
+            XmlReader reader = XmlReader.Create(Util.TestBaseDir + "/Samples/landsat8.atom");
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             AtomFeed atom = new AtomFeed(feed);
 
@@ -41,7 +41,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         public void FromLandsat8_2AtomTest()
         {
 
-            XmlReader reader = XmlReader.Create("../Samples/landsat8-2.atom");
+            XmlReader reader = XmlReader.Create(Util.TestBaseDir + "/Samples/landsat8-2.atom");
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             AtomFeed atom = new AtomFeed(feed);
 
@@ -63,7 +63,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void FromWPSAtomTest() {
 
-            XmlReader reader = XmlReader.Create("../Samples/wps.atom");
+            XmlReader reader = XmlReader.Create(Util.TestBaseDir + "/Samples/wps.atom");
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             AtomFeed atom = new AtomFeed(feed);
 
@@ -77,7 +77,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void FromWPSAtomTest2() {
 
-            XmlReader reader = XmlReader.Create("../Samples/wps2.xml");
+            XmlReader reader = XmlReader.Create(Util.TestBaseDir + "/Samples/wps2.xml");
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             AtomFeed atom = new AtomFeed(feed);
 
@@ -90,7 +90,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void FromWPSAtomTest3() {
 
-            XmlReader reader = XmlReader.Create("../Samples/test2.xml");
+            XmlReader reader = XmlReader.Create(Util.TestBaseDir + "/Samples/test2.xml");
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             AtomFeed atom = new AtomFeed(feed);
 
@@ -103,7 +103,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void FromWPSAtomNgeo() {
 
-            XmlReader reader = XmlReader.Create("../Samples/ngeo.atom");
+            XmlReader reader = XmlReader.Create(Util.TestBaseDir + "/Samples/ngeo.atom");
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             AtomFeed atom = new AtomFeed(feed);
 
@@ -116,7 +116,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void FromOwsAtom() {
 
-            FileStream file = new FileStream("../Samples/thematicapp.xml", FileMode.Open, FileAccess.Read);
+            FileStream file = new FileStream(Util.TestBaseDir + "/Samples/thematicapp.xml", FileMode.Open, FileAccess.Read);
 
             var xr = XmlReader.Create(file,new XmlReaderSettings(){
                 IgnoreWhitespace = true
@@ -135,7 +135,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 		public void FromDPAtom()
 		{
 
-			FileStream file = new FileStream("../Samples/dp.xml", FileMode.Open, FileAccess.Read);
+			FileStream file = new FileStream(Util.TestBaseDir + "/Samples/dp.xml", FileMode.Open, FileAccess.Read);
 
 			var xr = XmlReader.Create(file, new XmlReaderSettings() {
 				IgnoreWhitespace = true
@@ -154,7 +154,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 		public void FromASARAtom()
 		{
 
-			FileStream file = new FileStream("../Samples/ASAR.atom", FileMode.Open, FileAccess.Read);
+			FileStream file = new FileStream(Util.TestBaseDir + "/Samples/ASAR.atom", FileMode.Open, FileAccess.Read);
 
 			var xr = XmlReader.Create(file, new XmlReaderSettings() {
 				IgnoreWhitespace = true
@@ -173,7 +173,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         public void FromS1MultiPolyAtom()
         {
 
-            FileStream file = new FileStream("../Samples/S1multipoly.atom", FileMode.Open, FileAccess.Read);
+            FileStream file = new FileStream(Util.TestBaseDir + "/Samples/S1multipoly.atom", FileMode.Open, FileAccess.Read);
 
             var xr = XmlReader.Create(file, new XmlReaderSettings()
             {
@@ -195,7 +195,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         public void FromThemApp()
         {
 
-            FileStream file = new FileStream("../Samples/themapp.xml", FileMode.Open, FileAccess.Read);
+            FileStream file = new FileStream(Util.TestBaseDir + "/Samples/themapp.xml", FileMode.Open, FileAccess.Read);
 
             var xr = XmlReader.Create(file, new XmlReaderSettings()
             {
@@ -223,7 +223,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         public void FromASA_INS_AXAtom()
         {
 
-            FileStream file = new FileStream("../Samples/ASA_INS_AX.xml", FileMode.Open, FileAccess.Read);
+            FileStream file = new FileStream(Util.TestBaseDir + "/Samples/ASA_INS_AX.xml", FileMode.Open, FileAccess.Read);
 
             var xr = XmlReader.Create(file, new XmlReaderSettings()
             {
@@ -243,7 +243,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         public void FromAtomS1doublepoly()
         {
 
-            FileStream file = new FileStream("../Samples/S1doublepoly.atom", FileMode.Open, FileAccess.Read);
+            FileStream file = new FileStream(Util.TestBaseDir + "/Samples/S1doublepoly.atom", FileMode.Open, FileAccess.Read);
 
             var xr = XmlReader.Create(file, new XmlReaderSettings()
             {
@@ -258,7 +258,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             Assert.That(fc.Features.First().Geometry is Polygon);
 
-            FileStream outs = new FileStream("../out/S1doublepoly.json", FileMode.Create, FileAccess.Write);
+            FileStream outs = new FileStream(Util.TestBaseDir + "/out/S1doublepoly.json", FileMode.Create, FileAccess.Write);
 
             fc.SerializeToStream(outs);
 
@@ -270,7 +270,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         public void FromIt4IAtom()
         {
             
-            FileStream file = new FileStream("../Samples/it4i.xml", FileMode.Open, FileAccess.Read);
+            FileStream file = new FileStream(Util.TestBaseDir + "/Samples/it4i.xml", FileMode.Open, FileAccess.Read);
             
             var xr = XmlReader.Create(file, new XmlReaderSettings()
             {

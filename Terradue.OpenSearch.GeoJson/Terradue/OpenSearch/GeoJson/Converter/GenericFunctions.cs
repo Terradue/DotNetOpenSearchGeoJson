@@ -441,6 +441,26 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                 SyndicationLink slink = new SyndicationLink(href, rel, title, type, length);
                 return slink;
             }
+            if (link.SelectToken("href") != null) {
+                long length = 0;
+                string rel = null;
+                string title = null;
+                string type = null;
+                Uri href = new Uri((string)link.SelectToken("href").ToString());
+                object r = null;
+                if (link.SelectToken("rel") != null)
+                    rel = link.SelectToken("rel").ToString();
+                if (link.SelectToken("title") != null)
+                    title = link.SelectToken("title").ToString();
+                if (link.SelectToken("type") != null)
+                    type = link.SelectToken("type").ToString();
+                if (link.SelectToken("size") != null)
+                    long.TryParse(link.SelectToken("size").ToString(), out length);
+                else
+                    length = 0;
+                SyndicationLink slink = new SyndicationLink(href, rel, title, type, length);
+                return slink;
+            }
             throw new ArgumentException("Not a link");
         }
 

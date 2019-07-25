@@ -20,7 +20,7 @@ namespace Terradue.OpenSearch.GeoJson.Test
         public void FromLandsat8AtomTest()
         {
 
-            var fs = new FileStream("../Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read);
+            var fs = new FileStream(Util.TestBaseDir + "/Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read);
 
             var fc = FeatureCollectionResult.DeserializeFromStream(fs);
 
@@ -36,7 +36,7 @@ namespace Terradue.OpenSearch.GeoJson.Test
         public void FromS1GRDJsonTest()
         {
 
-            var fs = new FileStream("../Samples/S1_GRD.json", FileMode.Open, FileAccess.Read);
+            var fs = new FileStream(Util.TestBaseDir + "/Samples/S1_GRD.json", FileMode.Open, FileAccess.Read);
 
             var fc = FeatureCollectionResult.DeserializeFromStream(fs);
 

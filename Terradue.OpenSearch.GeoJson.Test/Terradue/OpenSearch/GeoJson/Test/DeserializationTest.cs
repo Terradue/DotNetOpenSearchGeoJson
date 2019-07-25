@@ -22,7 +22,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void FromJson() {
 
-            var file = new FileStream("../Samples/test1.json", FileMode.Open, FileAccess.Read);
+            var file = new FileStream(Util.TestBaseDir + "/Samples/test1.json", FileMode.Open, FileAccess.Read);
 
             FeatureCollectionResult fc = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(file);
 
@@ -35,7 +35,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void FromComplexJson() {
 
-            var fs = new FileStream("../Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read);
+            var fs = new FileStream(Util.TestBaseDir + "/Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read);
 
             FeatureCollectionResult fc = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(fs);
 
@@ -43,7 +43,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             Assert.That(fc.FeatureResults.Count == 1);
 
-            var file = new FileStream("../Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read);
+            var file = new FileStream(Util.TestBaseDir + "/Samples/ASA_IM__0.json", FileMode.Open, FileAccess.Read);
             BinaryReader reader = new BinaryReader(file);
 
             Terradue.OpenSearch.Response.MemoryOpenSearchResponse response = new Terradue.OpenSearch.Response.MemoryOpenSearchResponse(reader.ReadBytes(unchecked((int)file.Length)), "application/json");
@@ -74,7 +74,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             }
 
             JToken jsonin;
-            file = new FileStream("../Samples/ASA_IM__0.json", FileMode.Open);
+            file = new FileStream(Util.TestBaseDir + "/Samples/ASA_IM__0.json", FileMode.Open);
             using (var sr2 = new StreamReader(file))
             using (var jsonTextReader = new JsonTextReader(sr2))
             {
@@ -91,7 +91,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         public void FromJsonS1doublePoly()
         {
 
-            var file = new FileStream("../Samples/S1doublepoly.json", FileMode.Open, FileAccess.Read);
+            var file = new FileStream(Util.TestBaseDir + "/Samples/S1doublepoly.json", FileMode.Open, FileAccess.Read);
 
             FeatureCollectionResult fc = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(file);
 
@@ -101,6 +101,24 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             Assert.That(fc.FeatureResults.Count == 1);
 
             Assert.That(fc.Features.First().Geometry is Polygon);
+
+
+        }
+
+        [Test()]
+        public void CreoDIAS()
+        {
+
+            var file = new FileStream(Util.TestBaseDir + "/Samples/CREODIAS.json", FileMode.Open, FileAccess.Read);
+
+            FeatureCollectionResult fc = (FeatureCollectionResult)FeatureCollectionResult.DeserializeFromStream(file);
+
+            file.Close();
+            file.Dispose();
+
+            Assert.That(fc.FeatureResults.Count == 20);
+
+            Assert.That(fc.Features.First().Geometry is MultiPolygon);
 
 
         }

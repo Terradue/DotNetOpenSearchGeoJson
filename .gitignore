@@ -15,3 +15,5 @@
 /Terradue.OpenSearch.GeoJson.Test/bin/
 Terradue.OpenSearch.GeoJson.Test/obj
 /.vs
+
+Terradue\.OpenSearch\.GeoJson\.Test/packages/

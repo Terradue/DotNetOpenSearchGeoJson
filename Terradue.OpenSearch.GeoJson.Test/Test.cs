@@ -16,7 +16,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
         [Test()]
         public void WPSAtomToJsonTest() {
 
-            FileStream wps = new FileStream("../Samples/wps.xml", FileMode.Open);
+            FileStream wps = new FileStream(Util.TestBaseDir + "/Samples/wps.xml", FileMode.Open);
 
             AtomFeed feed = new AtomFeed(DeserializeFromStream(wps));
 
