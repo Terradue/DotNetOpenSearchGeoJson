@@ -9,28 +9,25 @@ pipeline {
     stage('Init') {
       steps {
         sh 'rm -rf packges */bin build'
-        sh 'mkdir -p build'
-        sh 'nuget restore'
+        sh 'mkdir -p build Terradue.OpenSearch.SciHub.Test/out'
         sh 'ls -la'
       }
     }
     stage('Build') {
-      steps {
+   steps {
         echo "The library will be build in ${params.DOTNET_CONFIG}"
-        sh "xbuild /p:Configuration=${params.DOTNET_CONFIG}"
+        sh "msbuild /property:GenerateFullPaths=true /t:build /p:Configuration=${params.DOTNET_CONFIG} /restore:True"
       }
     }
     stage('Package') {
-      steps {
-          sh "nuget4mono -g ${env.BRANCH_NAME} -p Terradue.OpenSearch.GeoJson/packages.config Terradue.OpenSearch.GeoJson/bin/Terradue.OpenSearch.GeoJson.dll"
-            sh 'cat *.nuspec'
-            sh 'nuget pack -OutputDirectory build'
-            sh "echo ${params.NUGET_PUBLISH}"
+       steps {
+        sh "msbuild /t:pack /p:Configuration=${params.DOTNET_CONFIG}"
+        sh 'cat */obj/*/*.nuspec'
       }
     }
     stage('Test') {
       steps {
-        sh 'nunit-console4 *.Test/bin/*.Test.dll -xml build/TestResult.xml'
+        sh 'mono packages/nunit.consolerunner/3.10.0/tools/nunit3-console.exe *.Test/bin/*/net45/*.Test.dll'
       }
     }
     stage('Publish') {
@@ -40,14 +37,14 @@ pipeline {
         }
       }
       steps {
-        echo 'Deploying'
+       echo 'Deploying'
         sh "nuget push build/*.nupkg -ApiKey ${params.NUGET_API_KEY} -Source https://www.nuget.org/api/v2/package"
       }       
     }
   }
   post { 
     always { 
-       nunit(testResultsPattern: 'build/TestResult.xml')
+       nunit(testResultsPattern: 'TestResult.xml')
     }
   }
 }

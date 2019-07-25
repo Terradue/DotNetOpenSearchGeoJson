@@ -24,7 +24,6 @@ using Terradue.OpenSearch.GeoJson.Converter;
 using Newtonsoft.Json.Linq;
 using Terradue.GeoJson.Geometry;
 using Terradue.GeoJson.Feature;
-using Terradue.ServiceModel.Ogc.Owc.AtomEncoding;
 
 namespace Terradue.OpenSearch.GeoJson.Result
 {
@@ -340,33 +339,33 @@ namespace Terradue.OpenSearch.GeoJson.Result
 
         #endregion
 
-        [JsonIgnore]
-        public DateTimeInterval DateTimeInterval
-        {
-            get
-            {
-                var date = ElementExtensions.ReadElementExtensions<string>("date", "http://purl.org/dc/elements/1.1/");
-                if (date.Count > 0)
-                    return DateTimeInterval.Parse(date[0]);
-                date = ElementExtensions.ReadElementExtensions<string>("date", "");
-                if (date.Count > 0)
-                    return DateTimeInterval.Parse(date[0]);
-                return null;
-            }
-            set
-            {
-                if (value == null)
-                    return;
-                foreach (var ext in this.ElementExtensions.ToArray())
-                {
-                    if (ext.OuterName == "date" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/")
-                    {
-                        this.ElementExtensions.Remove(ext);
-                        continue;
-                    }
-                }
-                this.ElementExtensions.Add(new XElement(XName.Get("date", "http://purl.org/dc/elements/1.1/"), value.ToString()).CreateReader());
-            }
-        }
+        // [JsonIgnore]
+        // public DateTimeInterval DateTimeInterval
+        // {
+        //     get
+        //     {
+        //         var date = ElementExtensions.ReadElementExtensions<string>("date", "http://purl.org/dc/elements/1.1/");
+        //         if (date.Count > 0)
+        //             return DateTimeInterval.Parse(date[0]);
+        //         date = ElementExtensions.ReadElementExtensions<string>("date", "");
+        //         if (date.Count > 0)
+        //             return DateTimeInterval.Parse(date[0]);
+        //         return null;
+        //     }
+        //     set
+        //     {
+        //         if (value == null)
+        //             return;
+        //         foreach (var ext in this.ElementExtensions.ToArray())
+        //         {
+        //             if (ext.OuterName == "date" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/")
+        //             {
+        //                 this.ElementExtensions.Remove(ext);
+        //                 continue;
+        //             }
+        //         }
+        //         this.ElementExtensions.Add(new XElement(XName.Get("date", "http://purl.org/dc/elements/1.1/"), value.ToString()).CreateReader());
+        //     }
+        // }
     }
 }
