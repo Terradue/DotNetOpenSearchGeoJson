@@ -118,7 +118,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             Assert.That(fc.FeatureResults.Count == 20);
 
-            Assert.That(fc.Features.First().Geometry is Polygon);
+            Assert.That(fc.Features.First().Geometry is MultiPolygon);
 
 
         }
