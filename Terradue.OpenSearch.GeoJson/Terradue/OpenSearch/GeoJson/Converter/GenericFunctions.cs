@@ -74,6 +74,22 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                 properties["authors"] = authors;
             }
 
+            if (feature.Contributors != null && feature.Contributors.Count > 0) {
+                List<object> contributors = new List<object>();
+                foreach (var contributor in feature.Contributors) {
+                    Dictionary<string,object> contributord = GenericFunctions.ExportSyndicationElementExtensions(contributor.ElementExtensions);
+                    if (contributord == null)
+                        contributord = new Dictionary<string, object>();
+                    contributord.Add("email", contributor.Email);
+                    contributord.Add("name", contributor.Name);
+                    if (contributor.Uri != null)
+                        contributord.Add("uri", contributor.Uri.ToString());
+
+                    contributors.Add(contributord);
+                }
+                properties["contributors"] = contributors;
+            }
+
             if (feature.Categories != null && feature.Categories.Count > 0) {
                 List<object> categories = new List<object>();
                 foreach (var category in feature.Categories) {
@@ -130,6 +146,20 @@ namespace Terradue.OpenSearch.GeoJson.Converter {
                     authors.Add(authord);
                 }
                 properties["authors"] = authors;
+            }
+
+            if (fc.Contributors != null && fc.Contributors.Count > 0) {
+                List<object> contributors = new List<object>();
+                foreach (var contributor in fc.Contributors) {
+                    Dictionary<string,object> contributord = GenericFunctions.ExportSyndicationElementExtensions(contributor.ElementExtensions);
+                    contributord.Add("email", contributor.Email);
+                    contributord.Add("name", contributor.Name);
+                    if (contributor.Uri != null)
+                        contributord.Add("uri", contributor.Uri.ToString());
+
+                    contributors.Add(contributord);
+                }
+                properties["contributors"] = contributors;
             }
 
             if (fc.Categories != null && fc.Categories.Count > 0) {
