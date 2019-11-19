@@ -289,6 +289,26 @@ namespace Terradue.OpenSearch.GeoJson.Test {
             
         }
 
+        [Test()]
+        public void FromGufAtomTest() {
+
+            XmlReader reader = XmlReader.Create(Util.TestBaseDir + "/Samples/guf.atom");
+            SyndicationFeed feed = SyndicationFeed.Load(reader);
+            AtomFeed atom = new AtomFeed(feed);
+
+            FeatureCollectionResult col = FeatureCollectionResult.FromOpenSearchResultCollection(atom);
+
+            Assert.That(col.Features[0].Properties != null);
+
+            var jsont = col.SerializeToString();
+
+            JToken json = JToken.Parse(jsont);
+
+            Assert.AreEqual("DLR", json.SelectToken("features").First().SelectToken("properties").SelectToken("authors").First().SelectToken("name").ToString());
+            Assert.AreEqual("Terradue", json.SelectToken("features").First().SelectToken("properties").SelectToken("contributors").First().SelectToken("name").ToString());
+
+        }
+
     }
 }
 
