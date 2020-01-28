@@ -9,7 +9,7 @@ pipeline {
     stage('Init') {
       steps {
         sh 'rm -rf packges */bin build'
-        sh 'mkdir -p build Terradue.OpenSearch.SciHub.Test/out'
+        sh 'mkdir -p build Terradue.OpenSearch.GeoJson.Test/out'
         sh 'ls -la'
       }
     }
