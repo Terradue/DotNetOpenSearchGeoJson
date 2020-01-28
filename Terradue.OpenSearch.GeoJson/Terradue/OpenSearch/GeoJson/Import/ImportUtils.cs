@@ -17,8 +17,7 @@ using System.Xml.XPath;
 using Newtonsoft.Json.Linq;
 using Terradue.OpenSearch.Result;
 using Terradue.GeoJson.Geometry;
-using Terradue.GeoJson.GeoRss;
-using Terradue.GeoJson.GeoRss10;
+using Terradue.ServiceModel.Ogc.GeoRss.GeoRss;
 
 namespace Terradue.OpenSearch.GeoJson.Import
 {
@@ -365,14 +364,14 @@ namespace Terradue.OpenSearch.GeoJson.Import
 					switch (xr.NamespaceURI) {
 					// 1) search for georss
 					case "http://www.georss.org/georss":
-						savegeom = Terradue.GeoJson.GeoRss.GeoRssHelper.Deserialize(xr).ToGeometry();
+						savegeom = ServiceModel.Ogc.GeoRss.GeoRss.GeoRssHelper.Deserialize(xr).ToGeometry();
 						if (name != "box" && name != "point") {
 							return savegeom;
 						}
 						break;
 					// 2) search for georss10
 					case "http://www.georss.org/georss/10":
-						savegeom = GeoRss10Extensions.ToGeometry(GeoRss10Helper.Deserialize(xr));
+						savegeom = ServiceModel.Ogc.GeoRss.GeoRss10.GeoRss10Extensions.ToGeometry(ServiceModel.Ogc.GeoRss.GeoRss10.GeoRss10Helper.Deserialize(xr));
 						if (name != "box" && name != "point") {
 							return savegeom;
 						}
