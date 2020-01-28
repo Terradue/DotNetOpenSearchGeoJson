@@ -16,7 +16,6 @@ namespace Terradue.OpenSearch.GeoJson
         [OneTimeSetUp]
         public static void OneTimeSetUp()
         {
-            BasicConfigurator.Configure();
             var baseDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             TestBaseDir = Path.Combine(baseDir, "../../..");
         }

@@ -17,3 +17,5 @@ Terradue.OpenSearch.GeoJson.Test/obj
 /.vs
 
 Terradue\.OpenSearch\.GeoJson\.Test/packages/
+
+Terradue.OpenSearch.GeoJson.Test/out/
