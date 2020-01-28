@@ -5,13 +5,15 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Terradue.OpenSearch.GeoJson.Test</RootNamespace>
     <AssemblyName>Terradue.OpenSearch.GeoJson.Test</AssemblyName>
-    <TargetFrameworks>net45</TargetFrameworks>
-    <RuntimeIdentifiers>win;linux-x64</RuntimeIdentifiers>
+    <_ExtraTargetFrameworks Condition="'$(OS)' == 'Windows_NT' or '$(MSBuildRuntimeType)' == 'Mono'">net472</_ExtraTargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;$(RoslynPortableTargetFrameworks);$(_ExtraTargetFrameworks)</TargetFrameworks>
+    <RuntimeIdentifiers>win;linux</RuntimeIdentifiers>
     <PackageOutputPath>$(SolutionDir)\build</PackageOutputPath>
     <RestorePackagesPath>$(SolutionDir)\packages</RestorePackagesPath>
     <IsPackable>false</IsPackable>
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
   </PropertyGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
     <Reference Include="System"/>
     <Reference Include="System.Xml"/>
     <Reference Include="System.Xml.Linq"/>
@@ -22,8 +24,11 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.12.0"/>
+    <PackageReference Include="NUnit.Runners" Version="3.10.0"/>
     <PackageReference Include="NUnit.ConsoleRunner" Version="3.10.0"/>
-    <PackageReference Include="Terradue.Metadata.EarthObservation" Version="1.5.9"/>
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="Terradue.Metadata.EarthObservation" Version="1.6.5"/>
     <PackageReference Include="log4net" Version="2.0.8"/>
   </ItemGroup>
 </Project>

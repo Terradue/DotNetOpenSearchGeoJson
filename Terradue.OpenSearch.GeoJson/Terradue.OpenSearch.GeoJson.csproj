@@ -5,8 +5,9 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Terradue.OpenSearch.GeoJson</RootNamespace>
     <AssemblyName>Terradue.OpenSearch.GeoJson</AssemblyName>
-    <TargetFrameworks>net45</TargetFrameworks>
-    <RuntimeIdentifiers>win;linux-x64</RuntimeIdentifiers>
+    <_ExtraTargetFrameworks Condition="'$(OS)' == 'Windows_NT' or '$(MSBuildRuntimeType)' == 'Mono'">net472</_ExtraTargetFrameworks>
+    <TargetFrameworks>netstandard2.0;$(RoslynPortableTargetFrameworks);$(_ExtraTargetFrameworks)</TargetFrameworks>
+    <RuntimeIdentifiers>win;linux</RuntimeIdentifiers>
     <Title>DotNetOpenSearchGeoJson</Title>
     <Description>Terradue.OpenSearch.GeoJson is a library targeting .NET 4.0 and above that provides an extension to Terradue.OpenSearch to query from a class or an URL from/to GeoJson format</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -16,10 +17,10 @@
     <RepositoryUrl>https://github.com/Terradue/DotNetOpenSearchGeoJson</RepositoryUrl>
     <PackageTags>OGC;Terradue;Opensearch;Json</PackageTags>
     <PackageOutputPath>$(SolutionDir)\build</PackageOutputPath>
-    <RestorePackagesPath>$(SolutionDir)\packages</RestorePackagesPath>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+net45;</AssetTargetFallback>
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
   </PropertyGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
     <Reference Include="System"/>
     <Reference Include="System.Core"/>
     <Reference Include="System.Xml"/>
@@ -32,10 +33,10 @@
     <Content Include="$(SolutionDir)\LICENSE" Pack="true" PackagePath=""/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NetTopologySuite.IO" Version="1.14.0.1"/>
-    <PackageReference Include="Terradue.OpenSearch" Version="1.16.2"/>
+    <PackageReference Include="Terradue.OpenSearch" Version="1.16.3"/>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3"/>
     <PackageReference Include="Terradue.GeoJson" Version="1.10.0"/>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.12"/>
+    <PackageReference Include="NetTopologySuite" Version="1.15.3"/>
   </ItemGroup>
 </Project>
