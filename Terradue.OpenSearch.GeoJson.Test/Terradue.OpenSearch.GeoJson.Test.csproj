@@ -29,6 +29,6 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="Terradue.Metadata.EarthObservation" Version="1.6.6"/>
-    <PackageReference Include="log4net" Version="2.0.8"/>
+    <PackageReference Include="log4net" Version="2.0.10"/>
   </ItemGroup>
 </Project>
