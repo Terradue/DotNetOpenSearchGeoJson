@@ -95,8 +95,6 @@ namespace Terradue.OpenSearch.GeoJson.Result
 
             feature.Links = new Collection<SyndicationLink>(result.Links);
 
-            feature.sortKey = result.SortKey;
-
             return feature;
         }
 

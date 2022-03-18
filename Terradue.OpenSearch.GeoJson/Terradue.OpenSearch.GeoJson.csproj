@@ -1,39 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Project ToolsVersion="Current" Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{B932B7CD-4DDA-4084-AFBC-0FFCF4310C2E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Terradue.OpenSearch.GeoJson</RootNamespace>
     <AssemblyName>Terradue.OpenSearch.GeoJson</AssemblyName>
-    <_ExtraTargetFrameworks Condition="'$(OS)' == 'Windows_NT' or '$(MSBuildRuntimeType)' == 'Mono'">net472</_ExtraTargetFrameworks>
-    <TargetFrameworks>netstandard2.0;$(RoslynPortableTargetFrameworks);$(_ExtraTargetFrameworks)</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <RuntimeIdentifiers>win;linux</RuntimeIdentifiers>
     <Title>DotNetOpenSearchGeoJson</Title>
-    <Description>Terradue.OpenSearch.GeoJson is a library targeting .NET 4.0 and above that provides an extension to Terradue.OpenSearch to query from a class or an URL from/to GeoJson format</Description>
+    <Description>Terradue.OpenSearch.GeoJson is a library targeting .NET standard that provides an extension to Terradue.OpenSearch to query from a class or an URL from/to GeoJson format</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>1.4.5</Version>
+    <Version>1.5.0</Version>
     <Authors>Emmanuel Mathot</Authors>
     <Company>Terradue</Company>
     <RepositoryUrl>https://github.com/Terradue/DotNetOpenSearchGeoJson</RepositoryUrl>
     <PackageTags>OGC;Terradue;Opensearch;Json</PackageTags>
-    <PackageOutputPath>$(SolutionDir)\build</PackageOutputPath>
-    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+net45;</AssetTargetFallback>
     <NoWarn>$(NoWarn);NU1605</NoWarn>
   </PropertyGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
-    <Reference Include="System"/>
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml"/>
-    <Reference Include="System.Net"/>
-    <Reference Include="System.Runtime.Serialization"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="Microsoft.VisualBasic"/>
+  <ItemGroup>
+    <Content Include="../LICENSE" Pack="true" PackagePath=""/>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(SolutionDir)\LICENSE" Pack="true" PackagePath=""/>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Terradue.OpenSearch" Version="1.17.5"/>
+    <PackageReference Include="Terradue.OpenSearch" Version="1.20.1"/>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3"/>
     <PackageReference Include="Terradue.GeoJson" Version="1.12.0"/>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.12"/>
