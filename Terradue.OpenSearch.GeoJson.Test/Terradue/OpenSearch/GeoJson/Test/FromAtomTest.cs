@@ -258,11 +258,7 @@ namespace Terradue.OpenSearch.GeoJson.Test {
 
             Assert.That(fc.Features.First().Geometry is Polygon);
 
-            FileStream outs = new FileStream(Util.TestBaseDir + "/out/S1doublepoly.json", FileMode.Create, FileAccess.Write);
-
-            fc.SerializeToStream(outs);
-
-            outs.Close();
+            fc.SerializeToString();
 
         }
         
